@@ -1,0 +1,11 @@
+body {background-color: #444;}
+#frame {margin:25px; background-color: #eee; border-radius: 15px; padding:10px; margin:30px 20px 0 20px;}
+.info{background-color:#ddd; border-radius: 10px; padding:5px;}
+.nobullets{list-style-type:none;}
+#message {/*visibility:hidden;*/ background-color: aquamarine; font-weight: bold; padding:5px; margin:5px 0; border-radius: 5px;}
+#hints{display:none;}
+#footnote{font-size:.9em; color:#bbb;text-align: center; margin:6px; padding:0;}
+#footnote a {color:#bbb;}
+#game {display:none;}
+#end {display:none; margin:10px;}
+#load {margin-top:10px;}

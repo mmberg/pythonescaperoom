@@ -1,0 +1,2 @@
+python EscapeRoomWeb.py
+pause
