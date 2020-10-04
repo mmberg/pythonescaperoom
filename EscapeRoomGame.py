@@ -10,7 +10,6 @@ class EscapeRoomGame:
         self.rooms = []
 
     def load_room(self, room_classname):
-        #print("load "+room_classname)
         for room in self.rooms:
             if room.get_name() == room_classname:
                 print("Already loaded.")

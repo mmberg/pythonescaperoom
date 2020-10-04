@@ -3,7 +3,7 @@ import string
 from EscapeRoom import EscapeRoom
 
 
-class AnotherRoom(EscapeRoom):
+class ExampleRoom(EscapeRoom):
 
     def __init__(self):
         super().__init__()
