@@ -64,7 +64,7 @@ function next_room() {
 
 function notify(message, fadeout = true) {
     if (fadeout) {
-        $("#message").text(message).fadeTo(500, 1).delay(1500).fadeTo(500, 0);
+        $("#message").text(message).fadeTo(500, 1).delay(3000).fadeTo(500, 0);
     }
     else {
         $("#message").text(message).fadeTo(500, 1);
@@ -136,12 +136,12 @@ function upload() {
     });
 }
 
-function show_result(solution) {
-    if (solution) {
-        notify("Juhu, das war richtig.");
+function show_result(result) {
+    if (result.correct) {
+        notify("Deine Lösung ist: " + result.solution + ". Juhu, das war richtig!");
         next_level();
     }
     else {
-        notify("Leider falsch.");
+        notify("Deine Lösung ist: " + result.solution + ". Das ist leider falsch.");
     }
 }
