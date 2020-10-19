@@ -22,7 +22,8 @@ class MyRoom(EscapeRoom):
             "Die Buchstabenfolge lautet: <b>"+mysterious_letters+"</b",
             "Hinter einem an der Wand aufgehängten Bild siehst du nun ein Eingabepanel für einen 6-ziffrigen Code.",
             "Schreibe eine Methode <code>run('"+mysterious_letters +
-            "')</code>, die aus den Buchstaben den richtigen Code erzeugt."
+            "')</code>, die aus den Buchstaben den richtigen Code erzeugt.",
+            "Hallihallo"
         ]
         hints = [
             "Wie kann aus 3 Buchstaben ein 6-stelliger numerischer Code abgeleitet werden?",
