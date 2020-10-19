@@ -34,3 +34,5 @@ class ExampleRoom(EscapeRoom):
         for word in words:
             result += word[0]
         return result
+
+        #hi kids ich bin carlo

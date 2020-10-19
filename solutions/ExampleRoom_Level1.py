@@ -4,3 +4,4 @@ def run(secret):
     for word in words:
         result += word[0]
     return result
+#TeST 123
