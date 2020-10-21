@@ -1,7 +1,7 @@
 from EscapeRoom import EscapeRoom
 from random import randint
 
-class DerFluchdesPharao(EscapeRoom):
+class DieverlorenePyramide(EscapeRoom):
 
     def __init__(self):
         super().__init__()
@@ -10,7 +10,7 @@ class DerFluchdesPharao(EscapeRoom):
 
     ### LEVELS ###
     
-    def create_level1(self):
+    def create_level2(self):
         secret = randint(0, 2222)
 
         task_messages = [
@@ -19,31 +19,17 @@ class DerFluchdesPharao(EscapeRoom):
             "Rechne bitte 1+3, was wird wohl das Ergebnis sein....",
             secret,
             "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='300' height='200'>"
+            "<img src='C:\Users\jessi\OneDrive\Dokumente\GitHub\Pictures\1.jpg'  width='300' height='200'>"
         ]
         hints = [
-            "Hello",
+            "Der erste Tipp das sag ich dir, wird nicht leicht zu verstehen! Aber schau doch eher mal die rechte Hälfte an um zu verstehen",
             "World"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": secret}
     
     
-    def create_level2(self):
-        secret = randint(0, 2222)
+  
 
-        task_messages = [
-            "Der Pharao sucht weiter",
-            "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du nun ",
-            "Rechne bitte 1+3, was wird wohl das Ergebnis sein....",
-            secret,
-            "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='300' height='200'>"
-        ]
-        hints = [
-            "Hello",
-            "World"
-        ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": secret}
     ### SOLUTIONS ###
 
     def sol_lv1(self, secret):
