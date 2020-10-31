@@ -24,7 +24,7 @@ class DerFluchdesPharao(EscapeRoom):
             "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='600' height='400'>",
             " ",
             secret,
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/master/static/tut_8.jpg' width='600' height='400'>"
+            "<img src='https://raw.githubusercontent.com/jess5117/pythonescaperoom/master/static/tut_8.jpg' width='600' height='400'>"
         ]
         hints = [
             "Findest du die passenden Sätze? Schau genau hin!",
