@@ -1,3 +1,5 @@
 def run(input_data):
 
-    return 4
+    pharao = "TUTANHAMUN"
+
+    return pharao

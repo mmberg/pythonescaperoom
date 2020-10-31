@@ -1,5 +1,7 @@
-from EscapeRoom import EscapeRoom
+
 from random import randint
+
+from EscapeRoom import EscapeRoom
 
 class DerFluchdesPharao(EscapeRoom):
 
@@ -12,43 +14,46 @@ class DerFluchdesPharao(EscapeRoom):
     
     def create_level1(self):
         secret = randint(0, 2222)
+        pharao = "TUTANCHAMUN"
 
         task_messages = [
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
             "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du nun ",
-            "Rechne bitte 1+3, was wird wohl das Ergebnis sein....",
             secret,
             "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='300' height='200'>"
+            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='600' height='400'>",
+            " ",
+            secret,
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/master/static/tut_8.jpg' width='600' height='400'>"
         ]
         hints = [
-            "Hello",
+            "Findest du die passenden Sätze? Schau genau hin!",
             "World"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": secret}
     
     
     def create_level2(self):
-        secret = randint(0, 2222)
 
         task_messages = [
-            "Der Pharao sucht weiter",
-            "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du nun ",
-            "Rechne bitte 1+3, was wird wohl das Ergebnis sein....",
-            secret,
-            "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='300' height='200'>"
+            "Bist du immer noch hier?",
         ]
         hints = [
-            "Hello",
+            "Findest du die passenden Sätze? Schau genau hin!",
             "World"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": secret}
+
+
     ### SOLUTIONS ###
 
-    def sol_lv1(self, secret):
+    def sol_lv1(self, pharao):
 
-        a = 1
-        b = 3
-
-        return a+b
+        if pharao != "TUTANCHAMUN":
+            print("FALSCH")
+        else:
+            print("Super! Es öffnet sich die nächste Tür!")
+        
+        pharao = "TUTANCHAMUN"
+        
+        return pharao
