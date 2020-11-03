@@ -41,7 +41,7 @@ class DerFluchdesPharao(EscapeRoom):
         super().__init__()
         self.set_metadata("Alex, Isi, Jessi", __name__)
         self.add_level(self.create_level1())
-        self.add_level(self.create_level2())
+        # self.add_level(self.create_level2())
 
     ### LEVELS ###
     
@@ -84,16 +84,16 @@ class DerFluchdesPharao(EscapeRoom):
     #Level2
 
 
-    def create_level2(self):
-        task_messages = [
-            "Shalom, das war gut, leider bist du immer noch im gleichen Raum",
-            "Aber schau mal da, siehst du den kleine Skarabäuskäfer der rechts von dir auf dem Boden sitzt?",
-            "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/Skarab%C3%A4usTruhe.jpg' width='400' height='250'>"
-        ]
-        hints = [
-            "Was hat es mit der Raute auf sich, siehst du etwas, das dazu passen könnte?"
-        ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.remove_vowels, "data": "Vokale verboten"}
+    # def create_level2(self):
+    #     task_messages = [
+    #         "Shalom, das war gut, leider bist du immer noch im gleichen Raum",
+    #         "Aber schau mal da, siehst du den kleine Skarabäuskäfer der rechts von dir auf dem Boden sitzt?",
+    #         "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/SkarabaeusTruhe.jpg' width='400' height='250'>"
+    #     ]
+    #     hints = [
+    #         "Was hat es mit der Raute auf sich, siehst du etwas, das dazu passen könnte?"
+    #     ]
+    #     return {"task_messages": task_messages, "hints": hints, "solution_function": self.remove_vowels, "data": "Vokale verboten"}
 
 
     ### SOLUTIONS ###

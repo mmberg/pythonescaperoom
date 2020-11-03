@@ -16,10 +16,8 @@ class AlexRoom(EscapeRoom):
         task_messages = [
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
             "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du nun ",
-            secret,
-            "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='300' height='200'>"
-        ]
+            secret
+                    ]
         hints = [
             "Hello",
             "World"
