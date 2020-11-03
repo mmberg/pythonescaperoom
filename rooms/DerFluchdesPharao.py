@@ -84,28 +84,21 @@ class DerFluchdesPharao(EscapeRoom):
     #Level2
 
 
-      def create_level2(self):
+    def create_level2(self):
         task_messages = [
             "Shalom, das war gut, leider bist du immer noch im gleichen Raum",
             "Aber schau mal da, siehst du den kleine Skarabäuskäfer der rechts von dir auf dem Boden sitzt?",
-            
+            "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/Skarab%C3%A4usTruhe.jpg' width='400' height='250'>"
         ]
         hints = [
-            "Wie lautet der Spruch 'Vokale verboten' wenn Vokale verboten sind?",
+            "Was hat es mit der Raute auf sich, siehst du etwas, das dazu passen könnte?"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.remove_vowels, "data": "Vokale verboten"}
 
-    def random_letters(self):
-        letters = ""
-        for _ in range(3):
-            letters = letters + random.choice(string.ascii_uppercase)
-        return letters
 
     ### SOLUTIONS ###
 
     def sol_lv1(self, pharao):
 
-        ermittelter_code = zahl2
-        
         return zahl2
 
