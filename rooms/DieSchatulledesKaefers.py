@@ -1,11 +1,11 @@
 from EscapeRoom import EscapeRoom
 from random import randint
 
-class AlexRoom(EscapeRoom):
+class DieSchatulledesKaefers(EscapeRoom):
 
     def __init__(self):
         super().__init__()
-        self.set_metadata("Alex", __name__)
+        self.set_metadata("Jessi", __name__)
         self.add_level(self.create_level1())
 
     ### LEVELS ###
@@ -14,13 +14,14 @@ class AlexRoom(EscapeRoom):
         secret = randint(0, 2222)
 
         task_messages = [
-            "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
-            "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du nun ",
-            secret
+            "Gut nun hast du vielleicht eine Zahl gefunden, aber das heißt noch lange nicht, dass du dich wo anders befindest.",
+            "aber schau dich nochmal etwas um, siehst du den Käfer der da rechts auf dem Boden hockt? Geh ruhig mal näher ran",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/SkarabaeusTruhe.jpg'  width='300' height='200'>"
                     ]
+
         hints = [
-            "Hello",
-            "World"
+            "Siehst du die kleine Raute? Hat sie vielleicht eine wichtige Bedeutung? Wo ist sie noch zu finden?",
+            "Suche vielleicht nach den versteckten Hinweisen, irgendwo muss es doch wohl eine Übersetzungstabelle oder sowas geben?"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": secret}
 

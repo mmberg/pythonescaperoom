@@ -72,13 +72,21 @@ class DerFluchdesPharao(EscapeRoom):
             "<b>Der Pharao erwartet dich</b>",
             "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='600' height='400'>",
             " ",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/1+2.png' width='1500' height='1200'>"
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/1+2.png' width='1500' height='1200'>",
+            "Gut nun hast du vielleicht eine Zahl gefunden, aber das heißt noch lange nicht, dass du dich wo anders befindest.",
+            "aber schau dich nochmal etwas um, siehst du den Käfer der da rechts auf dem Boden hockt? Geh ruhig mal näher ran",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/SkarabaeusTruhe.jpg'  width='300' height='200'>"
+            
         ]
         hints = [
             "Findest du die passenden Sätze? Schau genau hin!",
-            "World"
+            "Siehst du die kleine Raute? Hat sie vielleicht eine wichtige Bedeutung? Wo ist sie noch zu finden?",
+            "Suche vielleicht nach den versteckten Hinweisen, irgendwo muss es doch wohl eine Übersetzungstabelle oder sowas geben?"
         ]
+
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": secret}
+    
+
     
 
     #Level2
