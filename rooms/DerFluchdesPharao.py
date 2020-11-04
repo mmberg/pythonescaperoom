@@ -1,6 +1,7 @@
 from random import randint
 import random
 from EscapeRoom import EscapeRoom
+from tkinter import *
 
 # %matplotlib inline 
 # import matplotlib.pyplot as plt
@@ -24,12 +25,19 @@ def umwandeln_in_buchstabe(zahl):
 
     return buchstabe
 
-bilder01=["<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp1.jpg' width='370' height='600'>",
-    "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp2.jpg'width='370' height='600 >", 
-    "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp3.jpg'width='370' height='600'>",
-    "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp4.jpg'width='370' height='600'>"]
+bilder01=["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/wp1.png' width='370' height='600'>",
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/wp2.png'width='370' height='600 >", 
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/wp3.png'width='370' height='600'>",
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/wp4.png'width='370' height='600'>"]
 
 bild01 = random.choice(bilder01)
+
+wortraestel = ["Ist es nicht die absolute Dreistigkeit zweier Personen, absolut achtlos zu agieren?", 
+"Es ist natürlich zweitrangig, ob du nun einsam bist oder einen Schnuller möchtest", 
+"Übereinstimmst du meiner Meinung, dass ein Frachtschiff mindestens einundfünfzig Meter breit sein sollte?",
+"Was sagt Einstein dazu? Immerhin hat er in seinem Revier schon mal Delfine gesehen!"]
+
+zufallssatz=random.choice(wortraestel)
 
 startbild = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='800' height='600'>"
 cleospiel = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/cleo.jpg'  width='800' height='600'>"
@@ -48,7 +56,11 @@ else:
                 code = "308"  
 
 buchstabensalat =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+buchstabenspiel = ["D vor B", "A hinter C", "C tauscht mit D", "B vor A"]
 random.shuffle(buchstabensalat)
+#random.shuffle(buchstabenspiel)
+
+#bspiel = random.choice(buchstabenspiel)
 
 buchstabe=random.choice(buchstabensalat) #zufälliger Buchstabe zwischen A-Z
 
@@ -74,23 +86,23 @@ class DerFluchdesPharao(EscapeRoom):
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
             "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du hierher geraten und wie kommst du wieder raus?",
             "Um dich herum stehen lauter komische Dinge an den Wänden",
-            "Wenn Kleopatra spielt, sie nur die letzten drei.... der Lösung sieht...",
+            "Wenn Kleopatra schreibt, dann sie immer nur von h..... denkt" , 
             "D vor B",
-            "Du merkst, dass du inmitten einer alten Pyramide bist. Wie bist du nun ",
-            "C tauscht mit D",
-            "Satzanfang:", 
-            "B vor A",
+            "<small><i>Hilfe! Ich bin in einer Grabkammer erwacht und weiß nicht, wie ich hier rauskomme!</i></small>",
+            zufallssatz,
+            "wir schreiben MMDL vor Christus! Auch wenn das jetzt römisch ist aber wer auch immer das nach mir liest, ich weiß aus zuverlässiger Quelle, dass Tutanchamun hier mit <b>Cäsar</b> verwandt war/ist was auch immer! ",
             startbild + "     " + bild01,
+            "<small><i>Du musst dich nicht wundern, manche Sätze machen hier keinen Sinn</i></small>",
             code,
             cleospiel,
-            "Nanu, was haben denn diese komischen Zeichen zu bedeuten?",
-            "A hinter C",
-            " "]
+            "Nanu, was haben denn diese komischen Zeichen zu bedeuten?"
+            
+            ]
             
         
         hints = [
-            "Findest du die passenden Sätze? Schau genau hin!",
-            "Siehst du die kleine Raute? Hat sie vielleicht eine wichtige Bedeutung? Wo ist sie noch zu finden?",
+            "Du siehst die Grabkammer, daneben ein komisches Bild mit halbierter Schrift. Findest du eine Gemeinsamkeit? Was hat sie wohl zu bedeuten?",
+            "Im Text verstecken sich Buchstaben. Findest du das passende Bild und die Anordnung?",
             "Suche vielleicht nach den versteckten Hinweisen, irgendwo muss es doch wohl eine Übersetzungstabelle oder sowas geben?"
         ]
 
