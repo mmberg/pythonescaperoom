@@ -5,7 +5,7 @@ class DerFluchdesPharao(EscapeRoom):
 
     def __init__(self):
         super().__init__()
-        self.set_metadata("Alex, Isi, Jessi", __name__)
+        self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
         self.add_level(self.create_level1())
 
     ### LEVELS ###
