@@ -91,7 +91,7 @@ class DerFluchdesPharao(EscapeRoom):
             # buchstabe_verschluesselt,  #Buchstabe 
             " =" , zahl2, #= verschlüsselte Zahl von zufälligem Buchstaben
             "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='1100' height='800'>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='1100' height='800'> ",
             " ",
             "Zufälliges Bild",
             bild01,
