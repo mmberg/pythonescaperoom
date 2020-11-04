@@ -71,16 +71,27 @@ class DerFluchdesPharao(EscapeRoom):
         bilder01=["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg' width='1100' height='800'>",
         "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'width='600' height='350'>", 
         "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/seite9.jpg'width='1100' height='800'>",
-        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert.jpg'width='250' height='378'>"]
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert%20(1).png'width='250' height='378'>",
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert%20(2).png'width='250' height='378'>",
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert%20(3).png'width='250' height='378'>",
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert%20(4).png'width='250' height='378'>"]
 
         bild01 = random.choice(bilder01)
 
-        spiegelbild1 = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert.jpg'width='250' height='378'>"
-
-        if bild01==bilder01[3]:
-            code = 308
+       if bild01==bilder01[3]:
+           code = 308
         else:
-            code = 0
+            if bild01==bilder01[4]:
+                code = "81B"
+             else:
+                 if bild01==bilder01[5]:
+                     code = "H3C"
+                 else:
+                     if bild01==bilder01[6]:
+                         code = "OK8"
+                     else: 
+                         code=0
+
 
 
         task_messages = [
