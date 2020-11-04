@@ -34,6 +34,7 @@ bilder01=["<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/s
 bild01 = random.choice(bilder01)
 
 startbild = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='800' height='600'>"
+cleospiel = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'  width='800' height='600'>"
 
 
 if bild01==bilder01[0]:
@@ -81,7 +82,7 @@ class DerFluchdesPharao(EscapeRoom):
                                 "9. Das Schiff",
                                 "10. Ein Käfer",
                                 "11. Ein Mistkäfer"]
-        random.shuffle(secret)      
+        random.shuffle(secret)  
 
 
         task_messages = [
@@ -95,7 +96,7 @@ class DerFluchdesPharao(EscapeRoom):
             "<b>Der Pharao erwartet dich</b>",
             startbild + "     " + bild01,
             code,
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'width='600' height='350'>",
+            cleospiel,
             "Gut nun hast du vielleicht eine Zahl gefunden, aber das heißt noch lange nicht, dass du dich wo anders befindest.",
             "aber schau dich nochmal etwas um, siehst du den Käfer der da rechts auf dem Boden hockt? Geh ruhig mal näher ran"]
             
