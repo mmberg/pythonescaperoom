@@ -1,6 +1,8 @@
 from random import randint
 import random
 from EscapeRoom import EscapeRoom
+import os
+import sys
 
 # %matplotlib inline 
 # import matplotlib.pyplot as plt
@@ -23,6 +25,12 @@ def umwandeln_in_buchstabe(zahl):
     buchstabe=chr(zahl)
 
     return buchstabe
+
+# path = r"https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder"
+
+# def randomize_file():
+# 	return random.choice(os.listdir(path))
+
 
 buchstabensalat =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 random.shuffle(buchstabensalat)
@@ -60,6 +68,20 @@ class DerFluchdesPharao(EscapeRoom):
         random.shuffle(secret)
         pharao = "TUTANCHAMUN"
 
+        bilder01=["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg' width='1100' height='800'>",
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'width='600' height='350'>", 
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/seite9.jpg'width='1100' height='800'>",
+        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert.jpg'width='250' height='378'>"]
+
+        bild01 = random.choice(bilder01)
+
+        spiegelbild1 = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/waspassiert.jpg'width='250' height='378'>"
+
+        if bild01==bilder01[3]:
+            code = 308
+        else:
+            code = 0
+
 
         task_messages = [
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
@@ -70,9 +92,13 @@ class DerFluchdesPharao(EscapeRoom):
             # buchstabe_verschluesselt,  #Buchstabe 
             " =" , zahl2, #= verschlüsselte Zahl von zufälligem Buchstaben
             "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://upload.wikimedia.org/wikipedia/commons/c/ce/Egypt_Hieroglyphe2.jpg'  width='600' height='400'>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='1100' height='800'>",
             " ",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/1+2.png' width='1500' height='1200'>",
+            "Zufälliges Bild",
+            bild01,
+            spiegelbild1,
+            code,
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'width='600' height='350'>",
             "Gut nun hast du vielleicht eine Zahl gefunden, aber das heißt noch lange nicht, dass du dich wo anders befindest.",
             "aber schau dich nochmal etwas um, siehst du den Käfer der da rechts auf dem Boden hockt? Geh ruhig mal näher ran",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/SkarabaeusTruhe.jpg'  width='300' height='200'>"
