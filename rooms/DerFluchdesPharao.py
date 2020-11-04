@@ -26,11 +26,27 @@ def umwandeln_in_buchstabe(zahl):
 
     return buchstabe
 
-# path = r"https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder"
+bilder01=["<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp1.jpg?raw=true' width='370' height='600'>",
+    "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp2.jpg?raw=true'width='370' height='600 >", 
+    "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp3.jpg?raw=true'width='370' height='600'>",
+    "<img src='https://github.com/alex2101998/pythonescaperoom/blob/Jess/static/Bilder/wp4.jpg?raw=true'width='370' height='600'>"]
 
-# def randomize_file():
-# 	return random.choice(os.listdir(path))
+bild01 = random.choice(bilder01)
 
+startbild = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='800' height='600'>"
+
+
+if bild01==bilder01[0]:
+    code = "031"
+else:
+    if bild01==bilder01[1]:
+        code = "130"     
+    else:
+        if bild01==bilder01[2]:
+            code = "813"  
+        else:
+            if bild01==bilder01[3]:
+                code = "308"  
 
 buchstabensalat =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 random.shuffle(buchstabensalat)
@@ -47,7 +63,7 @@ class DerFluchdesPharao(EscapeRoom):
 
     def __init__(self):
         super().__init__()
-        self.set_metadata("Alex, Isi, Jessi", __name__)
+        self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
         self.add_level(self.create_level1())
         # self.add_level(self.create_level2())
 
@@ -65,21 +81,7 @@ class DerFluchdesPharao(EscapeRoom):
                                 "9. Das Schiff",
                                 "10. Ein Käfer",
                                 "11. Ein Mistkäfer"]
-        random.shuffle(secret)
-        pharao = "TUTANCHAMUN"
-
-        bilder01=["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg' width='1100' height='800'>",
-        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'width='600' height='350'>", 
-        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/seite9.jpg'width='1100' height='800'>",
-        "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/wp1.jpg'width='250' height='378'>"]
-
-        bild01 = random.choice(bilder01)
-
-
-        if bild01==bilder01[3]:
-            code = 308
-        else:
-            code = 0
+        random.shuffle(secret)      
 
 
         task_messages = [
@@ -91,17 +93,13 @@ class DerFluchdesPharao(EscapeRoom):
             # buchstabe_verschluesselt,  #Buchstabe 
             " =" , zahl2, #= verschlüsselte Zahl von zufälligem Buchstaben
             "<b>Der Pharao erwartet dich</b>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='1100' height='800'> ",
-            " ",
-            "Zufälliges Bild",
-            bild01,
+            startbild + "     " + bild01,
             code,
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/ABCD.jpg'width='600' height='350'>",
             "Gut nun hast du vielleicht eine Zahl gefunden, aber das heißt noch lange nicht, dass du dich wo anders befindest.",
-            "aber schau dich nochmal etwas um, siehst du den Käfer der da rechts auf dem Boden hockt? Geh ruhig mal näher ran",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/SkarabaeusTruhe.jpg'  width='300' height='200'>"
+            "aber schau dich nochmal etwas um, siehst du den Käfer der da rechts auf dem Boden hockt? Geh ruhig mal näher ran"]
             
-        ]
+        
         hints = [
             "Findest du die passenden Sätze? Schau genau hin!",
             "Siehst du die kleine Raute? Hat sie vielleicht eine wichtige Bedeutung? Wo ist sie noch zu finden?",
@@ -132,5 +130,5 @@ class DerFluchdesPharao(EscapeRoom):
 
     def sol_lv1(self, pharao):
 
-        return zahl2
+        return code
 
