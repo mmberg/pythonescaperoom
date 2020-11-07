@@ -138,8 +138,8 @@ buchstaben_loesung = ["C", "D", "B", "A"]
 
 buchstabencode= umwandeln_in_ascii(buchstaben_loesung[0])  #erste Stelle muss richtig ermittelt werden
 
-hieroglyphenraetsel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raum2.jpg'  width='800' height='600'>",
-"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raum3.jpg'  width='800' height='600'>"
+hieroglyphenraetsel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raum2.jpg'  width='1000' height='600'>",
+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raum3.jpg'  width='1000' height='600'>"
 ]
 
 buchstabencode = caesar(buchstabencode)
@@ -174,14 +174,24 @@ class DerFluchdesPharao(EscapeRoom):
             "War hier etwa schon Mal jemand gefangen? Vielleicht hat derjenige ein paar Tipps hinterlassen?",
             "<small><i>Es gibt Schlösser, keine Ahnung welches du drehen musst aber scheinbar gibt es hier einen Code zu finden. Das ist nicht so leicht. Ich habe 3 Rätsel gefunden, ich hoffe du kannst sie lösen!</i></small>",
             startbild,
+            " ",
+            "<i>Wer kann sich merken was er erkennt, den man hier zum Genie auch ernennt...</i>" , 
+            "<i>Derjenige der etwas findet, darf es behalten, egal wie es sich windet </i>" , 
             "<small><i>Ich habe eine Karte gefunden, die sowas Komisches zeigt. Ich habe keine Idee, kannst du vielleicht etwas erkennen?</i></small>",
             spiegelbild,
+            " ",
             "<small><i>Ey man, beachte meinen Tipp Buddy, such nach Sätzen die dir helfen!</i></small>",
+            "<i>Wer hier nicht richtig liest, sich dieses Rätsel bestimmt vermiest </i>" , 
+            "<i>Aber Gefangener sei dir bewusst, hiermit ist noch lange nicht Schluss</i>" , 
+            zufallssatz,
+            "<small><i>Jo ich denke das war das Rätsel Nummer 2, ich hoffe der Schreck hier ist bald vorbei</i></small>",
             hieroglyphenraetsel[0],
+            "<small><i>Also ich hab ja schon Mal gelesen, dass der Tutanch der da im Sarg liegt, irgendwie eng verwandt mit dem Cäsar ist! Der Typ hatte eh übernatürliche Kräfte und 3 Mal darfst du raten, wieso der so viele Schlösser braucht</i></small>",
+            "<i> </i>" , 
+            "<i>Für dieses Schloss du nur die erste Zahl benötigst, aber findest du die richtige? </i>" , 
             hieroglyphenraetsel[1],
              "<i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i>", 
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/cleo.jpg'  width='800' height='600'>",
-            zufallssatz
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='500' height='250'>"
             ]
 
     
@@ -192,7 +202,9 @@ class DerFluchdesPharao(EscapeRoom):
                 "Lies rückwärts...",
                 "Den zweiten Code findest du in den Worten, schau genau hin!!",
                 "Findest du ein Wort, das eine Zahl enthält? Dann solltest du auch den Rest finden",
-                "328, mano man das war zäh!"] 
+                "Es gibt 4 Buchstaben und jede Menge fremder Zeichen, wenn du genau schaust entdeckst du vielleicht eine Gemeinsamkeit",
+                "Die Reihenfolge ist elementar, die solltest du von anderen Bildern erkennen, suche nach Gemeinsamkeiten",
+                "nur der erste Buchstabe ergibt eine Zahl, die du hier brauchst. "] 
 
 
 
@@ -208,7 +220,7 @@ class DerFluchdesPharao(EscapeRoom):
         #           ]
         # else:
         #     if zufallssatz==wortraestel[1]:
-        #         hints = [
+        #         hints = [ 
         #                     "Du siehst die Grabkammer, daneben ein komisches Bild mit halbierter Schrift. Findest du eine Gemeinsamkeit? Was hat diese wohl zu bedeuten? Ergibt das etwa einen Sinn?",
         #                     "Als nächstes suchst du versteckte Botschaften. Kann es sein, dass vor dir jemand die alten Zeichen übersetzt hat?",
         #                     "War Kleopatra nicht bekannt für ihre schön gemalten Zeichen? Ich meine irgendwo eine ihrer Spielregeln gelesen zu haben...",
