@@ -138,7 +138,10 @@ buchstaben_loesung = ["C", "D", "B", "A"]
 
 buchstabencode= umwandeln_in_ascii(buchstaben_loesung[0])  #erste Stelle muss richtig ermittelt werden
 
-hieroglyphenraetsel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab.jpg'  width='800' height='600'>"]
+hieroglyphenraetsel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raum2.jpg'  width='800' height='600'>",
+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raum3.jpg'  width='800' height='600'>"
+]
+
 buchstabencode = caesar(buchstabencode)
 
 
@@ -165,15 +168,20 @@ class DerFluchdesPharao(EscapeRoom):
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
             "Du merkst, dass du inmitten einer alten Pyramide bist. Aber wie kommst du hier raus?",
             "Um dich herum stehen lauter komische Dinge an den Wänden, sind da vielleicht irgendwelche nützlichen Tipps versteckt?",
-            "Wenn Kleopatra mit Worten spinnt, dann sie immer nur von h..... beginnt" , 
+            "<i>Wenn Kleopatra mit Worten spinnt, dann sie immer nur von h..... beginnt</i>" , 
             "Schau dich nur weiter um",
-            buchstabenraetsel[0],
-            startbild + "     " + spiegelbild,
-            spiegelcode,
-            zufallssatz,
-            wortcode,
-            buchstabencode,
-            code_gesamt
+            "Schau mal an die Wand rechts von dir, ist da etwa was gekritzelt? <small><i>Hilfe! Ich bin in einer Grabkammer erwacht und weiß nicht, wie ich hier rauskomme!</i></small>",
+            "War hier etwa schon Mal jemand gefangen? Vielleicht hat derjenige ein paar Tipps hinterlassen?",
+            "<small><i>Es gibt Schlösser, keine Ahnung welches du drehen musst aber scheinbar gibt es hier einen Code zu finden. Das ist nicht so leicht. Ich habe 3 Rätsel gefunden, ich hoffe du kannst sie lösen!</i></small>",
+            startbild,
+            "<small><i>Ich habe eine Karte gefunden, die sowas Komisches zeigt. Ich habe keine Idee, kannst du vielleicht etwas erkennen?</i></small>",
+            spiegelbild,
+            "<small><i>Ey man, beachte meinen Tipp Buddy, such nach Sätzen die dir helfen!</i></small>",
+            hieroglyphenraetsel[0],
+            hieroglyphenraetsel[1],
+             "<i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i>", 
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/cleo.jpg'  width='800' height='600'>",
+            zufallssatz
             ]
 
     
