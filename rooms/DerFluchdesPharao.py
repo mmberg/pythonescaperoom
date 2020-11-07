@@ -168,34 +168,32 @@ class DerFluchdesPharao(EscapeRoom):
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
             "Du merkst, dass du inmitten einer alten Pyramide bist. Aber wie kommst du hier raus?",
             "Um dich herum stehen lauter komische Dinge an den Wänden, sind da vielleicht irgendwelche nützlichen Tipps versteckt?",
-            "<i>Wenn Kleopatra mit Worten spinnt, dann sie immer nur von h..... beginnt</i>" , 
+            "<b><i>Wenn Kleopatra mit Worten spinnt, dann sie immer nur von h..... beginnt</i></b>" , 
             "Schau dich nur weiter um",
             "Schau mal an die Wand rechts von dir, ist da etwa was gekritzelt? <small><i>Hilfe! Ich bin in einer Grabkammer erwacht und weiß nicht, wie ich hier rauskomme!</i></small>",
             "War hier etwa schon Mal jemand gefangen? Vielleicht hat derjenige ein paar Tipps hinterlassen?",
             "<small><i>Es gibt Schlösser, keine Ahnung welches du drehen musst aber scheinbar gibt es hier einen Code zu finden. Das ist nicht so leicht. Ich habe 3 Rätsel gefunden, ich hoffe du kannst sie lösen!</i></small>",
             startbild,
-            " ",
-            "<i>Wer kann sich merken was er erkennt, den man hier zum Genie auch ernennt...</i>" , 
-            "<i>Derjenige der etwas findet, darf es behalten, egal wie es sich windet </i>" , 
+            "<b><i>Wer kann sich merken was er erkennt, den man hier zum Genie auch ernennt...</i></b>" , 
+            "<b><i>Derjenige der etwas findet, darf es behalten, egal wie es sich windet </i></b>" , 
             "<small><i>Ich habe eine Karte gefunden, die sowas Komisches zeigt. Ich habe keine Idee, kannst du vielleicht etwas erkennen?</i></small>",
             spiegelbild,
-            " ",
             "<small><i>Ey man, beachte meinen Tipp Buddy, such nach Sätzen die dir helfen!</i></small>",
-            "<i>Wer hier nicht richtig liest, sich dieses Rätsel bestimmt vermiest </i>" , 
-            "<i>Aber Gefangener sei dir bewusst, hiermit ist noch lange nicht Schluss</i>" , 
+            "<b><i>Wer hier nicht richtig liest, sich dieses Rätsel bestimmt vermiest </i></b>" , 
+            "<b><i>Aber Gefangener sei dir bewusst, hiermit ist noch lange nicht Schluss</i></b>" , 
             zufallssatz,
             "<small><i>Jo ich denke das war das Rätsel Nummer 2, ich hoffe der Schreck hier ist bald vorbei</i></small>",
             hieroglyphenraetsel[0],
             "<small><i>Also ich hab ja schon Mal gelesen, dass der Tutanch der da im Sarg liegt, irgendwie eng verwandt mit dem Cäsar ist! Der Typ hatte eh übernatürliche Kräfte und 3 Mal darfst du raten, wieso der so viele Schlösser braucht</i></small>",
-            "<i> </i>" , 
-            "<i>Für dieses Schloss du nur die erste Zahl benötigst, aber findest du die richtige? </i>" , 
+            "<b><i>Für dieses Schloss du nur die erste Zahl benötigst, aber findest du die richtige? </i></b>" , 
             hieroglyphenraetsel[1],
-             "<i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i>", 
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='350' height='150'>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='100' height='40'>",
-            "<i>Finde erst eine kurze Zahl um auch das letzte Schloss zu knacken</i>" ,
+            "\n",
+            "<b><i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i></b>", 
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='350' height='100'>" + "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='120' height='70'>",
+            "<b><i>Finde erst eine kurze Zahl um auch das letzte Schloss zu knacken</i></b>" ,
             "<small><i>Kannst du dir das bitte auch mal anschauen? Ich hab keinen Schimmer, warum da jetzt plötzlich so viele freie Felder stehen!?</i></small>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Code4.jpg'  width='350' height='150'>",
+            "<b><i>Es gibt nur 10 Arten von Menschen, die das lösen können. Diese oder Jene.</i></b>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/code4.jpg'  width='500' height='115'>"
             ]
 
     
@@ -208,7 +206,10 @@ class DerFluchdesPharao(EscapeRoom):
                 "Findest du ein Wort, das eine Zahl enthält? Dann solltest du auch den Rest finden",
                 "Es gibt 4 Buchstaben und jede Menge fremder Zeichen, wenn du genau schaust entdeckst du vielleicht eine Gemeinsamkeit",
                 "Die Reihenfolge ist elementar, die solltest du von anderen Bildern erkennen, suche nach Gemeinsamkeiten",
-                "nur der erste Buchstabe ergibt eine Zahl, die du hier brauchst. "] 
+                "nur der erste Buchstabe ergibt eine Zahl, die du hier brauchst. ",
+                "es ist eine zweistellige Zahl, was hat wohl eine Zahl mit nem Buchstaben zu tun?",
+                "wofür stehen die drei Viererblöcke",
+                "Umrechnen du musst! Es gibt nur 10 Ziffern um sie zu lösen"] 
 
 
 
