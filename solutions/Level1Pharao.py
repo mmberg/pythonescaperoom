@@ -1,3 +1,5 @@
 def run(input_data):
 
-    return "031210"
+    code = bin(510)
+
+    return code
