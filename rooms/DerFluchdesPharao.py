@@ -83,10 +83,10 @@ else:
 #+++++++++++++++++++++++++++++++++++++++++++++
 #  2.  SPIEL02  globale Liste KleopatrasHieroglyphen "wortraetsel" beienhaltet 4 fast gleiche Bilder, der Unterschied sind KleopatrasHieroglyphen
 
-wortraestel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Einstein.jpg' width='1000' height='600'>",
-    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Personen.jpg' width='1000' height='600' >", 
-    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Meinung.jpg' width='1000' height='600'>",
-    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schnuller.jpg' width='1000' height='600'>"]
+wortraestel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Einstein.jpg' width='1000' height='600'>"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss4.jpg'  width='100' height='70'>",
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Personen.jpg' width='1000' height='600' >"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>", 
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Meinung.jpg' width='1000' height='600'>" + "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>",
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schnuller.jpg' width='1000' height='600'>"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>"]
 
 #Variable "wortraetsel" als zufällige Auswahl von Bildern aus der Liste "wortraetsel" --> Beim Neustart des Rätsels wird jedes Mal ein anderes Bild zufällig ausgewählt
 
@@ -191,7 +191,8 @@ class DerFluchdesPharao(EscapeRoom):
             "<i>Für dieses Schloss du nur die erste Zahl benötigst, aber findest du die richtige? </i>" , 
             hieroglyphenraetsel[1],
              "<i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i>", 
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='500' height='250'>"
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='500' height='200'>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='200' height='70'>"
             ]
 
     
