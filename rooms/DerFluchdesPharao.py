@@ -192,8 +192,10 @@ class DerFluchdesPharao(EscapeRoom):
             hieroglyphenraetsel[1],
              "<i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i>", 
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='350' height='150'>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='100' height='70'>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/code4.jpg'  width='250' height='100'>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='100' height='40'>",
+            "<i>Finde erst eine kurze Zahl um auch das letzte Schloss zu knacken</i>" ,
+            "<small><i>Kannst du dir das bitte auch mal anschauen? Ich hab keinen Schimmer, warum da jetzt plötzlich so viele freie Felder stehen!?</i></small>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Code4.jpg'  width='350' height='150'>",
             ]
 
     
