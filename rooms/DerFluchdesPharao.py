@@ -83,10 +83,10 @@ else:
 #+++++++++++++++++++++++++++++++++++++++++++++
 #  2.  SPIEL02  globale Liste KleopatrasHieroglyphen "wortraetsel" beienhaltet 4 fast gleiche Bilder, der Unterschied sind KleopatrasHieroglyphen
 
-wortraestel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Einstein.jpg' width='800' height='500'>"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss4.jpg'  width='100' height='70'>",
-    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Personen.jpg' width='800' height='500' >"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>", 
+wortraestel = ["<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Personen.jpg' width='800' height='500'>"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>",
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schnuller.jpg' width='800' height='500' >"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>", 
     "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Meinung.jpg' width='800' height='500'>" + "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>",
-    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schnuller.jpg' width='800' height='500'>"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg'  width='100' height='70'>"]
+    "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Einstein.jpg' width='800' height='500'>"+"<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss4.jpg'  width='100' height='70'>"]
 
 #Variable "wortraetsel" als zufällige Auswahl von Bildern aus der Liste "wortraetsel" --> Beim Neustart des Rätsels wird jedes Mal ein anderes Bild zufällig ausgewählt
 
@@ -147,7 +147,7 @@ buchstabencode = caesar(buchstabencode)
 
 #++++++++++++++++++ CODE GESAMT
 
-code_gesamt = bin(spiegelcode + wortcode + buchstabencode)
+code_gesamt = spiegelcode + wortcode + buchstabencode
 
 
 #++++++++++++++ HAUPTTEIL ++++++++++++++++++++++++
@@ -168,32 +168,56 @@ class DerFluchdesPharao(EscapeRoom):
             "Du wachst auf und fühlst dich noch etwas benommen. Du schaust dich um, aber erkennst nichts wieder..",
             "Du merkst, dass du inmitten einer alten Pyramide bist. Aber wie kommst du hier raus?",
             "Um dich herum stehen lauter komische Dinge an den Wänden, sind da vielleicht irgendwelche nützlichen Tipps versteckt?",
+            "<br></br>",
             "<b><i>Wenn Kleopatra mit Worten spinnt, dann sie immer nur von h..... beginnt</i></b>" , 
+            "<br></br>",
             "Schau dich nur weiter um",
-            "Schau mal an die Wand rechts von dir, ist da etwa was gekritzelt? <small><i>Hilfe! Ich bin in einer Grabkammer erwacht und weiß nicht, wie ich hier rauskomme!</i></small>",
+            "Schau mal hier, ist da etwa was gekritzelt? <small><i>Hilfe! Ich bin in einer Grabkammer erwacht und weiß nicht, wie ich hier rauskomme!</i></small>",
             "War hier etwa schon Mal jemand gefangen? Vielleicht hat derjenige ein paar Tipps hinterlassen?",
+            "<br></br>",
             "<small><i>Es gibt Schlösser, keine Ahnung welches du drehen musst aber scheinbar gibt es hier einen Code zu finden. Das ist nicht so leicht. Ich habe 3 Rätsel gefunden, ich hoffe du kannst sie lösen!</i></small>",
             startbild,
-            "<b><i>Wer kann sich merken was er erkennt, den man hier zum Genie auch ernennt...</i></b>" , 
+            "<br></br>",
+            "<br></br>",
+            "<b>RÄTSEL1</b>",
+            "<b>Wer kann sich merken was er erkennt, den man hier zum Genie auch ernennt...</b>" , 
             "<b><i>Derjenige der etwas findet, darf es behalten, egal wie es sich windet </i></b>" , 
+            "<br></br>",
             "<small><i>Ich habe eine Karte gefunden, die sowas Komisches zeigt. Ich habe keine Idee, kannst du vielleicht etwas erkennen?</i></small>",
+            "<br></br>",
             spiegelbild,
+            "<br></br>",
             "<small><i>Ey man, beachte meinen Tipp Buddy, such nach Sätzen die dir helfen!</i></small>",
             "<b><i>Wer hier nicht richtig liest, sich dieses Rätsel bestimmt vermiest </i></b>" , 
-            "<b><i>Aber Gefangener sei dir bewusst, hiermit ist noch lange nicht Schluss</i></b>" , 
+            "<b><i>Aber Gefangener sei dir bewusst, hiermit ist noch lange nicht Schluss</i></b>" ,
+            "<br></br>",
+            "<br></br>",
+            "<b>RÄTSEL2</b>", 
+            "<br></br>",
             zufallssatz,
             "<small><i>Jo ich denke das war das Rätsel Nummer 2, ich hoffe der Schreck hier ist bald vorbei</i></small>",
-            hieroglyphenraetsel[0],
-            "<small><i>Also ich hab ja schon Mal gelesen, dass der Tutanch der da im Sarg liegt, irgendwie eng verwandt mit dem Cäsar ist! Der Typ hatte eh übernatürliche Kräfte und 3 Mal darfst du raten, wieso der so viele Schlösser braucht</i></small>",
+            "<br></br>",
+            "<b>4=1+2+3</b>",
+            "<br></br>",
+            "<b>RÄTSEL3</b>",
             "<b><i>Für dieses Schloss du nur die erste Zahl benötigst, aber findest du die richtige? </i></b>" , 
-            hieroglyphenraetsel[1],
-            "\n",
-            "<b><i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i></b>", 
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='350' height='100'>" + "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='120' height='70'>",
-            "<b><i>Finde erst eine kurze Zahl um auch das letzte Schloss zu knacken</i></b>" ,
+            "<br></br>",
+            hieroglyphenraetsel[1] + hieroglyphenraetsel[0],
+            "<small><i>Also ich hab ja schon Mal gelesen, dass der Tutanch der da im Sarg liegt, irgendwie eng verwandt mit dem Cäsar ist! Der Typ hatte eh übernatürliche Kräfte und 3 Mal darfst du raten, wieso der so viele Schlösser braucht</i></small>",
+            "<br></br>",
+            "<b><i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.</i></b>", 
+            "<b><i>Finde erst eine kurze Zahl um auch das letzte Schloss zu knacken aber denke dran, die Verwandschaft spielt hier ne +3 Rolle</i></b>",
+            "<br></br>",
             "<small><i>Kannst du dir das bitte auch mal anschauen? Ich hab keinen Schimmer, warum da jetzt plötzlich so viele freie Felder stehen!?</i></small>",
+            "<br></br>",
             "<b><i>Es gibt nur 10 Arten von Menschen, die das lösen können. Diese oder Jene.</i></b>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/code4.jpg'  width='500' height='115'>"
+            "<br></br>",
+            "War nicht die Rede von 3 Rätseln? Warum kommt hier Code Nr.<b> 4</b>?",
+            "<br></br>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/code4.jpg'  width='500' height='115'>",
+            code_gesamt,
+            bin(code_gesamt)
             ]
 
     
@@ -292,7 +316,7 @@ class DerFluchdesPharao(EscapeRoom):
 
     def sol_lv1(self, pharao):
         
-        
+        code = bin(code_gesamt)
 
-        return code_gesamt
+        return code
 

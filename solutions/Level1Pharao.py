@@ -1,5 +1,5 @@
 def run(input_data):
 
-    code = bin(510)
+    code = bin(385)
 
     return code
