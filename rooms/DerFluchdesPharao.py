@@ -188,7 +188,7 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "<b>RÄTSEL3</b>",
             "<br></br>",
-            "<b><i>Wenn Nofretete mit Buchstaben spielt, sie mit dem Stift auf Steine zielt.Doch ist sie noch immer ein kleines Schlitzohr, einfach gemacht, das käme ihr zu langweilig vor. Auch wenn Sie gerne mit Buchstaben spielt, sie doch nur auf einen genau abzielt.  </i></b>", 
+            "<i>Wenn Nofretete mit Buchst<b>A</b>ben spielt, <b>S</b>ie mit dem Stift auf Steine zielt.Do<b>C</b>h ist sie noch <b>I</b>mmer ein kleines Schl<b>I</b>tzohr, einfach gemacht, das käme ihr zu langweilig vor. Auch wenn Sie gerne mit Buchstaben spielt, sie doch nur auf einen genau abzielt.  </i>", 
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/nofre.jpg'  width='350' height='100'>" + "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss2.jpg'  width='120' height='70'>",
             "<br></br>",
