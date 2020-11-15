@@ -28,9 +28,14 @@ class EscapeRoom:
     def get_metadata(self):
         return {"author": self.author, "room_name": self.room_name, "levels": len(self.levels)}
 
-    def check_solution(self, solution_filename, correct_function, data):
+    def check_solution(self, solution_filename, correct_function, data, algorithm):
         solution = self.run_code(solution_filename, data)
-        correct = solution == correct_function(data)
+        try:
+            correct = algorithm(solution)
+        except:
+            result_error = 1
+        if 'result_error' in locals() and result_error == 1:
+            correct = solution == correct_function(data)
         return {"correct": correct, "solution": solution}
 
     def run_code(self, filename, data):

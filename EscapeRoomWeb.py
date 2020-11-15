@@ -72,7 +72,7 @@ def post_solve_level(room_nr, level_nr):
         string.ascii_lowercase + string.digits, k=7))
     file.save(filename+".py")
     solution = room.check_solution(
-        filename, level["solution_function"], level["data"])
+        filename, level["solution_function"], level["data"], level.get("algorithm", None))
     os.remove(filename+".py")
     return jsonify(solution)
 
