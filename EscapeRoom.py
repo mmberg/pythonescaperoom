@@ -30,7 +30,8 @@ class EscapeRoom:
 
     def check_solution(self, solution_filename, correct_function, data):
         solution = self.run_code(solution_filename, data)
-        return solution == correct_function(data)
+        correct = solution == correct_function(data)
+        return {"correct": correct, "solution": solution}
 
     def run_code(self, filename, data):
         try:
