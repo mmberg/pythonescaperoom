@@ -14,18 +14,18 @@ class ExampleRoom(EscapeRoom):
     ### LEVELS ###
 
     def create_level1(self):
-        secret = random.choice(["Sogar Einige Clowns Riechen Es Tagelang",
-                                "Gangster Erkennen Heimliche Essenzen In Mails"])
-
         task_messages = [
-            "Auf einem Zettel steht folgender Text:",
-            "<b>"+secret+"</b>",
-            "Lässt sich hier ein Geheimnis erahnen?"
+            "Die nächste Tür öffnet sich erst, wenn du dem Wärter die Lösung der Gleichung verrätst. Der Wärter zeigt dir folgendes Papyrus: ",
+            "<img src='static/assets/1.png'>",
+
+            "Du erinnerst dich aus dem Geschichtsunterricht, wie die Umrechnung von Ägyptischen Hieroglyphenzeichen in Arabische Zahlen funktioniert",
+            "Diese Grafik schwebt dir in Erinnerung:",
+            "<img src='static/assets/hieroglypische_zahlzeichen.PNG'>"
         ]
         hints = [
-            "Werfen Sie einen Blick auf die Anfangsbuchstaben!"
+            
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.first_letters, "data": secret}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.first_letters, "data": ""}
 
     ### SOLUTIONS ###
 
