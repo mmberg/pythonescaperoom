@@ -136,3 +136,4 @@ class Frankenstein(EscapeRoom):
             aligned_picture_lines.append(str(picture_line))
 
             return aligned_picture_lines
+        ###End solution Level 5###
