@@ -26,7 +26,7 @@ class Frankenstein(EscapeRoom):
        return
 
     def create_level2(self):
-        doorbell = "Dr. VXktXr FrXnkXstXXn"
+        doorbell = "Dr. VXktXr FrXnkXnstXXn"
         task_messages = [
             "Du findest an dem errechneten Ort eine verfallene Stadtvilla mit \
             einem unleserlichen Namen an der Klingel: " +doorbell+ 
