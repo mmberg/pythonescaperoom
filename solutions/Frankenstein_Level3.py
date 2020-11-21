@@ -8,8 +8,6 @@ def create_badge_number():
 
         digits = [int(i) for i in str(a)]
 
-        print(digits)
-
         if digits[0] == digits[1]:
             return False
         
@@ -28,11 +26,11 @@ def create_badge_number():
 
         return sum(cross_sum_digits)
 
-    ints_list = []                                              # list of three digit numbers for the badge number
+    numbers = []                                              # list of three digit numbers for the badge number
 
     import random
 
-    while len(ints_list) < 3:                                  # while we have less than 3 items in the list
+    while len(numbers) < 3:                                  # while we have less than 3 items in the list
 
         x = random.randint(101,998)                             # get random 3 digit number
 
@@ -40,13 +38,14 @@ def create_badge_number():
 
             if cross_sum(x) >= 9 and cross_sum(x) <= 15:        # check if cross sum is 9
 
-                ints_list.append(x)                             # add number to ints list
+                numbers.append(x)                             # add number to ints list
 
         else:
             continue
 
-    badgeNumber = '-'.join(map(str, ints_list))
+    badge_number = '-'.join(map(str, numbers))
+    
+    print(badge_number)
+    return badge_number
 
-    return badgeNumber
-
-print(create_badge_number())
+create_badge_number()
