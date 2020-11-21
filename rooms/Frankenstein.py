@@ -2,9 +2,8 @@ import random
 import string
 from EscapeRoom import EscapeRoom
 
-##Lib for Level 2 solution
+from itertools import permutations
 from itertools import product
-
 
 class Frankenstein(EscapeRoom):
 
@@ -12,8 +11,9 @@ class Frankenstein(EscapeRoom):
         super().__init__()
         self.set_metadata("Lisa, Christoph und Thomas", __name__)
         #self.add_level(self.create_level1())
-        self.add_level(self.create_level2())
+        #self.add_level(self.create_level2())
         self.add_level(self.create_level3())
+        self.add_level(self.create_level4())
 
     ### LEVELS ###
 
@@ -52,6 +52,17 @@ class Frankenstein(EscapeRoom):
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.create_badge_number, "data": "Scotland Yard Badge"}
 
+    def create_level4(self):
+
+        code = ['A1', 'B2', 'M2', 'Q1', 'K2', 'L1']  # TO DO: needs to be different every time
+
+        task_messages = ["message here"]
+
+        hints = ["hints here"]
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.open_safe, "data": code}
+
+
     ### SOLUTIONS ###
 
     ###Level 2###
@@ -78,7 +89,7 @@ class Frankenstein(EscapeRoom):
 
     ###Level 3###
 
-    def create_badge_number(self, data):
+    def create_badge_number(self):
         '''
         create a badge number with format xxx-xxx-xxx
         requirements per block of 3: cross sum is between 9 and 15, the digits are unique
@@ -127,3 +138,50 @@ class Frankenstein(EscapeRoom):
         return badge_number
 
     ###END Solution Level 3 
+
+    ###Level 4###
+
+    def open_safe(self, code):
+        '''
+        find the right 3 keys red, blue, yellow
+        decode numbers from the note
+        '''
+        # Try out all combinations of the keys
+
+        def key_combinations():
+
+            colours =['red', 'yellow', 'blue']
+            all_possible_compinations = []
+
+            p = permutations(colours)
+            
+            for p in list(p):
+                all_possible_compinations.append(p)
+
+            print(all_possible_compinations)
+            return all_possible_compinations
+
+        key_combinations()
+
+        # Decode the numbers to open the safe, 1-52 (A1 - Z2)
+
+        def decoding_numbers(code):
+        
+            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+
+            key = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
+
+            decoded_numbers = []
+
+            for item in code:
+
+                num = key.index(item)
+                
+                decoded_numbers.append(num+1)
+
+            print(decoded_numbers)
+            return decoded_numbers
+        
+        decoding_numbers(code)
+
+    ###END Solution Level 4
