@@ -1,0 +1,21 @@
+#Levelbeschreibung
+
+#Um Level 2 abzuschließen musst du folgende Aufgabe lösen.
+#Generiere eine Zufallszahl zwischen 2 und 100.
+#Programmiere mittels While-Schleifen die Primzahlen von 2 bis dem Wert deiner Zufallszahl.
+
+
+#Loesung
+
+import.random
+
+r=random.randint (2,100)
+i=2
+
+while (i<r):
+	p=2
+	while (p<= (i/p)):
+		if not (i%p): break
+		p=p+1
+	if (p> (i/p)): print i
+	i=i+1
