@@ -1,10 +1,8 @@
-def create_badge_number():
-    '''
-    create a badge number with format xxx-xxx-xxx
-    requirements per block of 3: cross sum is between 9 and 15, the digits are digits
-    '''
+import random
 
-    def unique_digits(a):                                       # function to check uniqueness of digits in a number
+def create_badge_number():
+
+    def unique_digits(a):
 
         digits = [int(i) for i in str(a)]
 
@@ -20,25 +18,23 @@ def create_badge_number():
         else:
             return True
 
-    def cross_sum(a):                                           # function to calculate the cross sum
+    def cross_sum(a):
 
         cross_sum_digits = [int(i) for i in str(a)]
 
         return sum(cross_sum_digits)
 
-    numbers = []                                              # list of three digit numbers for the badge number
+    numbers = []
 
-    import random
+    while len(numbers) < 3:
 
-    while len(numbers) < 3:                                  # while we have less than 3 items in the list
+        x = random.randint(101,998)
 
-        x = random.randint(101,998)                             # get random 3 digit number
+        if unique_digits(x) == True:
 
-        if unique_digits(x) == True:                            # check if all digits are unique
+            if cross_sum(x) >= 9 and cross_sum(x) <= 15:
 
-            if cross_sum(x) >= 9 and cross_sum(x) <= 15:        # check if cross sum is 9
-
-                numbers.append(x)                             # add number to ints list
+                numbers.append(x)
 
         else:
             continue

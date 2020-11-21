@@ -78,10 +78,10 @@ class Frankenstein(EscapeRoom):
 
     ###Level 3###
 
-    def create_badge_number(self):
+    def create_badge_number(self, data):
         '''
         create a badge number with format xxx-xxx-xxx
-        requirements per block of 3: cross sum is between 9 and 15, the digits are digits
+        requirements per block of 3: cross sum is between 9 and 15, the digits are unique
         '''
 
         def unique_digits(a):                                       # function to check uniqueness of digits in a number
@@ -107,8 +107,6 @@ class Frankenstein(EscapeRoom):
             return sum(cross_sum_digits)
 
         numbers = []                                              # list of three digit numbers for the badge number
-
-        import random
 
         while len(numbers) < 3:                                  # while we have less than 3 items in the list
 
