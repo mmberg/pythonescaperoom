@@ -44,4 +44,4 @@ def run():
     print(badge_number)
     return badge_number
 
-create_badge_number()
+run()

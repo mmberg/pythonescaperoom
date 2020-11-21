@@ -46,4 +46,6 @@ def open_safe(code):
     
     decoding_numbers(code)
 
+    # Possible TO DO: Combine the answers?
+
 open_safe(code)
