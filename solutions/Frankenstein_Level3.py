@@ -1,6 +1,6 @@
 import random
 
-def create_badge_number():
+def run():
 
     def unique_digits(a):
 
