@@ -19,7 +19,8 @@ class DieGrabkammerdesPharao(EscapeRoom):
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raetselxy.jpg' width='1000' height='550'>",
             "<br></br>",
             "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b>Bitte heb mich auf</b> </a>",
-            "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!"
+            "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
+            "<br></br>",
             
             ]
         hints = [
@@ -38,5 +39,5 @@ class DieGrabkammerdesPharao(EscapeRoom):
     ### SOLUTIONS ###
 
     def sol_lv1(self):
-        
+
         return "1234"
