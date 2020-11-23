@@ -1,6 +1,52 @@
 from EscapeRoom import EscapeRoom
 from random import randint
+import random
 
+f = open('pyramide.txt', 'w')
+
+stein = ["[]"]
+
+reihen = [
+"                /\ ",
+"               /][\ ",
+"              /[][[\ ",
+"             /[][]T[\ ",
+"            /[][][]U[\ ",
+"           /[][][]T[][\ ", 
+"          /[][][]A[][][\ ", 
+"         /[][][]N[][][][\ ", 
+"        /[][][][]C[][][][\ ",
+"       /[][]H[][][][][][][\ ", 
+"      /[]A[][][][][][][][][\ ", 
+"     /[][][]M[][][][][][][][\ ", 
+"    /[]U[][][][][][][][][][][\ ", 
+"   /[][][][][][][][]N[][][][][\ "]
+
+
+#Steine zählen Stein = []
+def count_block(string):
+    i = 0
+    for i in range(len(string)):
+        
+        bloecke=string[i].count("[]")
+        #f.write(str(bloecke)+"\n")
+
+    return string
+
+count_block(reihen)
+
+
+#Pyramide wird random gemischelt und sicher gestellt, dass jeder Eintrag genau einmal ausgegeben wird (.remove)
+def built_pyramide(reihen):
+    i = 0
+    for i in range(len(reihen)):
+        reihe = random.choice(reihen)
+        reihen.remove(reihe)
+        f.write(str(reihe)+"\n")
+    
+    return reihe
+
+built_pyramide(reihen)
 
 class DieGrabkammerdesPharao(EscapeRoom):
 
@@ -14,53 +60,52 @@ class DieGrabkammerdesPharao(EscapeRoom):
     def create_level1(self):
         secret = randint(0, 2222)
 
-        
-    f = open('C:\Users\jessi\OneDrive\Dokumente\GitHub\pythonescaperoom\static\pyramide.txt', 'w')
-
-    stein = ["[]"]
-
-    reihen = [
-    "                /\ ",
-    "               /][\ ",
-    "              /[][[\ ",
-    "             /[][]T[\ ",
-    "            /[][][]U[\ ",
-    "           /[][][]T[][\ ", 
-    "          /[][][]A[][][\ ", 
-    "         /[][][]N[][][][\ ", 
-    "        /[][][][]C[][][][\ ",
-    "       /[][]H[][][][][][][\ ", 
-    "      /[]A[][][][][][][][][\ ", 
-    "     /[][][]M[][][][][][][][\ ", 
-    "    /[]U[][][][][][][][][][][\ ", 
-    "   /[][][][][][][][]N[][][][][\ "]
-
-
-    #Steine zählen Stein = []
-    def count_block(string):
-        i = 0
-        for i in range(len(string)):
             
-            bloecke=string[i].count("[]")
-            #f.write(str(bloecke)+"\n")
+        # f = open('pyramide.txt', 'w')
 
-        return string
+        # stein = ["[]"]
 
-    count_block(reihen)
+        # reihen = [
+        # "                /\ ",
+        # "               /][\ ",
+        # "              /[][[\ ",
+        # "             /[][]T[\ ",
+        # "            /[][][]U[\ ",
+        # "           /[][][]T[][\ ", 
+        # "          /[][][]A[][][\ ", 
+        # "         /[][][]N[][][][\ ", 
+        # "        /[][][][]C[][][][\ ",
+        # "       /[][]H[][][][][][][\ ", 
+        # "      /[]A[][][][][][][][][\ ", 
+        # "     /[][][]M[][][][][][][][\ ", 
+        # "    /[]U[][][][][][][][][][][\ ", 
+        # "   /[][][][][][][][]N[][][][][\ "]
 
 
-#Pyramide wird random gemischelt und sicher gestellt, dass jeder Eintrag genau einmal ausgegeben wird (.remove)
-def built_pyramide(reihen):
+        # #Steine zählen Stein = []
+        # def count_block(string):
+        #     i = 0
+        #     for i in range(len(string)):
+                
+        #         bloecke=string[i].count("[]")
+        #         #f.write(str(bloecke)+"\n")
 
-    i = 0
-    for i in range(len(reihen)):
-        reihe = random.choice(reihen)
-        reihen.remove(reihe)
-        f.write(str(reihe)+"\n")
-    
-    return reihe
-    
-built_pyramide(reihen)
+        #     return string
+
+        # count_block(reihen)
+
+
+        # #Pyramide wird random gemischelt und sicher gestellt, dass jeder Eintrag genau einmal ausgegeben wird (.remove)
+        # def built_pyramide(reihen):
+        #     i = 0
+        #     for i in range(len(reihen)):
+        #         reihe = random.choice(reihen)
+        #         reihen.remove(reihe)
+        #         f.write(str(reihe)+"\n")
+            
+        #     return reihe
+        
+        # built_pyramide(reihen)
 
         task_messages = ["Während du dich im Raum umschaust entdeckst du zwei Rätsel an einer Säule und an der Wand",
             "<br></br>",
