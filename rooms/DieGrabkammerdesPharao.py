@@ -14,12 +14,13 @@ class DieGrabkammerdesPharao(EscapeRoom):
     def create_level1(self):
         secret = randint(0, 2222)
 
-        task_messages = ["Während du dich im Raum umschaust entdeckst du zwei Rätsel an einer Säule und an der Wand",
+        task_messages = ["Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raetselxy.jpg' width='1000' height='550'>",
             "<br></br>",
-            "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'>Bitte heb mich vom Boden auf </a>",
-            "Auf dem Boden liegt ein zerknüllter Zettel, als du ihn öffnest siehst du folgendes:"
+            "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b>Bitte heb mich auf</b> </a>",
+            "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert? Komisch, jede Zeile hat eine andere Länge!",
+            "Hat das eventuell etwas mit der Zeichnung an der Säule zu tun?"
             
             ]
         hints = [
