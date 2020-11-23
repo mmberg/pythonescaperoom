@@ -18,8 +18,9 @@ class DieGrabkammerdesPharao(EscapeRoom):
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Raetselxy.jpg' width='1000' height='550'>",
             "<br></br>",
-            "Auf dem Boden liegt ein zerknüllter Zettel, als du ihn öffnest siehst du folgendes:",
-            "<iframe src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt' width="80%" height="40%" scrolling="no">"
+            "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'>Bitte heb mich vom Boden auf </a>",
+            "Auf dem Boden liegt ein zerknüllter Zettel, als du ihn öffnest siehst du folgendes:"
+            
             ]
         hints = [
             "Hello",
