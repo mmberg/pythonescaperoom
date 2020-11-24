@@ -1,42 +1,49 @@
 def run(input_data):
 
-        #Datei einlesen
-        file = open('pyramide.txt', 'r')
-        print("\nFolgende Inhalte wurden gelesen:\n")
-        for line in file:
-            print(line.strip("\n")) #DAteiinhalte drucken in Zeilen ohne leere Zeile
+    #Datei einlesen
+    textfile = open('pyramide.txt', 'r')
+    lines = textfile.readlines()
+    letter = "".join(lines)
+    #print(letter)
+    
+    #zählen der Steine [] & sortieren um es als richtige Pyramide auszugeben
+    for i in range(len(lines)):
+    
+        letter.count("[]") 
+        lines.sort()
         
-        print("\nHier kommt die sortierte Pyramide: \n")
+    letter="".join(lines)
+    print(letter)
 
-        for i in range(len(file)):
-            
-            file[i].count("[]") #zählen der Steine []
-            print(file[i])
+    #Zeilen zu einem Eintrag zusammenführen und alles außer Buchstaben entfernen    
+    letterneu = []
+    print("\n ")
+    
+    for l in range(len(lines)):
+        #Wortliste zusammenführen zu einem String
+        letter = "".join(lines[l])
+        letter = letter.replace("[", "")
+        letter = letter.replace("]", "")
+        letter = letter.replace(" ", "")
+        letter = letter.replace("/", "")
+        letter = letter.replace("\n", "")
+        letter = letter.replace("\\", "")
+        letterneu +=letter
 
-        letterneu = []
-        print("\n ")
-        for i in range(len(file)):
-            #Wortliste zusammenführen zu einem String
-            letter = "".join(file[i])
-            letter = letter.replace("[", "")
-            letter = letter.replace("]", "")
-            letter = letter.replace(" ", "")
-            letter = letter.replace("/", "")
-            letter = letter.replace("\\", "")
-            letterneu +=letter
+    letterneu = "".join(letterneu)
+    
+    print("Lösungswort: " + letterneu + "\n ") #Ausgabe N
 
-            letterneu = "".join(letterneu)
+    code = 0
+    #Berechnen des ACSII Code für die einzelnen Buchstaben & alle zusammenrechnen = Code 840
+    for i in range(len(letterneu)):   
+    
+        zahl = ord(letterneu[i])
+        code +=zahl
+    print("Lösungscode: " + str(code))
 
-        print("Lösungswort: " + letterneu + "\n ") #Ausgabe N
+    textfile.close()
 
-        code = 0
-        #Berechnen des ACSII Code für die einzelnen Buchstaben & alle zusammenrechnen = Code 840
-        for i in range(len(letterneu)):   #Also wird hier nur der ASci von N berechnet
-        
-            zahl = ord(letterneu[i])
-            code +=zahl
-        print("Lösungscode: " + str(code))
+    loesungswort = "TUTANCHAMUN"
 
-        file.close()
-
-        return code
+    return code,loesungswort

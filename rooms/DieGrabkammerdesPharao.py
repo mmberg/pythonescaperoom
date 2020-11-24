@@ -28,8 +28,6 @@ class DieGrabkammerdesPharao(EscapeRoom):
     ### LEVELS ###
     
     def create_level1(self):
-        secret = randint(0, 2222)
-
         
         task_messages = ["Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
             "<br></br>",
@@ -37,6 +35,7 @@ class DieGrabkammerdesPharao(EscapeRoom):
             "<br></br>",
             "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b>Bitte heb mich auf</b> </a>",
             "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
+            "Von oben nach unten ist es wahr, was dabei zu lesen ist, das ist klar!"
             "<br></br>",
 
             ]
@@ -51,49 +50,56 @@ class DieGrabkammerdesPharao(EscapeRoom):
             "8. Die erste Lösung ist TUTANCHAMUN!",
             "9. Du musst das Wort nur noch in Zahlen übersetzen, schon bist du fertig"
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": reihen}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": "reihen"}
 
     ### SOLUTIONS ###
 
     def sol_lv1(self):
 
         #Datei einlesen
-        file = open('pyramide.txt', 'r')
-        print("\nFolgende Inhalte wurden gelesen:\n")
-        for line in file:
-            print(line.strip("\n")) #DAteiinhalte drucken in Zeilen ohne leere Zeile
+        textfile = open('pyramide.txt', 'r')
+        lines = textfile.readlines()
+        letter = "".join(lines)
+        #print(letter)
         
-        print("\nHier kommt die sortierte Pyramide: \n")
-
-        for i in range(len(reihen)):
+        #zählen der Steine [] & sortieren um es als richtige Pyramide auszugeben
+        for i in range(len(lines)):
+        
+            letter.count("[]") 
+            lines.sort()
             
-            reihen[i].count("[]") #zählen der Steine []
-            print(reihen[i])
+        letter="".join(lines)
+        print(letter)
 
+        #Zeilen zu einem Eintrag zusammenführen und alles außer Buchstaben entfernen    
         letterneu = []
         print("\n ")
-        for i in range(len(reihen)):
+        
+        for l in range(len(lines)):
             #Wortliste zusammenführen zu einem String
-            letter = "".join(reihen[i])
+            letter = "".join(lines[l])
             letter = letter.replace("[", "")
             letter = letter.replace("]", "")
             letter = letter.replace(" ", "")
             letter = letter.replace("/", "")
+            letter = letter.replace("\n", "")
             letter = letter.replace("\\", "")
             letterneu +=letter
 
-            letterneu = "".join(letterneu)
-
+        letterneu = "".join(letterneu)
+        
         print("Lösungswort: " + letterneu + "\n ") #Ausgabe N
 
         code = 0
         #Berechnen des ACSII Code für die einzelnen Buchstaben & alle zusammenrechnen = Code 840
-        for i in range(len(letterneu)):   #Also wird hier nur der ASci von N berechnet
+        for i in range(len(letterneu)):   
         
             zahl = ord(letterneu[i])
             code +=zahl
         print("Lösungscode: " + str(code))
 
-        file.close()
+        textfile.close()
 
-        return code
+        loesungswort = "TUTANCHAMUN"
+
+        return code,loesungswort
