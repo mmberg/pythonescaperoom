@@ -35,7 +35,8 @@ class DieGrabkammerdesPharao(EscapeRoom):
             "<br></br>",
             "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b>Bitte heb mich auf</b> </a>",
             "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
-            "Von oben nach unten ist es wahr, was dabei zu lesen ist, das ist klar!"
+            "Auf der Rückseite siehst du folgednes Gekritzel : <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/erklaerung.txt'target ='_blank'><b>Rückseite!</b> </a>",
+            "Von oben nach unten ist es wahr, was dabei zu lesen ist, das ist klar!",
             "<br></br>",
 
             ]
