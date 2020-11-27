@@ -13,10 +13,10 @@ class Frankenstein(EscapeRoom):
         super().__init__()
         self.set_metadata("Lisa, Christoph und Thomas", __name__)
         #self.add_level(self.create_level1())
-        #self.add_level(self.create_level2())
+        self.add_level(self.create_level5())
         #self.add_level(self.create_level3())
         #self.add_level(self.create_level4())
-        self.add_level(self.create_level5())
+        self.add_level(self.create_level2())
         #self.add_level(self.create_level6())
 
     ### LEVELS ###
@@ -89,7 +89,7 @@ class Frankenstein(EscapeRoom):
             "\"Verschieben\" heisst in dem Fall, dass Du etwas entfernen solltest. Gebe am Ende nur die 8 korrekt\
             ausgerichteten Zeilen aus.",
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.realign_picture, "data": task_messages[0:10]}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.realign_picture, "data": task_messages}
 
 
 
@@ -114,7 +114,6 @@ class Frankenstein(EscapeRoom):
             if tuple(doorbell_solution_vowels) == c:
                 print(position_counter)
                 return position_counter
-        return 
     ###END Solution Level 2   
 
     ###Level 5###     
@@ -135,5 +134,5 @@ class Frankenstein(EscapeRoom):
             picture_line = ''.join(picture_line)  
             aligned_picture_lines.append(str(picture_line))
 
-            return aligned_picture_lines
+        return aligned_picture_lines
         ###End solution Level 5###

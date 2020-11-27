@@ -64,10 +64,10 @@ function next_room() {
 
 function notify(message, fadeout = true) {
     if (fadeout) {
-        $("#message").text(message).fadeTo(500, 1).delay(3000).fadeTo(500, 0);
+        $("#message").html(message).fadeTo(500, 1).delay(3000).fadeTo(500, 0);
     }
     else {
-        $("#message").text(message).fadeTo(500, 1);
+        $("#message").html(message).fadeTo(500, 1);
     }
 }
 
@@ -137,11 +137,21 @@ function upload() {
 }
 
 function show_result(result) {
+    var html_msg = "Deine Lösung ist:<br>"
+    if (result.solution.constructor.name == "Array") {
+        result.solution.forEach(function(m, index){
+        html_msg = html_msg + m + "<br>";
+    });
+    }
+    else {
+        html_msg = html_msg + result.solution + "<br>"
+    }
+    
     if (result.correct) {
-        notify("Deine Lösung ist: " + result.solution + ". Juhu, das war richtig!");
+        notify(html_msg + "Juhu, das war richtig!");
         next_level();
     }
     else {
-        notify("Deine Lösung ist: " + result.solution + ". Das ist leider falsch.");
+        notify(html_msg + "Das ist leider falsch.");
     }
 }
