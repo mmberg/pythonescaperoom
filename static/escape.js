@@ -62,6 +62,7 @@ function next_room() {
         );
 }
 
+//changed from "text" to "html" convert
 function notify(message, fadeout = true) {
     if (fadeout) {
         $("#message").html(message).fadeTo(500, 1).delay(3000).fadeTo(500, 0);
@@ -136,6 +137,7 @@ function upload() {
     });
 }
 
+//Convert message to html and make sure it can handle arrays if solution returns an array
 function show_result(result) {
     var html_msg = "Deine Lösung ist:<br>"
     if (result.solution.constructor.name == "Array") {
