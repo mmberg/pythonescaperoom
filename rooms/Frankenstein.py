@@ -26,11 +26,12 @@ class Frankenstein(EscapeRoom):
        return
 
     def create_level2(self):
-        doorbell = "Dr. VXktXr FrXnkXnstXXn"
+        doorbell = "Dr. Viktor Frankenstein"
+        doorbell_no_vowels = "Dr. VXktXr FrXnkXnstXXn"
         task_messages = [
             "Du findest an dem errechneten Ort eine verfallene Stadtvilla mit \
             einem unleserlichen Namen an der Klingel:",
-            "<b>" + doorbell + "</b>", 
+            "<b>" + doorbell_no_vowels + "</b>", 
             "Die Vokale sind unkenntlich. Nachdem Du geklinglt hast, antwortet eine mystische Stimme:", 
             "<em>\"Wer klingelt an einer Klingel, ohne den Namen lesen zu können?\"</em> fragte die Stimme und fuhr nach eine kurzen Pause fort:",
             "<em>\"Vielleicht öffne ich Dir die Tür. Doch dafür musst Du etwas tun. Erstelle eine Liste \
@@ -96,10 +97,9 @@ class Frankenstein(EscapeRoom):
     ###Level 2###
     def get_combinations_and_position(self, doorbell):
         vowels_alphabetical_order = ["a","e","i","o","u"]
-        doorbell_solution = "Dr. Viktor Frankenstein"
         doorbell_solution_vowels = []
-        ##Extract vowels of solution
-        for character in doorbell_solution:
+        ##Extract vowels
+        for character in doorbell:
             ##If vowel add to vowel list
             if character in vowels_alphabetical_order:
                 doorbell_solution_vowels.append(character)
