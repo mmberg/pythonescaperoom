@@ -1,6 +1,7 @@
 from EscapeRoom import EscapeRoom
 from random import randint
 import random
+import requests
 
 reihen = [
         "                /\ ",
@@ -56,6 +57,10 @@ class DieGrabkammerdesPharao(EscapeRoom):
     ### SOLUTIONS ###
 
     def sol_lv1(self):
+
+        r = requests.get("https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt")
+
+        print(r.content)
 
         #Datei einlesen
         textfile = open('pyramide.txt', 'r')
