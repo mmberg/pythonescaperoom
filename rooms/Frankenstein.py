@@ -12,7 +12,6 @@ class Frankenstein(EscapeRoom):
         super().__init__()
         self.set_metadata("Lisa, Christoph und Thomas", __name__)
         #self.add_level(self.create_level1())
-<<<<<<< HEAD
         #self.add_level(self.create_level2())
         self.add_level(self.create_level3())
         self.add_level(self.create_level4())
@@ -52,13 +51,6 @@ class Frankenstein(EscapeRoom):
         #self.add_level(self.create_level4())
         self.add_level(self.create_level2())
         self.add_level(self.create_level5())
-
-    ### LEVELS ###
-
-    def create_level1(self):
-       pass
-       return
->>>>>>> origin/thomas
 
     def create_level2(self):
         doorbell = "Dr. Viktor Frankenstein"
@@ -138,18 +130,18 @@ class Frankenstein(EscapeRoom):
 
     def create_level4(self):
 
-            def create_random_code():
+        def create_random_code():
 
-                alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
 
-                code_numbers = [item + ‘1’ for item in alphabet] + [item + ‘2’ for item in alphabet]
+            code_numbers = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
 
-                random_code = []
+            random_code = []
 
-                for _ in range(0, 6):
-                    code.append(random.choice(code_numbers))
+            for _ in range(0, 6):
+                code.append(random.choice(code_numbers))
 
-                return random_code
+            return random_code
 
         code = create_random_code()
 
@@ -185,13 +177,13 @@ class Frankenstein(EscapeRoom):
     ###Level 1###
 
     def solution_level1(self, rectangle):
-    m = []  # Mittelpunkt des Rechtecks - List
-    # Werte aus dem Tupel mit Formel für x
-    m.append(rectangle[0] + (2 / (rectangle[4] - rectangle[0])))
-    # Werte aus dem Tupel mit Formel für y
-    m.append(rectangle[1] + (2 / (rectangle[5] - rectangle[1])))
+        m = []  # Mittelpunkt des Rechtecks - List
+        # Werte aus dem Tupel mit Formel für x
+        m.append(rectangle[0] + (2 / (rectangle[4] - rectangle[0])))
+        # Werte aus dem Tupel mit Formel für y
+        m.append(rectangle[1] + (2 / (rectangle[5] - rectangle[1])))
 
-    return m
+        return m
 
     ###END Solution Level 1
 
@@ -215,7 +207,6 @@ class Frankenstein(EscapeRoom):
                 ##Print to check the result in console
                 print(position_counter)
                 return position_counter
-<<<<<<< HEAD
         return 
     ###END Solution Level 2    
 
@@ -321,60 +312,36 @@ class Frankenstein(EscapeRoom):
     ###Level 6###
 
         def solution_level6(self, data):  # Tupel/Tripel 3 Elemente
-        msg_encr = data[0]
-        a = data[1]
-        b = data[2]
+            msg_encr = data[0]
+            a = data[1]
+            b = data[2]
 
-        def decrypt(y, a_inv, b):
-            return ((a_inv*(y - b)) % 26)
+            def decrypt(y, a_inv, b):
+                return ((a_inv*(y - b)) % 26)
 
-        def euklid(a, m):
-            def ggt_euklid(a, b):
-                if a == 0:
-                    return (b, 0, 1)
+            def euklid(a, m):
+                def ggt_euklid(a, b):
+                    if a == 0:
+                        return (b, 0, 1)
+                    else:
+                        ggt, y, x = ggt_euklid(b % a, a)
+                        return (ggt, x - (b // a) * y, y)
+
+                ggt, x, y = ggt_euklid(a, m)
+                if ggt != 1:
+                    raise Exception("Es gibt kein inverses zu a modulo m")
                 else:
-                    ggt, y, x = ggt_euklid(b % a, a)
-                    return (ggt, x - (b // a) * y, y)
+                    return x % m
 
-            ggt, x, y = ggt_euklid(a, m)
-            if ggt != 1:
-                raise Exception("Es gibt kein inverses zu a modulo m")
-            else:
-                return x % m
-
-        alphabet = "abcdefghijklmnopqrstuvwxyz"
-        msg = ""
-        for y in msg_encr:
-            if alphabet.find(y) == -1:
-                msg = msg + y
-            else:
-                a_inv = euklid(a, 26)
-                x = decrypt(alphabet.find(y), a_inv, b)
-                msg = msg + alphabet[x]
-        return msg  # auf msg ist nun die entschlüsselte Nachricht gespeichert
+            alphabet = "abcdefghijklmnopqrstuvwxyz"
+            msg = ""
+            for y in msg_encr:
+                if alphabet.find(y) == -1:
+                    msg = msg + y
+                else:
+                    a_inv = euklid(a, 26)
+                    x = decrypt(alphabet.find(y), a_inv, b)
+                    msg = msg + alphabet[x]
+            return msg  # auf msg ist nun die entschlüsselte Nachricht gespeichert
 
     ###END Solution Level 6
-=======
-    ###END Solution Level 2   
-
-    ###Level 5###     
-    def realign_picture(self, task_messages):
-        ###Put the misaligned picture into fresh array (only first 10 lines)
-        picture_lines = task_messages[0:10]
-        ###Create empty array for the realigned lines
-        aligned_picture_lines = []
-        ###Convert the number in line 9 to a list of numbers using "map"
-        date_from_picture = list(map(int, str(picture_lines[9])))
-        ###Iterate through the misaligned lines by using enumerate in order to match the index to Number index of line 9 (date)
-        for i, elem in enumerate(picture_lines[0:8]):
-            ###Convert each line to list to make sure single elements (characters) can be removed 
-            picture_line = list(picture_lines[i])
-            ###Removing elements depending on the number which is given in number list from line 9
-            del picture_line[:date_from_picture[i]]
-            ###Add the aligned line to the realigned lines array after converting it back to string
-            picture_line = ''.join(picture_line)  
-            aligned_picture_lines.append(str(picture_line))
-
-        return aligned_picture_lines
-        ###End solution Level 5###
->>>>>>> origin/thomas
