@@ -41,5 +41,5 @@ def run(rohbau):
 
     loesungswort = "TUTANCHAMUN"
 
-    return loesungswort   
+    return code,loesungswort   
 

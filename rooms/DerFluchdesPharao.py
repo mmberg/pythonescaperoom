@@ -1,9 +1,7 @@
 from EscapeRoom import EscapeRoom
 from random import randint
 import random
-import requests
 
-#targeturl = https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt
 
 class DerFluchdesPharao(EscapeRoom):
 
@@ -28,20 +26,22 @@ class DerFluchdesPharao(EscapeRoom):
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
         code = [0,1,2,3,4,5,6,7,8,9,10,11]
                 
-        task_messages = [ " Du schaust dich im Raum um und entdeckst einen an die Wand geschriebenen Satz!",
-            "<i>Denke daran mein Freund Kleopatra nimmts immer <b>wörtlich</b> und sie liebt aufsteigende Reihenfolgen! </i>",
+        task_messages = [ "Juhuu, du hast den Schlüssel für die nächste Tür gefunden! Los, öffne sie und schau, was dich dahinter erwaret!",
+            "<br></br>",
+            "Du schaust dich im Raum um und entdeckst ein Gekritzel an der Wand rechts",
+            "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
             "<b>"+mythos+"</b>",
             "<br></br>",
-            "In einer anderen Ecke siehst du folgende auf<b>LIST</b>ung: ",
-            zahl_in_worten,
-            code
+            "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
+            "<br></br>",
+            "In einer anderen Ecke siehst du folgende <b>LIST(EN)</b>: " + "<h6>0 bis elf</h6>"
             ]
         hints = [
             "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Ganz genau.",
             "2. Nimm´s wörtlich.",
             "3. In jedem Mythos steckt mindestens eine Zahl. Vielleicht auch mehr",
             "4. Schau dir auch die Listen an, entdeckst du eine Ähnlichkeit?",
-            "5. Schreibe ein Programm das anhand der Listen die du in der Ecke findest, übereinstimmende Zahlen aus dem Mythos ausgibt"
+            "5. Schreibe ein Programm das anhand der Listen die du in der Ecke findest, übereinstimmende Zahlen aus dem Mythos ausgibt",
             
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": mythos}
@@ -70,9 +70,6 @@ class DerFluchdesPharao(EscapeRoom):
             reihe = random.choice(bauplan)
             rohbau.append(reihe)
             bauplan.remove(reihe)
-        satz = " ".join(rohbau)
-
-          
                 
         task_messages = ["Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
             "<br></br>",
@@ -99,16 +96,17 @@ class DerFluchdesPharao(EscapeRoom):
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.bauplan, "data": rohbau}
 
     ### SOLUTIONS ###
-
+    #Level3
     def mythos(self, mythos):
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
-        code = [0,1,2,3,4,5,6,7,8,9,10,11]
-
+        zahlen = [0,1,2,3,4,5,6,7,8,9,10,11]
+        code = []
         for word in zahl_in_worten:
                 if (word in mythos):
-                    print(code[zahl_in_worten.index(word)])
-
-        return str(135)
+                    code.append(zahlen[zahl_in_worten.index(word)])
+                    print(zahlen[zahl_in_worten.index(word)])
+                print(code)
+        return code 
 
 
     def bauplan(self,rohbau):
@@ -154,6 +152,6 @@ class DerFluchdesPharao(EscapeRoom):
 
 
         loesungswort = "TUTANCHAMUN"
-        return loesungswort
+        return code,loesungswort
     
 
