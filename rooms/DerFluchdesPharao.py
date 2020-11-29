@@ -38,6 +38,10 @@ class DerFluchdesPharao(EscapeRoom):
             ]
         hints = [
             "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Ganz genau.",
+            "2. Nimm´s wörtlich.",
+            "3. In jedem Mythos steckt mindestens eine Zahl. Vielleicht auch mehr",
+            "4. Schau dir auch die Listen an, entdeckst du eine Ähnlichkeit?",
+            "5. Schreibe ein Programm das anhand der Listen die du in der Ecke findest, übereinstimmende Zahlen aus dem Mythos ausgibt"
             
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": mythos}
@@ -76,8 +80,6 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "Auf dem Boden liegt ein zerknüllter Zettel mit folgendem Inhalt: ",
             "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b>Bitte heb mich auf</b> </a>",
-            "<br></br>",
-            satz,
             "<br></br>",
             "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
             "Auf der Rückseite siehst du folgednes Gekritzel : <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/erklaerung.txt'target ='_blank'><b>Rückseite!</b> </a>",
