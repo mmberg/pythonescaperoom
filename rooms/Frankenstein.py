@@ -54,7 +54,20 @@ class Frankenstein(EscapeRoom):
 
     def create_level4(self):
 
-        code = ['A1', 'B2', 'M2', 'Q1', 'K2', 'L1']  # TO DO: needs to be different every time
+        def create_random_code():
+
+            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+
+            code_numbers = [item + ‘1’ for item in alphabet] + [item + ‘2’ for item in alphabet]
+
+            random_code = []
+
+            for _ in range(0, 6):
+                code.append(random.choice(code_numbers))
+
+            return random_code
+
+        code = create_random_code()
 
         task_messages = ["message here"]
 
