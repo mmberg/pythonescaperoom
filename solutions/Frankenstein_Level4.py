@@ -1,9 +1,7 @@
 from itertools import permutations
 import string
 
-code = ['A1', 'B2', 'M2']
-
-def open_safe(code):
+def run(code):
     '''
     find the right 3 keys red, blue, yellow
     decode numbers from the note
@@ -45,7 +43,3 @@ def open_safe(code):
         return decoded_numbers
     
     decoding_numbers(code)
-
-    # Possible TO DO: Combine the answers?
-
-open_safe(code)

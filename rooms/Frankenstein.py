@@ -45,7 +45,7 @@ class Frankenstein(EscapeRoom):
 
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution_level1, "data": rectangle}
-=======
+
         self.add_level(self.create_level5())
         #self.add_level(self.create_level3())
         #self.add_level(self.create_level4())
@@ -139,7 +139,7 @@ class Frankenstein(EscapeRoom):
             random_code = []
 
             for _ in range(0, 6):
-                code.append(random.choice(code_numbers))
+                random_code.append(random.choice(code_numbers))
 
             return random_code
 
