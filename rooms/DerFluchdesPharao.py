@@ -34,7 +34,11 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
             "<br></br>",
-            "In einer anderen Ecke siehst du folgende <b>LIST(EN)</b>: " + "<h6>0 bis elf</h6>"
+            "Was hat denn das nun wieder zu bedeuten?",
+            "<br></br>",
+            "Du drehst dich im Raum und findest eine <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2+Notiz.jpg'target ='_blank'><b>Schriftrolle!</b> </a>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
+            
             ]
         hints = [
             "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Ganz genau.",
