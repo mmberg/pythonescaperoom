@@ -15,13 +15,40 @@ class DerFluchdesPharao(EscapeRoom):
     #Level 3 Jessi#
     def create_level3(self):
 
-        mythos = random.choice(["Kleopatra liess ihren Mann ermorden,kurz bevor ihre Ehe annulliert werden sollte, um gemeinsam mit Ihrem Sohn an die Macht zu kommen!.", 
-        "Man sagt, dass Hieroglyphen soviel wie in Stein gravieren heisst. Die Zeichen wurden sogar vielfach farbig geschrieben und sind immer eine Bildreihe!", 
+        mythos = ["Kleopatra liess ihren Mann ermorden,kurz bevor ihre Ehe annulliert werden sollte, um gemeinsam mit Ihrem Sohn an die Macht zu kommen!.", 
+        "Man sagt, dass Hieroglyphen soviel wie in Stein gemeißelt heisst. Die Zeichen wurden sogar vielfach farbig geschrieben und sind immer eine Bildreihe!", 
         "Nicht nur Pharaonen hatten damals so viel Macht, auch Lokalkönige waren sehr mächtig. So waren sie zuständig für all die Kleinstaaten! Beide Arten von Regenten waren allerdings sehr streng beim Aussieben von Sand!",
         "Die goettliche Legitimation beginnt mit der rituellen Aktivierung der Göttlichkeit. Das ist etwa vergleichbar mit einer Routineuntersuchung!" ,
         "Vorgänger der fünfkantigen Pyramide ist ein Mstabas, ein einstufiger und flacher Bau. Auch sie hatten bereits Kammern, die tief ins Erdreich verlagert wurden." ,
         "Pyramiden dienen als Begräbnisstätten, deren Steine sind aus Kalkstein. Die Bauwerke haben unter anderem Stollen die von Schächten abzweigen. Es gibt eine Pyramide, die während der Bauzeit fünfmal erweitert wurde! Die meisten Pyramiden sind viereckig ",
-        "Cheops, der boese Pharao, zwang alle Untertanen seines Reviers beim Pyramidenbau zu helfen."  ])
+        "Cheops, der boese Pharao, zwang alle Untertanen seines Reviers beim Pyramidenbau zu helfen."  ]
+
+        myth = random.choice(mythos)
+
+        if myth == mythos[0]:
+            print("3er Schloss")
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+        elif myth == mythos[1]:
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+        elif myth == mythos[2]:
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+        elif myth == mythos[3]:
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+        elif myth == mythos[4]:
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+        elif myth == mythos[5]:
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+        else: 
+            schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+
+        
 
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
         code = [0,1,2,3,4,5,6,7,8,9,10,11]
@@ -30,25 +57,27 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "Du schaust dich im Raum um und entdeckst ein Gekritzel an der Wand rechts",
             "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
-            "<b>"+mythos+"</b>",
+            "<b>"+myth+"</b>",
             "<br></br>",
             "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
             "<br></br>",
             "Was hat denn das nun wieder zu bedeuten?",
             "<br></br>",
-            "Du drehst dich im Raum und findest eine <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2+Notiz.jpg'target ='_blank'><b>Schriftrolle!</b> </a>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
-            
+            schriftrolle_zu,
+            "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle",
+            schriftrolle_offen
             ]
         hints = [
             "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Ganz genau.",
             "2. Nimm´s wörtlich.",
             "3. In jedem Mythos steckt mindestens eine Zahl. Vielleicht auch mehr",
-            "4. Schau dir auch die Listen an, entdeckst du eine Ähnlichkeit?",
-            "5. Schreibe ein Programm das anhand der Listen die du in der Ecke findest, übereinstimmende Zahlen aus dem Mythos ausgibt",
+            "4. Öffne die Schriftrolle! Darin ist ein Hinweis für zwei Listen enthalten",
+            "5. Eine Liste besteht aus Strings, die andere aus Int",
+            "6. Verwende liste1 = ['null',.....,'elf'], liste2 = [0,...,11]",
+            "7. Schreibe ein Programm das anhand der Listen die du ermittelt hast, übereinstimmende Zahlen aus dem Mythos ausgibt"
             
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": mythos}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": myth}
     
     #Level 7 Jess #
     def create_level7(self):
@@ -101,12 +130,12 @@ class DerFluchdesPharao(EscapeRoom):
 
     ### SOLUTIONS ###
     #Level3
-    def mythos(self, mythos):
+    def mythos(self, myth):
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
         zahlen = [0,1,2,3,4,5,6,7,8,9,10,11]
         code = []
         for word in zahl_in_worten:
-                if (word in mythos):
+                if (word in myth):
                     code.append(zahlen[zahl_in_worten.index(word)])
                     print(zahlen[zahl_in_worten.index(word)])
                 print(code)
