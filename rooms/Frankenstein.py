@@ -76,7 +76,37 @@ class Frankenstein(EscapeRoom):
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.get_combinations_and_position, "data": doorbell}
 
+    def create_level3(self):
 
+        task_messages = ["message here"]
+
+        hints = ["hints here"]
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.create_badge_number, "data": "Scotland Yard Badge"}
+
+    def create_level4(self):
+
+        def create_random_code():
+
+            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+
+            code_numbers = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
+
+            random_code = []
+
+            for _ in range(0, 6):
+                random_code.append(random.choice(code_numbers))
+
+            return random_code
+
+        code = create_random_code()
+
+        task_messages = ["message here"]
+
+        hints = ["hints here"]
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.open_safe, "data": code}
+        
     def create_level5(self):
         d = datetime.datetime.now()
         d_num_raw = d.strftime("%d" "%m" "%Y")
@@ -116,40 +146,6 @@ class Frankenstein(EscapeRoom):
             ausgerichteten Zeilen aus.",
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.realign_picture, "data": task_messages}
-
-
-
-
-    def create_level3(self):
-
-        task_messages = ["message here"]
-
-        hints = ["hints here"]
-
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.create_badge_number, "data": "Scotland Yard Badge"}
-
-    def create_level4(self):
-
-        def create_random_code():
-
-            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
-
-            code_numbers = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
-
-            random_code = []
-
-            for _ in range(0, 6):
-                random_code.append(random.choice(code_numbers))
-
-            return random_code
-
-        code = create_random_code()
-
-        task_messages = ["message here"]
-
-        hints = ["hints here"]
-
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.open_safe, "data": code}
 
     def create_level6(self):
             data = ("rjaa kt jv mfv gfjwgjw hjvlgniiu gnvu, mfvu kt tavjwj jfaofhj lgnalj czakza szw kjb bzavujw ot wjuuja!", 25, 13)
