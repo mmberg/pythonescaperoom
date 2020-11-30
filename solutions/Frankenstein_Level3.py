@@ -1,6 +1,6 @@
 import random
 
-def run():
+def run(name):
 
     def get_initials(name):
 
