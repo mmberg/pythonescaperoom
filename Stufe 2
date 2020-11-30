@@ -20,4 +20,4 @@ while (i<r):
 		p=p+1
 	if (p> (i/p)): print (i)
 	i=i+1
-print (r)
+
