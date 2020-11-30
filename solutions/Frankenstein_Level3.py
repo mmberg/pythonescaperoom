@@ -56,5 +56,3 @@ def run(name):
     
     print(badge_number)
     return badge_number
-
-run()
