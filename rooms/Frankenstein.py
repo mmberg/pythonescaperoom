@@ -78,6 +78,8 @@ class Frankenstein(EscapeRoom):
 
     def create_level3(self):
 
+        name = random.choice(['Adam Chattoway', 'Phineas Prescott', 'Mycroft Hayward', 'Sterling Kaylock', 'Eliza Godwin', 'Eudora Steverus', 'Lenore Whittock'])
+
         task_messages = ["message here"]
 
         hints = ["hints here"]
@@ -208,11 +210,21 @@ class Frankenstein(EscapeRoom):
 
     ###Level 3###
 
-    def create_badge_number(self):
+    def create_badge_number(self, name):
         '''
-        create a badge number with format xxx-xxx-xxx
+        create a badge number with format XX-xxx-xxx-xxx
+        requirements for the first block: Initials of the badge holders name
         requirements per block of 3: cross sum is between 9 and 15, the digits are unique
         '''
+        def get_initials(name):
+
+            initials =[]
+            names = name.split()
+
+            for i in range(0,2):
+                initials.append(names[i][0])
+
+            return initials
 
         def unique_digits(a):                                       # function to check uniqueness of digits in a number
 
@@ -236,9 +248,9 @@ class Frankenstein(EscapeRoom):
 
             return sum(cross_sum_digits)
 
-        numbers = []                                              # list of three digit numbers for the badge number
+        numbers = []                                                # list of three digit numbers for the badge number
 
-        while len(numbers) < 3:                                  # while we have less than 3 items in the list
+        while len(numbers) < 3:                                     # while we have less than 3 items in the list
 
             x = random.randint(101,998)                             # get random 3 digit number
 
@@ -246,12 +258,15 @@ class Frankenstein(EscapeRoom):
 
                 if cross_sum(x) >= 9 and cross_sum(x) <= 15:        # check if cross sum is 9
 
-                    numbers.append(x)                             # add number to ints list
+                    numbers.append(x)                               # add number to ints list
 
             else:
                 continue
 
-        badge_number = '-'.join(map(str, numbers))
+        badge_initials = ''.join(get_initials(name))
+        badge_nums = '-'.join(map(str, numbers))
+
+        badge_number = badge_initials + '-' + badge_nums
         
         print(badge_number)
         return badge_number

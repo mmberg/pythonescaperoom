@@ -2,6 +2,16 @@ import random
 
 def run():
 
+    def get_initials(name):
+
+        initials =[]
+        names = name.split()
+
+        for i in range(0,2):
+            initials.append(names[i][0])
+
+        return initials
+
     def unique_digits(a):
 
         digits = [int(i) for i in str(a)]
@@ -38,8 +48,13 @@ def run():
 
         else:
             continue
+    
+    badge_initials = ''.join(get_initials(name))
+    badge_nums = '-'.join(map(str, numbers))
 
-    badge_number = '-'.join(map(str, numbers))
+    badge_number = badge_initials + '-' + badge_nums
     
     print(badge_number)
     return badge_number
+
+run()
