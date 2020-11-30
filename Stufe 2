@@ -7,15 +7,17 @@
 
 #Loesung
 
-import.random
+from random import *
 
-r=random.randint (2,100)
-i=2
+r = randint(1, 100)    # Pick a random number between 1 and 100.
+i =2
+
 
 while (i<r):
 	p=2
 	while (p<= (i/p)):
 		if not (i%p): break
 		p=p+1
-	if (p> (i/p)): print i
+	if (p> (i/p)): print (i)
 	i=i+1
+print (r)
