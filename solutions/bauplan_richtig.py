@@ -41,5 +41,11 @@ def run(rohbau):
 
     loesungswort = "TUTANCHAMUN"
 
-    return code,loesungswort   
+    dir = "https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Tal%20der%20Koenige.jpg"
+
+    geheimnis = dir.split('\\').pop().split('/').pop().rsplit('.', 1)[0] 
+    geheimnis = geheimnis.replace('%20', " ")
+    print(geheimnis)
+
+    return code,loesungswort, geheimnis   
 
