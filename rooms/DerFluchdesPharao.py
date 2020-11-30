@@ -26,25 +26,31 @@ class DerFluchdesPharao(EscapeRoom):
         myth = random.choice(mythos)
 
         if myth == mythos[0]:
-            print("3er Schloss")
+            zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
         elif myth == mythos[1]:
+            zahl = 2
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
         elif myth == mythos[2]:
+            zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
         elif myth == mythos[3]:
+            zahl = 2
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
         elif myth == mythos[4]:
+            zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
         elif myth == mythos[5]:
+            zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
         else: 
+            zahl = 2
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
 
@@ -55,6 +61,9 @@ class DerFluchdesPharao(EscapeRoom):
                 
         task_messages = [ "Juhuu, du hast den Schlüssel für die nächste Tür gefunden! Los, öffne sie und schau, was dich dahinter erwaret!",
             "<br></br>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Toroffe.jpg' width='280' height='210'>",
+            "<br></br>",
+            "Du stehst in einem großen Raum, mitten drin steht ein Sarkopharg! OMG!!!",
             "Du schaust dich im Raum um und entdeckst ein Gekritzel an der Wand rechts",
             "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
             "<b>"+myth+"</b>",
@@ -64,7 +73,7 @@ class DerFluchdesPharao(EscapeRoom):
             "Was hat denn das nun wieder zu bedeuten?",
             "<br></br>",
             schriftrolle_zu,
-            "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle",
+            "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle und ein Schloss mit " + str(zahl) + " Drehscheiben!",
             schriftrolle_offen
             ]
         hints = [
@@ -104,16 +113,20 @@ class DerFluchdesPharao(EscapeRoom):
             rohbau.append(reihe)
             bauplan.remove(reihe)
                 
-        task_messages = ["Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
+        task_messages = [ "<h2><i>Willkommen im Raum des Greywolf!</h2></i>",
+            "Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Bauplan.jpg' width='1000' height='550'>",
             "<br></br>",
-            "Auf dem Boden liegt ein zerknüllter Zettel mit folgendem Inhalt: ",
-            "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b>Bitte heb mich auf</b> </a>",
+            "Auf dem Boden liegt ein zerknüllter Zettel","<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/pyramide.txt'target ='_blank'><b><i>Bitte heb mich auf</i></b> </a>",
             "<br></br>",
             "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
             "Auf der Rückseite siehst du folgednes Gekritzel : <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/erklaerung.txt'target ='_blank'><b>Rückseite!</b> </a>",
-            "<br></br>"
+            "<br></br>",
+            "Um weiter zu kommen finde den Code!",
+            "<button id='btn_hint'>HILFE!</button>",
+            "<br></br>",
+            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg' width='200' height='120'>"
             ]
         hints = [
             "1. Auf dem zerknüllten Papier ist ein Bauplan zu sehen, leider ist etwas durcheinander geraten.",
@@ -124,7 +137,10 @@ class DerFluchdesPharao(EscapeRoom):
             "6. Du solltest ein Lösungswort mit 11 Stellen erhalten haben, davon musst du manche tauschen oder löschen",
             "7. Beim Ersetzen solltest du den Ascii Code des Buchstabens verwenden um den neuen Buchstaben zu ermitteln!",
             "8. Die erste Lösung ist TUTANCHAMUN!",
-            "9. Du musst das Wort nur noch in Zahlen übersetzen, schon bist du fertig"
+            "9. Du musst das Wort nur noch in Zahlen übersetzen, schon bist du fertig! Aber achte auf die Zeichnung an der Wand!",
+            "10. Ascii wäre ein passendes Schlagwort. Aber pass gut auf, das Schloss hat nur 3 Stellen!",
+            "11. Rechne jeden einzelnen Buchstaben um und rechne alle Ergebnisse zusammen!",
+            "12. Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.bauplan, "data": rohbau}
 
