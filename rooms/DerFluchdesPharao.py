@@ -1,5 +1,6 @@
 from EscapeRoom import EscapeRoom
 from random import randint
+from os import *
 import random
 
 
@@ -63,7 +64,7 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Toroffe.jpg' width='280' height='210'>",
             "<br></br>",
-            "Du stehst in einem großen Raum, mitten drin steht ein Sarkopharg! OMG!!!",
+            "Du betrittst einen großen Raum, mitten drin steht ein Sarkopharg! OMG!!!",
             "Du schaust dich im Raum um und entdeckst ein Gekritzel an der Wand rechts",
             "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
             "<b>"+myth+"</b>",
@@ -113,7 +114,7 @@ class DerFluchdesPharao(EscapeRoom):
             rohbau.append(reihe)
             bauplan.remove(reihe)
                 
-        task_messages = [ "<h2><i>Willkommen im Raum des Greywolf!</h2></i>",
+        task_messages = [ "<h2><i>Willkommen in der Grabkammer des Pharao!</h2></i>",
             "Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Bauplan.jpg' width='1000' height='550'>",
@@ -123,8 +124,14 @@ class DerFluchdesPharao(EscapeRoom):
             "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
             "Auf der Rückseite siehst du folgednes Gekritzel : <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/erklaerung.txt'target ='_blank'><b>Rückseite!</b> </a>",
             "<br></br>",
-            "Um weiter zu kommen finde den Code!",
-            "<button id='btn_hint'>HILFE!</button>",
+            "Um Folgende Elemente musst du finden, um dieses Level abzuschließen: ",
+            "Einen Code " + "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg' width='100' height='70'>",
+            "Ein Lösungswort: ",
+            "Ein Geheimnis: ",
+            "<br></br>",
+            "Schau dich um! Du darfst alles verwenden was du hier findest!",
+            "<br></br>",
+            "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Das%20Grab%20dieses%20Pharaos%20steht%20im%20Tal%20der%20K%C3%B6nige.jpg'target ='_blank'><b>Ich könnte nützlich sein!</b> </a>",
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schloss3.jpg' width='200' height='120'>"
             ]
@@ -140,7 +147,8 @@ class DerFluchdesPharao(EscapeRoom):
             "9. Du musst das Wort nur noch in Zahlen übersetzen, schon bist du fertig! Aber achte auf die Zeichnung an der Wand!",
             "10. Ascii wäre ein passendes Schlagwort. Aber pass gut auf, das Schloss hat nur 3 Stellen!",
             "11. Rechne jeden einzelnen Buchstaben um und rechne alle Ergebnisse zusammen!",
-            "12. Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!"
+            "12. Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!",
+            "13. Hast du das Geheimnis schon gefunden? Es hieß doch, du darfst alles verwenden! Hast du dir auch alles angeschaut? Die Datei, die nützlich erschien, ist es definitiv! Du musst nur hinschauen!"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.bauplan, "data": rohbau}
 
@@ -201,6 +209,8 @@ class DerFluchdesPharao(EscapeRoom):
 
 
         loesungswort = "TUTANCHAMUN"
-        return code,loesungswort
+        geheimnis = "Tal der Koenige" 
+
+        return code, loesungswort, geheimnis
     
 
