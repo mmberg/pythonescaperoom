@@ -137,7 +137,9 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/DasBildvomSarg.txt'target ='_blank'><b>Ich könnte nützlich sein!</b> </a>",
             "<br></br>",
-            "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Tal%20der%20Koenige.jpg'target ='_blank'><b>Ich könnte auch nützlich sein!</b> </a>"
+            "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Tal%20der%20Koenige.jpg'target ='_blank'><b>Ich könnte auch nützlich sein!</b> </a>",
+            "<br></br>",
+            "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/DateinamenKopierenSollstDu.txt'target ='_blank'><b>Ich helfe dir zum Schluss!</b> </a>",
             
             ]
         hints = [
