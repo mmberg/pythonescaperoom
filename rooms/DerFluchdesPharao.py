@@ -71,11 +71,16 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
             "<br></br>",
+            "In Kleopatras Spiel gibt es zwei Regeln. 1. Finde einen Zahlencode, 2. Finde ein " +  "<a href='https://www.hurraki.de/wiki/Pig_Latin' target ='_blank'><b>Pig Latin</b> </a>" ,
+            "<br></br>",
             "Was hat denn das nun wieder zu bedeuten?",
             "<br></br>",
             schriftrolle_zu,
             "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle und ein Schloss mit " + str(zahl) + " Drehscheiben!",
-            schriftrolle_offen
+            schriftrolle_offen,
+            "<br></br>",
+            "Findest du auch das Codewort?"
+
             ]
         hints = [
             "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Ganz genau.",
@@ -229,7 +234,9 @@ class DerFluchdesPharao(EscapeRoom):
         geheimnis = dir.split('\\').pop().split('/').pop().rsplit('.', 1)[0] 
         geheimnis = geheimnis.replace('%20', " ")
         print("Das Grab von " + loesungswort + " liegt im " + geheimnis)
-        print("Der Code " + code + " knackt das Schloss und du konntest die Tür öffnen!")
+        print("Mit dem Lösungswort " + loesungswort + " dem Geheimnis " + geheimnis + " kannst du die beiden Schlösser an der Wand und auf dem Boden öffnen, zum Vorschein kommen 2 Schlüssel")
+        print("Der Code " + str(code) + " knackt das letzte Schloss und der fehlende Schlüssel liegt jetzt auch in deiner Hand!")
+        print("Schnell, geh zur verschlossenen Tür und öffne sie!")
 
         return code, loesungswort, geheimnis
 
