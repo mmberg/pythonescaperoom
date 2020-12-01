@@ -71,8 +71,6 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
             "<br></br>",
-            "In Kleopatras Spiel gibt es zwei Regeln. 1. Finde einen Zahlencode, 2. Finde ein " +  "<a href='https://www.hurraki.de/wiki/Pig_Latin' target ='_blank'><b>Pig Latin</b> </a>" ,
-            "<br></br>",
             "Was hat denn das nun wieder zu bedeuten?",
             "<br></br>",
             schriftrolle_zu,
