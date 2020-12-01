@@ -26,10 +26,14 @@ def run(code):
     # Decode the numbers to open the safe, 1-52 (A1 - Z2)
 
     def decoding_numbers(code):
+
+        # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
      
-        alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+        alphabet = list(string.ascii_uppercase) 
 
         key = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
+
+        # Decode the numbers using their list position 
 
         decoded_numbers = []
 
@@ -41,5 +45,3 @@ def run(code):
 
         print(decoded_numbers)
         return decoded_numbers
-    
-    decoding_numbers(code)

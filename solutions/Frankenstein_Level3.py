@@ -2,6 +2,8 @@ import random
 
 def run(name):
 
+    # Slicing & Indexing to get the initials from the name
+
     def get_initials(name):
 
         initials =[]
@@ -11,6 +13,8 @@ def run(name):
             initials.append(names[i][0])
 
         return initials
+
+    # Check if the digits are unique within a 3 digit block
 
     def unique_digits(a):
 
@@ -28,11 +32,15 @@ def run(name):
         else:
             return True
 
+    # Calculate a cross sum for a given number
+
     def cross_sum(a):
 
         cross_sum_digits = [int(i) for i in str(a)]
 
         return sum(cross_sum_digits)
+
+    # Randomly create 3-digit numbers, check the requirements and add to list if they are met
 
     numbers = []
 
@@ -48,6 +56,8 @@ def run(name):
 
         else:
             continue
+
+    # Create the strings and join/add everything together
     
     badge_initials = ''.join(get_initials(name))
     badge_nums = '-'.join(map(str, numbers))

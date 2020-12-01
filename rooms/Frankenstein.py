@@ -91,16 +91,16 @@ class Frankenstein(EscapeRoom):
 
     def create_level4(self):
 
-        def create_random_code():
+        def create_random_code():                                                                # Create a random code each time the level is played
 
-            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+            alphabet = list(string.ascii_uppercase)                                              # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
 
-            code_numbers = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
+            code_numbers = [item + '1' for item in alphabet] + [item + '2' for item in alphabet] # Combine alphabet with numbers 
 
             random_code = []
 
             for _ in range(0, 6):
-                random_code.append(random.choice(code_numbers))
+                random_code.append(random.choice(code_numbers))                                   # Get 6 random choices from the code list 
 
             return random_code
 
