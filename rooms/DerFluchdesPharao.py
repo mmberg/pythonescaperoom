@@ -57,8 +57,8 @@ class DerFluchdesPharao(EscapeRoom):
 
         
 
-        zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
-        code = [0,1,2,3,4,5,6,7,8,9,10,11]
+        #zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
+        #code = [0,1,2,3,4,5,6,7,8,9,10,11]
                 
         task_messages = [ "Juhuu, du hast den Schlüssel für die nächste Tür gefunden! Los, öffne sie und schau, was dich dahinter erwaret!",
             "<br></br>",
