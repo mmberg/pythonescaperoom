@@ -60,15 +60,13 @@ class DerFluchdesPharao(EscapeRoom):
         #zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
         #code = [0,1,2,3,4,5,6,7,8,9,10,11]
                 
-        task_messages = [ "Juhuu, du hast den Schlüssel für die nächste Tür gefunden! Los, öffne sie und schau, was dich dahinter erwaret!",
+        task_messages = [ "Du bist im nächsten Raum gelandet, genauer gesagt in der <h1> Grabkammer des Pharao´s</h1>",
+            "Du schaust dich im Raum um und entdeckst einen Sarkopharg und folgendes Rätsel:",
             "<br></br>",
-            "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Toroffe.jpg' width='280' height='210'>",
-            "<br></br>",
-            "Du betrittst einen großen Raum, mitten drin steht ein Sarkopharg! OMG!!!",
-            "Du schaust dich im Raum um und entdeckst ein Gekritzel an der Wand rechts",
             "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
             "<b>"+myth+"</b>",
             "<br></br>",
+            "<b> Die Spielregeln </b>",
             "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
             "<br></br>",
             "Was hat denn das nun wieder zu bedeuten?",
