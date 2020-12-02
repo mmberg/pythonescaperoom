@@ -24,6 +24,3 @@ while (i<r):
 
 	
 
-#if return = true:
-#	print ("Level complete"):
-#	else ("Try again"):
