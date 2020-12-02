@@ -124,7 +124,7 @@ class DerFluchdesPharao(EscapeRoom):
             "Du entknüllst den Zettel und siehst eine seltsame Zeichnung, sind da etwa Buchstaben eingraviert?!",
             "Auf der Rückseite siehst du folgednes Gekritzel : <a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/erklaerung.txt'target ='_blank'><b>Rückseite!</b> </a>",
             "<br></br>",
-            "Du siehst zwei Türen, eine ist mit 3 Schlössern gesichert, <i> na toll </i> die zweite ist Spalt geöffnet, vorsichtig schaust du, was sich hinter der Tür verbirgt ",
+            "Du siehst zwei Türen, eine ist mit 3 Schlössern gesichert, <i> na toll </i>, die zweite ist einen Spalt geöffnet, vorsichtig schaust du, was sich hinter der Tür verbirgt ",
             "Es scheint eine Art Schatzkammer zu sein, sind hier drin vielleicht die Schlüssel für die andere Tür versteckt?",
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Schatzkammer.jpg' width='1500' height='1000'>",
