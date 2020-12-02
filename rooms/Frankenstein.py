@@ -76,10 +76,10 @@ class Frankenstein(EscapeRoom):
 
         task_messages = ['Der Name "Dr. Viktor Frankenstein" geht dir nicht aus dem Kopf. Du fühslt wie sich ein Gedanke aus den Tiefen deines Unterbewussten empor kämpft.',
             'Dr. Viktor Frankenstein... AHA! Es gab vor einigen Monaten einen Skandal um den jungen Doktor. Er hatte behauptet Leben erschaffen zu können, es gab einige vehemente Gegner, wie den Bischoff zum Beispiel.',
-            'Kurz darauf war der junge Mann verschwunden, wie vom Erdboden verschluckt, Scotland Yard hatte ermittelt. Du fragst dich, ob die Monstersichtungen mit dem Verschwinden des Doktors zu tun haben. Du willst die Akten des Falls unter die Lupe nehmen.',
-            'Das wird nicht einfach, du kannst ja nicht einfach bei Scotland Yard reinmaschieren und Einsicht verlangen. Zum Glück hast du gute Verbindungen. Einer deiner Leute ist ein Detective bei Scotland Yard, er hatte dir geholfen eine Police Badge zu fälschen.',
+            'Kurz darauf war der junge Mann verschwunden, wie vom Erdboden verschluckt, die Metropolitan Police hatte ermittelt. Du fragst dich, ob die Monstersichtungen mit dem Verschwinden des Doktors zu tun haben. Du willst die Akten des Falls unter die Lupe nehmen.',
+            'Das wird nicht einfach, du kannst ja nicht einfach bei der Metropolitan Police reinmaschieren und Einsicht verlangen. Zum Glück hast du gute Verbindungen. Einer deiner Leute ist ein Detective bei der Metropolitan Police, er hatte dir geholfen eine Police Badge zu fälschen.',
             'Es fehlt nur noch die Nummer, diese folgt ein paar Regeln um sie vor Fälschungen zu schützen, das aber hält dich nicht auf. Dein Kontakt hatte dir eine Liste mit Namen und Anweisungen gegeben.',
-            f'Du entscheidest dich für {name}. Laut Anweisung nimmst du nun die Initialen des Namens und fügst dann, verbunden mit Bindestrichen, drei Blöcke mit jeweilsdrei Zahlen an',
+            f'Du entscheidest dich für {name}. Laut Anweisung nimmst du nun die Initialen des Namens und fügst dann, verbunden mit Bindestrichen, drei Blöcke mit jeweils drei Zahlen an.',
             'Die Blöcke müssen jeweils eine Quersumme zwischen und inklusive 9 und 15 ergeben, jede Ziffer darf nur einmal pro Block vorkommen.']
 
         hints = ['Das Format muss am Ende so aussehen: XX-xxx-xxx-xxx, Beispiel: AC-425-428-263.',
@@ -108,11 +108,11 @@ class Frankenstein(EscapeRoom):
 
         task_messages = ['Du bist ein bisschen überrascht aber auch sehr zufrieden, dass du mit deiner gefälschten Badge so einfach Zugang zur Aservatenkammer und den Akten bekommen hast.',
             'In den Akten selbst findest du eine Beschreibung des Labors des Doktors. Dort ist eine riesige Maschine die Elektrizität bündeln kann. Eine Aparatur zeigte auf eine Metalltisch.',
-            'Man war sich nicht sicher, aber sie wurde wohl benutzt. Dir läuft ein Schauer über den Rücken wenn du an die Experimente denkst, die dort vonstatten gingen.',
+            'Man war sich nicht sicher, aber sie wurde wohl benutzt. Dir läuft ein Schauer über den Rücken, wenn du an die Experimente denkst, die dort vonstatten gingen.',
             'Du stopfst eine Skizze des Labors in die Tasche. Ausserdem steht in der Akte, dass ein Stück Papier gefunden wurde, auf dem ein paar Zahlen gekritzelt waren, die niemand verstanden hat.',
-            'Sicherheitshalber wurden alle Beweismittel im Safe der Aservatenkammer eingeschlossen. Man benötigt drei Schlüssel und eine Kombination, um ihn zu öffnen, die aber nichts weisst.',
+            'Sicherheitshalber wurden alle Beweismittel im Safe der Aservatenkammer eingeschlossen. Man benötigt drei Schlüssel und eine Kombination, um ihn zu öffnen, die du aber nicht weißt.',
             'Zu deinem Glück, ist der Officer der dort immer arbeitet ein bisschen vergesslich und hat sich einiger Hilfsmittel bedient, um sein Erinnerungsvermögen zu unterstützen.',
-            'Die drei Schlüssel haben jeweils ein blauen, roten und gelben Anhänger. Es sollte nicht allzu lange dauern alle Kombinationen auszuprobieren.',
+            'Die drei Schlüssel haben jeweils einen blauen, roten und gelben Anhänger. Es sollte nicht allzu lange dauern alle Kombinationen auszuprobieren.',
             f'Auf dem Safe liegt ein Zettel mit folgendem Code: {code} - Den gilt es nun zu entschlüsseln und schon hast du Zugriff.']
 
         hints = ['Teste alle Schlüssel-Kombinationen durch und gib diese in einer Liste aus.',
