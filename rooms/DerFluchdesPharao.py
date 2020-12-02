@@ -62,20 +62,19 @@ class DerFluchdesPharao(EscapeRoom):
                 
         task_messages = [ "Du bist im nächsten Raum gelandet, genauer gesagt in der <h1> Grabkammer des Pharao´s</h1>",
             "Du schaust dich im Raum um und entdeckst einen Sarkopharg und folgendes Rätsel:",
-            "<br></br>",
             "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
             "<b>"+myth+"</b>",
             "<br></br>",
             "<b> Die Spielregeln </b>",
             "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
             "<br></br>",
-            "Was hat denn das nun wieder zu bedeuten?",
-            "<br></br>",
             schriftrolle_zu,
+            "<br></br>",
             "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle und ein Schloss mit " + str(zahl) + " Drehscheiben!",
             schriftrolle_offen,
             "<br></br>",
-            "Findest du auch das Codewort?"
+            "Was steht auf der Notiz? Sieht aus wie zweierlei Listen?!",
+            "Versuche mit Kleopatras Spielregeln den Mythos mit den Listen in Verbindung zu bringen!"
 
             ]
         hints = [
