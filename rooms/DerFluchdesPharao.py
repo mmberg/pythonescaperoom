@@ -37,23 +37,23 @@ class DerFluchdesPharao(EscapeRoom):
         elif myth == mythos[2]:
             zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
-            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne diese Schriftrolle!</b> </a>"
         elif myth == mythos[3]:
             zahl = 2
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
-            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne diese Schriftrolle!</b> </a>"
         elif myth == mythos[4]:
             zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
-            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne diese Schriftrolle!</b> </a>"
         elif myth == mythos[5]:
             zahl = 3
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3.jpg' width='900' height='550'>"
-            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab3Schriftrolle.jpg'target ='_blank'><b>Öffne diese Schriftrolle!</b> </a>"
         else: 
             zahl = 2
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
-            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne mich!</b> </a>"
+            schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne diese Schriftrolle!</b> </a>"
 
         
 
@@ -63,22 +63,22 @@ class DerFluchdesPharao(EscapeRoom):
         task_messages = [ "Du bist im nächsten Raum gelandet, genauer gesagt in der <h1> Grabkammer des Pharao´s</h1>",
             "Du schaust dich im Raum um und entdeckst einen Sarkopharg und folgendes Rätsel:",
             "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
-            "<b>"+myth+"</b>",
+            "<b><font size = '4'><b>"+myth+"</b></font>",
             "<br></br>",
             "<b> Die Spielregeln </b>",
-            "<i>Wenn Kleopatra Mythen erzählt, sie es immer <b>wörtlich</b> meint! Aber nimm dich in Acht, von klein nach groß, von unten nach oben, hast du das bedacht? </i>",
+            "<i>Wenn Kleopatra Mythen erzählt, sie es immer <font size = '4'><b>wörtlich</b></font> meint! Aber nimm dich in <b><font size = '4'>8</font></b>, von klein nach groß, von unten nach oben, hast du das bed<b><font size = '4'>8? </i>",
+            "<br></br>",
+            "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle und ein Schloss mit " + str(zahl) + " Drehscheiben!",
             "<br></br>",
             schriftrolle_zu,
             "<br></br>",
-            "Du drehst dich im Raum und siehst dich um, am Sarkophag findest eine Schriftrolle und ein Schloss mit " + str(zahl) + " Drehscheiben!",
             schriftrolle_offen,
             "<br></br>",
-            "Was steht auf der Notiz? Sieht aus wie zweierlei Listen?!",
-            "Versuche mit Kleopatras Spielregeln den Mythos mit den Listen in Verbindung zu bringen!"
+            "Was steht auf der Notiz? Sieht aus wie zweierlei Listen?! Welche Verbindung mag das haben?"
 
             ]
         hints = [
-            "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Ganz genau.",
+            "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Dabei jedes EINzelne Wort ganz genau.",
             "2. Nimm´s wörtlich.",
             "3. In jedem Mythos steckt mindestens eine Zahl. Vielleicht auch mehr",
             "4. Öffne die Schriftrolle! Darin ist ein Hinweis für zwei Listen enthalten",
