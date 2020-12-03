@@ -5,6 +5,6 @@ def run(myth):
     for word in zahl_in_worten:
             if (word in myth):
                 code.append(zahlen[zahl_in_worten.index(word)])
-                print(zahlen[zahl_in_worten.index(word)])
-            print(code)
+            #     print(zahlen[zahl_in_worten.index(word)])
+            # print(code)
     return code
