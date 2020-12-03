@@ -9,10 +9,29 @@ class DerFluchdesPharao(EscapeRoom):
     def __init__(self):
         super().__init__()
         self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
+        self.add_level(self.create_level1())
         self.add_level(self.create_level3())
+        self.add_level(self.create_level5())
         self.add_level(self.create_level7())
 
     ### LEVELS ###
+    #Level 1 Isi
+    def create_level1(self):
+        liste = [ "Pyramide" , "Kleopratra" , "Python" , "Rätsel" , "Gizeh" , "Ausgang" , "Auf" , "Sand" , "Raus" , 
+                "Hilfe" , "Katze" , "Wüste" , "Ausweg" , "zu" , "Käfer" , "Ägypten" , "Programmierkönig" , "Schlange" , "Katze" ,
+                "Level" , "Room" , "next" , "Heilig" , "Exit" , "Isis" , "zwei" , "Ende" ]
+        task_messages = [
+            "Sei gegrüßt, Spieler. Du träumst nicht, das ist die Realität. Du bist gefangen in",
+            "dieser Pyramide. Acht Level sollst du bestreiten und siegen, dann lasse ich dich",
+            "heraus. Verlierst Du, bleibst du auf ewig gefangen. Zeige mir, ob du ein wahres Progratier",
+            "bist und ich lasse dich heraus.",
+            "Scheiterst du, so bleibst Du gefangen.",
+            "Einen kleinen Tipp habe ich für dich: Lösungssatz: 6-13-18-24"
+        ]
+        hints = []
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution1, "data": liste}
+
+
     #Level 3 Jessi#
     def create_level3(self):
 
@@ -89,6 +108,26 @@ class DerFluchdesPharao(EscapeRoom):
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": myth}
     
+    #Level 5 Isi
+    def create_level5(self):
+    
+        alphabet = 'abcdefghijklmnopqrstuvwxyz' 
+        result = "" 
+
+        key = 2
+        ver_nachricht = "fw fcthuv kp ngxgn ugeju"
+
+        task_messages = [
+            "Cleopatra erscheint Dir und spricht zu Dir: Mein geliebter Caesar wollte dir helfen, doch ich kann seine komische",
+            "Nachricht nicht lesen. Kannst du sie erkennen? Er sagte mir nur, Du schaffst das in <b>zwei</b> Schritten..." ,
+            "Das hier ist die geheime Nachricht die dir helfen soll: " + ver_nachricht , 
+        ]
+        hints = [ "Du brauchst alle 26..." ,
+        "Wie viele Buchstaben hat doch das Alphabet"
+        ]
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution5, "data": ver_nachricht}
+
+
     #Level 7 Jess #
     def create_level7(self):
 
@@ -166,6 +205,18 @@ class DerFluchdesPharao(EscapeRoom):
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.bauplan, "data": rohbau}
 
     ### SOLUTIONS ###
+
+    #Level 1
+    def solution1(self, liste):
+        satz = [6,13,19,25]
+        meineLoesung = ""
+
+        for i in range(len(liste)):
+            if i in satz:
+                meineLoesung+= liste[i]
+        return meineLoesung
+
+
     #Level3
     def mythos(self, myth):
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
@@ -235,7 +286,31 @@ class DerFluchdesPharao(EscapeRoom):
 
         return code, loesungswort, geheimnis
 
+    #Level5
 
+    def solution5(self, ver_nachricht):
+
+        alphabet = 'abcdefghijklmnopqrstuvwxyz' 
+        result = "" 
+
+        key = 2 
+        ver_nachricht = "fw fcthuv kp ngxgn ugeju" 
+
+
+        for line in ver_nachricht: 
+            line = line.lower() 
+            for letter in line: 
+                index = alphabet.find(letter) 
+                if index == -1: 
+                    result = result + letter
+                else:
+                        new_index = index - key 
+                        new_index = new_index % len(alphabet)  
+                        result = result + alphabet[new_index] 
+
+        print (result)      
+
+        return result
 
 
     
