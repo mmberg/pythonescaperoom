@@ -1,6 +1,5 @@
 from EscapeRoom import EscapeRoom
 from random import randint
-from os import *
 import random
 
 
@@ -9,15 +8,20 @@ class DerFluchdesPharao(EscapeRoom):
     def __init__(self):
         super().__init__()
         self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
-        self.add_level(self.create_level1())
         self.add_level(self.create_level4())
+        self.add_level(self.create_level1())
+        self.add_level(self.create_level2())
         self.add_level(self.create_level3())
         self.add_level(self.create_level5())
+        self.add_level(self.create_level6())
         self.add_level(self.create_level7())
         self.add_level(self.create_level8())
 
+    #################
     ### LEVELS ###
-    #Level 1 Isi
+    #################
+
+    #   Level 1 Isabelle
     def create_level1(self):
         liste = [ "Pyramide" , "Kleopratra" , "Python" , "Rätsel" , "Gizeh" , "Ausgang" , "Auf" , "Sand" , "Raus" , 
                 "Hilfe" , "Katze" , "Wüste" , "Ausweg" , "zu" , "Käfer" , "Ägypten" , "Programmierkönig" , "Schlange" , "Katze" ,
@@ -31,10 +35,25 @@ class DerFluchdesPharao(EscapeRoom):
             "Einen kleinen Tipp habe ich für dich: Lösungssatz: 6-13-18-24"
         ]
         hints = []
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution1, "data": liste}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": liste}
 
+    #   Level 2 Laura
+    def create_level2(self):
 
-    #Level 3 Jessi#
+        rndNumber = randint(2, 1000)
+
+        task_messages = [
+            "Gratuliere, du hast Level 1 erfolgreich gelöst.",
+            "Das nächste Level wird anspruchsvoller und du musst folgende Aufgabe lösen.",
+            "Programmiere mittels While-Schleifen die Primzahlen von 2 bis dem Wert deiner Zufallszahl.",
+            "Deine Zufallszahl lautet: " + str(rndNumber)
+        ]
+
+        hints = []
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv2, "data": rndNumber} 
+
+    #   Level 3 Jessi
     def create_level3(self):
 
         mythos = ["Kleopatra liess ihren Mann ermorden,kurz bevor ihre Ehe annulliert werden sollte, um gemeinsam mit Ihrem Sohn an die Macht zu kommen!.", 
@@ -108,9 +127,20 @@ class DerFluchdesPharao(EscapeRoom):
             "7. Schreibe ein Programm das anhand der Listen die du ermittelt hast, übereinstimmende Zahlen aus dem Mythos ausgibt"
             
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": myth}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv3, "data": myth}
     
-    #Level 5 Isi
+    #   Level 4 Alex
+    def create_level4(self):
+        data = "static/assets/Csv.csv"
+        task_messages = [
+            "Auswerten einer CSV Datei"
+            ]
+
+        hints = []
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv4, "data": data} 
+
+    #   Level 5 Isabelle
     def create_level5(self):
     
         alphabet = 'abcdefghijklmnopqrstuvwxyz' 
@@ -129,15 +159,20 @@ class DerFluchdesPharao(EscapeRoom):
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution5, "data": ver_nachricht}
 
+      #   Level 8 Alex
+    
+    #   Level 6 Laura
+    def create_level6(self):
 
-    def create_level4(self):
-        task_messages = ["Auswerten einer CSV Datei"]
+        task_messages = [
+            "Hello"
+        ]
 
         hints = []
 
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv4, "data": data} 
-
-    #Level 7 Jess #
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv6, "data": ""} 
+    
+    #   Level 7 Jessi
     def create_level7(self):
 
         bauplan = [
@@ -211,8 +246,9 @@ class DerFluchdesPharao(EscapeRoom):
             "Manchmal muss man über den Tellerrand schauen!",
             "Wie wäre es, wenn du einfach den Dateinamen nimmst, der dir angezeigt wird? Jetzt gilt es nur noch, diese richtig auszulesen, ohne störende Zeichen, ohne %20, ohne Endung..."
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.bauplan, "data": rohbau}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv7, "data": rohbau}
 
+    #   Level 8 Alex
     def create_level8(self):
 
         task_messages = [
@@ -225,10 +261,12 @@ class DerFluchdesPharao(EscapeRoom):
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv8, "data": "myth"} 
 
+    #################
     ### SOLUTIONS ###
+    #################
 
     #Level 1
-    def solution1(self, liste):
+    def sol_lv1(self, liste):
         satz = [6,13,19,25]
         meineLoesung = ""
 
@@ -237,9 +275,23 @@ class DerFluchdesPharao(EscapeRoom):
                 meineLoesung+= liste[i]
         return meineLoesung
 
+    #Level 2
+    def sol_lv2(self, data):
+        i = 2
+        solutionArray=[]
+        while (i<data):
+            p=2
+            while (p<= (i/p)):
+                if not (i%p): 
+                    break
+                p=p+1
+            if (p> (i/p)):
+                solutionArray.append(i)
+            i=i+1
+        return solutionArray
 
     #Level3
-    def mythos(self, myth):
+    def sol_lv3(self, myth):
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
         zahlen = [0,1,2,3,4,5,6,7,8,9,10,11]
         code = []
@@ -249,7 +301,6 @@ class DerFluchdesPharao(EscapeRoom):
                     print(zahlen[zahl_in_worten.index(word)])
                 print(code)
         return code 
-
 
     # Level 4
     def sol_lv4(self, data):
@@ -262,7 +313,7 @@ class DerFluchdesPharao(EscapeRoom):
                         count += 1
         return count
 
-    def bauplan(self,rohbau):
+    def sol_lv7(self,rohbau):
 
         #Liste reinkopieren aus txt file      
         lines = ['                /\\ ', '     /[][][]M[][][][][][][][\\ ', '       /[][]H[][][][][][][\\ ', '              /[][[\\ ', '   /[][][][][][][][]N[][][][][\\ ', '        /[][][][]C[][][][\\ ', '               /][\\ ', '      /[]A[][][][][][][][][\\ ', '         /[][][]N[][][][\\ ', '    /[]U[][][][][][][][][][][\\ ', '           /[][][]T[][\\ ', '            /[][][]U[\\ ', '          /[][][]A[][][\\ ', '             /[][]T[\\ ']
@@ -341,6 +392,10 @@ class DerFluchdesPharao(EscapeRoom):
                         result = result + alphabet[new_index] 
 
         print (result)      
+    
+       #Level 2
+    def sol_lv6(self, data):
+            return 0
     # Level 8
     def sol_lv8(self, data):
         return 0
