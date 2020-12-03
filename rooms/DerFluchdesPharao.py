@@ -9,8 +9,10 @@ class DerFluchdesPharao(EscapeRoom):
     def __init__(self):
         super().__init__()
         self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
+        self.add_level(self.create_level4())
         self.add_level(self.create_level3())
         self.add_level(self.create_level7())
+        self.add_level(self.create_level8())
 
     ### LEVELS ###
     #Level 3 Jessi#
@@ -89,6 +91,14 @@ class DerFluchdesPharao(EscapeRoom):
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.mythos, "data": myth}
     
+
+    def create_level4(self):
+        task_messages = ["Auswerten einer CSV Datei"]
+
+        hints = []
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv4, "data": data} 
+
     #Level 7 Jess #
     def create_level7(self):
 
@@ -163,6 +173,18 @@ class DerFluchdesPharao(EscapeRoom):
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.bauplan, "data": rohbau}
 
+    def create_level8(self):
+
+        task_messages = [
+            "Du hast bisher alle Hindernisse und Rätsel erfolgreich überwunden. Eine letzte Aufgabe steht dir noch ",
+            "im Weg, bevor du wieder in die Freiheit entlassen wirst.",
+
+        ]
+
+        hints = []
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv8, "data": "myth"} 
+
     ### SOLUTIONS ###
     #Level3
     def mythos(self, myth):
@@ -176,6 +198,17 @@ class DerFluchdesPharao(EscapeRoom):
                 print(code)
         return code 
 
+
+    # Level 4
+    def sol_lv4(self, data):
+        count = 0
+        with open(data, 'r') as file:
+            for line in file:
+                    dates = str(line).split(",")[1].split("-")
+                    duratrion = int(dates[0])-int(dates[1])
+                    if(duratrion >= 30):
+                        count += 1
+        return count
 
     def bauplan(self,rohbau):
 
@@ -231,6 +264,9 @@ class DerFluchdesPharao(EscapeRoom):
 
         return code, loesungswort, geheimnis
 
+    # Level 8
+    def sol_lv8(self, data):
+        return 0
 
 
 
