@@ -8,17 +8,17 @@ class DerFluchdesPharao(EscapeRoom):
     def __init__(self):
         super().__init__()
         self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
-        self.add_level(self.create_level4())
         self.add_level(self.create_level1())
         self.add_level(self.create_level2())
         self.add_level(self.create_level3())
+        self.add_level(self.create_level4())
         self.add_level(self.create_level5())
         self.add_level(self.create_level6())
         self.add_level(self.create_level7())
         self.add_level(self.create_level8())
 
     #################
-    ### LEVELS ###
+    #### LEVELS #####
     #################
 
     #   Level 1 Isabelle
@@ -165,7 +165,13 @@ class DerFluchdesPharao(EscapeRoom):
     def create_level6(self):
 
         task_messages = [
-            "Hello"
+            "Mehr als die Hälfte hast du bereits geschafft.",
+            "Nun... konzentriere dich jetzt besonders auf deine nächste Aufgabe.",
+            "Im Jahre ..... v. Chr. kam Pharao Necho II. nach dem Tod seines Vaters an die Macht.",
+            "Wir wollen wissen welches Jahr v. Chr. ist gesucht???",
+            "Stelle die FIBONACCI-Folge dar, wiederhole diese aber nur 16 Mal.",
+
+            "Am Ende werden wir sehen, ob du die korrekte Jahreszahl ermittelt hast."
         ]
 
         hints = []
@@ -265,7 +271,7 @@ class DerFluchdesPharao(EscapeRoom):
     ### SOLUTIONS ###
     #################
 
-    #Level 1
+    #   Level 1
     def sol_lv1(self, liste):
         satz = [6,13,19,25]
         meineLoesung = ""
@@ -275,7 +281,7 @@ class DerFluchdesPharao(EscapeRoom):
                 meineLoesung+= liste[i]
         return meineLoesung
 
-    #Level 2
+    #   Level 2
     def sol_lv2(self, data):
         i = 2
         solutionArray=[]
@@ -290,7 +296,7 @@ class DerFluchdesPharao(EscapeRoom):
             i=i+1
         return solutionArray
 
-    #Level3
+    #   Level3
     def sol_lv3(self, myth):
         zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
         zahlen = [0,1,2,3,4,5,6,7,8,9,10,11]
@@ -302,7 +308,7 @@ class DerFluchdesPharao(EscapeRoom):
                 print(code)
         return code 
 
-    # Level 4
+    #   Level 4
     def sol_lv4(self, data):
         count = 0
         with open(data, 'r') as file:
@@ -313,6 +319,40 @@ class DerFluchdesPharao(EscapeRoom):
                         count += 1
         return count
 
+    #   Level 5
+    def solution5(self, ver_nachricht):
+
+        alphabet = 'abcdefghijklmnopqrstuvwxyz' 
+        result = "" 
+
+        key = 2 
+        ver_nachricht = "fw fcthuv kp ngxgn ugeju" 
+
+        for line in ver_nachricht: 
+            line = line.lower() 
+            for letter in line: 
+                index = alphabet.find(letter) 
+                if index == -1: 
+                    result = result + letter
+                else:
+                        new_index = index - key 
+                        new_index = new_index % len(alphabet)  
+                        result = result + alphabet[new_index] 
+
+        return result    
+    
+    #   Level 6
+    def sol_lv6(self, data):
+        anzahl_wiederholungen = 14
+        i = 0
+        folge = [0,1]
+        while (i < anzahl_wiederholungen):
+            fibo = folge[i]+folge[i+1]
+            folge.append(fibo)
+            i += 1
+        return folge[-1]
+
+    #   Level 7
     def sol_lv7(self,rohbau):
 
         #Liste reinkopieren aus txt file      
@@ -369,38 +409,13 @@ class DerFluchdesPharao(EscapeRoom):
 
         return code, loesungswort, geheimnis
 
-    #Level5
-
-    def solution5(self, ver_nachricht):
-
-        alphabet = 'abcdefghijklmnopqrstuvwxyz' 
-        result = "" 
-
-        key = 2 
-        ver_nachricht = "fw fcthuv kp ngxgn ugeju" 
-
-
-        for line in ver_nachricht: 
-            line = line.lower() 
-            for letter in line: 
-                index = alphabet.find(letter) 
-                if index == -1: 
-                    result = result + letter
-                else:
-                        new_index = index - key 
-                        new_index = new_index % len(alphabet)  
-                        result = result + alphabet[new_index] 
-
-        print (result)      
+    
     
        #Level 2
-    def sol_lv6(self, data):
-            return 0
+    
     # Level 8
     def sol_lv8(self, data):
         return 0
-
-        return result
 
 
     
