@@ -7,7 +7,8 @@ class DerFluchdesPharao(EscapeRoom):
 
     def __init__(self):
         super().__init__()
-        self.set_metadata("Alex, Isi, Jessi, Laura", __name__)
+        self.set_metadata("Alexander Kempf, Isabelle Beisler, Jessica Seltzer, Laura Kaltenbrunner", __name__)
+        self.add_level(self.create_level9())
         self.add_level(self.create_level1())
         self.add_level(self.create_level2())
         self.add_level(self.create_level3())
@@ -27,14 +28,22 @@ class DerFluchdesPharao(EscapeRoom):
                 "Hilfe" , "Katze" , "Wüste" , "Ausweg" , "zu" , "Käfer" , "Ägypten" , "Programmierkönig" , "Schlange" , "Katze" ,
                 "Level" , "Room" , "next" , "Heilig" , "Exit" , "Isis" , "zwei" , "Ende" ]
         task_messages = [
+            "<h2>Die Liste des Pharao</h2>",
             "Sei gegrüßt, Spieler. Du träumst nicht, das ist die Realität. Du bist gefangen in",
             "dieser Pyramide. Acht Level sollst du bestreiten und siegen, dann lasse ich dich",
             "heraus. Verlierst Du, bleibst du auf ewig gefangen. Zeige mir, ob du ein wahres Progratier",
             "bist und ich lasse dich heraus.",
-            "Scheiterst du, so bleibst Du gefangen.",
-            "Einen kleinen Tipp habe ich für dich: Lösungssatz: 6-13-18-24"
+            "</br>"
+            "Scheiterst du, so bleibst Du gefangen. Es sei dir eine Liste gegeben die neumoderne Wörter enthält.",
+            "Kombiniere die Wörter geschickt, um den Lösungssatz zu erfahren!",
+            "<ul><li>Die erste Zahl lässt sich durch 2 und durch 3 teilen</li><li>Die zweite Zahl ist eine Unglückszahl</li><li>Die Wertigkeit der dritte Zahl ist 3 mal so hoch ist wie die erste Zahl</li><li>Die Prophezeiung des Pharos besagt, dass in einer unbekannten Anzahl von Jahren an diesem Tag ein heiliges Kind auf die Welt kommen wird. Dieser Tag ist die vierte Zahl.</li></ul>",
+            "</br>",
+            "*<code>input_data</code> des Levels ist die Liste."
         ]
-        hints = []
+        hints = [
+            "1. Die Zahlen könnten die Positionen der Wörter sein...", 
+            "2. Einen kleinen Tipp habe ich für dich: <b>Lösungssatz: 6-13-18-24</b>"
+            ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv1, "data": liste}
 
     #   Level 2 Laura
@@ -43,17 +52,23 @@ class DerFluchdesPharao(EscapeRoom):
         rndNumber = randint(2, 1000)
 
         task_messages = [
-            "Gratuliere, du hast Level 1 erfolgreich gelöst.",
-            "Das nächste Level wird anspruchsvoller und du musst folgende Aufgabe lösen.",
-            "Programmiere mittels While-Schleifen die Primzahlen von 2 bis dem Wert deiner Zufallszahl.",
-            "Deine Zufallszahl lautet: " + str(rndNumber)
+            "<h2>Der Geist des Pharao</h2>"
+            "Plötzlich taucht der Geist des Pharao auf. Er nennt dir eine Zufällige Zahl: ",
+            "<b><p style='font-size: 30'>"+ str(rndNumber)+ "</p></b>",
+            "Der Geist verlangt die Anzahl der Primzahlen, die sich zwischen 2 und der Zufallszahl befinden,",
+            "ansonsten wird er dich nicht gehen lassen und mit in sein Grab nehmen!"
+            "</br>",
+            "*<code>input_data</code> des Levels ist die Zufallszahl."
         ]
 
-        hints = []
+        hints = [
+            "1. Versuche es mit der While-Schleife",
+            "2. Die Lösung ist die Ansammlung aller Werte"
+        ]
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv2, "data": rndNumber} 
 
-    #   Level 3 Jessi
+    #   Level 3 Jessica
     def create_level3(self):
 
         mythos = ["Kleopatra liess ihren Mann ermorden,kurz bevor ihre Ehe annulliert werden sollte, um gemeinsam mit Ihrem Sohn an die Macht zu kommen!.", 
@@ -95,14 +110,10 @@ class DerFluchdesPharao(EscapeRoom):
             schriftrolle_zu = "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2.jpg' width='900' height='550'>"
             schriftrolle_offen = "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Grab2Schriftrolle.jpg'target ='_blank'><b>Öffne diese Schriftrolle!</b> </a>"
 
-        
-
-        #zahl_in_worten = ["null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun", "zehn", "elf"]
-        #code = [0,1,2,3,4,5,6,7,8,9,10,11]
                 
-        task_messages = [ "Du bist im nächsten Raum gelandet, genauer gesagt in der <h1> Grabkammer des Pharao´s</h1>",
+        task_messages = [ "Du bist im nächsten Raum gelandet, genauer gesagt in der <h2> Grabkammer des Pharao´s</h2>",
             "Du schaust dich im Raum um und entdeckst einen Sarkopharg und folgendes Rätsel:",
-            "<h2><i> Kleopatra´s Mythenspiel</i></h2>",
+            "<h3><i> Kleopatra´s Mythenspiel</i></h3>",
             "<b><font size = '4'><b>"+myth+"</b></font>",
             "<br></br>",
             "<b> Die Spielregeln </b>",
@@ -114,57 +125,71 @@ class DerFluchdesPharao(EscapeRoom):
             "<br></br>",
             schriftrolle_offen,
             "<br></br>",
-            "Was steht auf der Notiz? Sieht aus wie zweierlei Listen?! Welche Verbindung mag das haben?"
+            "Was steht auf der Notiz? Sieht aus wie zweierlei Listen?! Welche Verbindung mag das haben?",
+            "</br>",
+            "*<code>input_data</code> des Levels ist der Mythos."
 
             ]
         hints = [
             "1. Wenn du einen Mythos gefunden hast, dann lies ihn genau durch. Dabei jedes EINzelne Wort ganz genau.",
-            "2. Nimm´s wörtlich.",
-            "3. In jedem Mythos steckt mindestens eine Zahl. Vielleicht auch mehr",
-            "4. Öffne die Schriftrolle! Darin ist ein Hinweis für zwei Listen enthalten",
-            "5. Eine Liste besteht aus Strings, die andere aus Int",
-            "6. Verwende liste1 = ['null',.....,'elf'], liste2 = [0,...,11]",
-            "7. Schreibe ein Programm das anhand der Listen die du ermittelt hast, übereinstimmende Zahlen aus dem Mythos ausgibt"
+            "2. In jedem Mythos steckt mindestens eine Zahl. Vielleicht auch mehr",
+            "3. Öffne die Schriftrolle! Darin ist ein Hinweis für zwei Listen enthalten",
+            "4. Eine Liste besteht aus Strings, die andere aus Int",
+            "5. Verwende liste1 = ['null',.....,'elf'], liste2 = [0,...,11]",
+            "6. Schreibe ein Programm das anhand der Listen die du ermittelt hast, übereinstimmende Zahlen aus dem Mythos ausgibt"
             
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv3, "data": myth}
     
-    #   Level 4 Alex
+    #   Level 4 Alexander
     def create_level4(self):
         data = "static/assets/Csv.csv"
         task_messages = [
-            "Auswerten einer CSV Datei"
+            "<h2>Die Ahnentabelle</h2>"
+            "Du bist nun im vierten Raum angekommen und siehst auf der Wand eine Tabelle von allen Pharaonen.",
+            "Die Liste ist so aufgebaut, dass in einer Spalte der Name steht und in der anderen Spalte, von wann bis wann dieser Pharo regiert hat.",
+            "Beim Blick auf die Tabelle wird dir schwarz vor Augen..",
+            "In einem Traum siehst du den Pharao Amasis. Er erzählt dir von seiner Herrschaft, die bereits über 30 Jahre andauert.",
+            "Nun wundert er sich, wie viele Pharaonen dieses bisher auch erreicht haben.",
+            "</br>",
+            "*<code>input_data</code> des Levels ist der Pfad der csv-Datei mit der Tabelle."
             ]
 
-        hints = []
+        hints = [
+            "1. Die Jahresdaten sind alle vor Christus",
+            "2. Vielleicht erwachst du aus dem Traum, wenn du ihm dies mitteilst.",
+            "3. Lies die csv Datei aus..",
+            "4. Beachte, dass beide Jahreszahlen gespeichert sind. Beispiel: 640-610"
+        ]
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv4, "data": data} 
 
     #   Level 5 Isabelle
     def create_level5(self):
-    
         alphabet = 'abcdefghijklmnopqrstuvwxyz' 
         result = "" 
-
         key = 2
         ver_nachricht = "fw fcthuv kp ngxgn ugeju"
 
         task_messages = [
+            "<h2>Caesars geheime Nachricht</h2>"
             "Cleopatra erscheint Dir und spricht zu Dir: Mein geliebter Caesar wollte dir helfen, doch ich kann seine komische",
             "Nachricht nicht lesen. Kannst du sie erkennen? Er sagte mir nur, Du schaffst das in <b>zwei</b> Schritten..." ,
-            "Das hier ist die geheime Nachricht die dir helfen soll: " + ver_nachricht , 
+            "Das hier ist die geheime Nachricht die dir helfen soll: " + ver_nachricht, 
+            "</br>",
+            "*<code>input_data</code> des Levels ist die verschlüsselte Nachricht."
         ]
-        hints = [ "Du brauchst alle 26..." ,
-        "Wie viele Buchstaben hat doch das Alphabet"
+        hints = [ 
+            "1. Du brauchst alle 26..." ,
+            "2. Wie viele Buchstaben hat noch das Alphabet...",
+            "3. Übersetze die geheime Botschaft mit dem zweier Schlüssel"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution5, "data": ver_nachricht}
 
-      #   Level 8 Alex
-    
     #   Level 6 Laura
     def create_level6(self):
-
         task_messages = [
+            "<h2>Der einsame Sohn des Pharao</h2>"
             "Mehr als die Hälfte hast du bereits geschafft.",
             "Nun... konzentriere dich jetzt besonders auf deine nächste Aufgabe.",
             "Im Jahre ..... v. Chr. kam Pharao Necho II. nach dem Tod seines Vaters an die Macht.",
@@ -174,11 +199,14 @@ class DerFluchdesPharao(EscapeRoom):
             "Am Ende werden wir sehen, ob du die korrekte Jahreszahl ermittelt hast."
         ]
 
-        hints = []
+        hints = [
+            "1. Die gesuchte Zahl ist nicht 377 und auch nicht 987",
+            "2. Die ersten fünf Zahlen der Folge sind.. 0 1 1 2 3 5 8"
+        ]
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv6, "data": ""} 
     
-    #   Level 7 Jessi
+    #   Level 7 Jessica
     def create_level7(self):
 
         bauplan = [
@@ -203,7 +231,8 @@ class DerFluchdesPharao(EscapeRoom):
             rohbau.append(reihe)
             bauplan.remove(reihe)
                 
-        task_messages = [ "<h2>Willkommen in der Kammer des <i>Greywolf!</h2></i>",
+        task_messages = [ 
+            "<h2>Willkommen in der Kammer des <i>Greywolf!</h2></i>",
             "Während du dich im Raum umschaust entdeckst du zwei Zeichnungen an einer Säule und an der Wand",
             "<br></br>",
             "<img src='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Bauplan.jpg' width='1500' height='1000'>",
@@ -229,43 +258,56 @@ class DerFluchdesPharao(EscapeRoom):
             "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Tal%20der%20Koenige.jpg'target ='_blank'><b>Ich könnte auch nützlich sein!</b> </a>",
             "<br></br>",
             "<a href='https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/DateinamenKopierenSollstDu.txt'target ='_blank'><b>Ich helfe dir zum Schluss!</b> </a>",
-            
+            "</br>",
+            "*<code>input_data</code> des Levels ist die Liste 'soeindurcheinander'."
             ]
+
         hints = [
-            "Auf dem zerknüllten Papier ist ein Bauplan zu sehen, leider ist etwas durcheinander geraten.",
-            "Der Bauplan ist für eine Pyramide! Versuche ihn zu sortieren!",
-            "Jede Reihe hat eine aufsteigende Anzahl von [], das sollte hilfreich sein!",
-            "Wenn du erfolgreich sortiert hast, solltest du ein Wort erkennen können!",
-            "Leider ist mit dem Wort noch nicht Schluss, beachte die zweite Zeichnung an der Wand!",
-            "Du solltest ein Lösungswort mit 11 Stellen erhalten haben",
-            "Lies von oben nach unten, es ist ein bekannter Pharao! Dessen Sarg haben wir heute schon Mal gesehen!",
-            "Die erste Lösung ist TUTANCHAMUN!",
-            "Die zweite ergibt nur 3 Stellen. Siehst du die Rechenoperatoren an der Wand?",
-            "Du sollst alle Buchstaben umwandeln in deren ASCII Code, danach alle zusammen rechnen. Voilá eine 3 stellige Zahl!",
-            "Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!",
-            "Die dritte Lösung musst du suchen, nimm die Handnotiz als Hilfe!",
-            "Rechne jeden einzelnen Buchstaben um und rechne alle Ergebnisse zusammen!",
-            "Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!",
-            "Hast du das Geheimnis schon gefunden? Es hieß doch, du darfst alles verwenden! Hast du dir auch alles angeschaut? Die Datei, die nützlich erschien, ist es definitiv! Du musst nur hinschauen!",
-            "Hast du weit genug nach oben geschaut? Also ganz nach oben.",
-            "Das Geheimnis ist, wo die Grabstätte gefunden wurde. Suche nach dem Ort!",
-            "Manchmal muss man über den Tellerrand schauen!",
-            "Wie wäre es, wenn du einfach den Dateinamen nimmst, der dir angezeigt wird? Jetzt gilt es nur noch, diese richtig auszulesen, ohne störende Zeichen, ohne %20, ohne Endung..."
+            "1. Auf dem zerknüllten Papier ist ein Bauplan zu sehen, leider ist etwas durcheinander geraten.",
+            "2. Der Bauplan ist für eine Pyramide! Versuche ihn zu sortieren!",
+            "3. Jede Reihe hat eine aufsteigende Anzahl von [], das sollte hilfreich sein!",
+            "4. Wenn du erfolgreich sortiert hast, solltest du ein Wort erkennen können!",
+            "5. Leider ist mit dem Wort noch nicht Schluss, beachte die zweite Zeichnung an der Wand!",
+            "6. Du solltest ein Lösungswort mit 11 Stellen erhalten haben",
+            "7. Lies von oben nach unten, es ist ein bekannter Pharao! Dessen Sarg haben wir heute schon Mal gesehen!",
+            "8. Die erste Lösung ist TUTANCHAMUN!",
+            "9. Die zweite ergibt nur 3 Stellen. Siehst du die Rechenoperatoren an der Wand?",
+            "10. Du sollst alle Buchstaben umwandeln in deren ASCII Code, danach alle zusammen rechnen. Voilá eine 3 stellige Zahl!",
+            "11. Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!",
+            "12. Die dritte Lösung musst du suchen, nimm die Handnotiz als Hilfe!",
+            "13. Rechne jeden einzelnen Buchstaben um und rechne alle Ergebnisse zusammen!",
+            "14. Jetzt reicht es aber mit Hinweisen! 840 Herrje! Was für eine schwache Rätselleistung Meister!",
+            "15. Hast du das Geheimnis schon gefunden? Es hieß doch, du darfst alles verwenden! Hast du dir auch alles angeschaut? Die Datei, die nützlich erschien, ist es definitiv! Du musst nur hinschauen!",
+            "16. Hast du weit genug nach oben geschaut? Also ganz nach oben.",
+            "17. Das Geheimnis ist, wo die Grabstätte gefunden wurde. Suche nach dem Ort!",
+            "18. Manchmal muss man über den Tellerrand schauen!",
+            "19. Wie wäre es, wenn du einfach den Dateinamen nimmst, der dir angezeigt wird? Jetzt gilt es nur noch, diese richtig auszulesen, ohne störende Zeichen, ohne %20, ohne Endung..."
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv7, "data": rohbau}
 
-    #   Level 8 Alex
+    #   Level 8 Alexander
     def create_level8(self):
 
         task_messages = [
             "Du hast bisher alle Hindernisse und Rätsel erfolgreich überwunden. Eine letzte Aufgabe steht dir noch ",
             "im Weg, bevor du wieder in die Freiheit entlassen wirst.",
-
         ]
 
         hints = []
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv8, "data": "myth"} 
+
+        #   Level 9 - Abschlusslevel
+    def create_level9(self):
+
+        task_messages = [
+            "<img src='static/Bilder/Solved.jpg'>",
+            "Um das Spiel abzuschließen, erstelle eine Funktion die das Wort Freiheit zurückgibt!"
+        ]
+
+        hints = []
+
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv9, "data": ""} 
 
     #################
     ### SOLUTIONS ###
@@ -396,8 +438,6 @@ class DerFluchdesPharao(EscapeRoom):
 
         loesungswort = "TUTANCHAMUN"
 
-        #geheimnis = "Tal der Koenige" 
-
         dir = "https://raw.githubusercontent.com/alex2101998/pythonescaperoom/Jess/static/Bilder/Tal%20der%20Koenige.jpg"
 
         geheimnis = dir.split('\\').pop().split('/').pop().rsplit('.', 1)[0] 
@@ -408,14 +448,14 @@ class DerFluchdesPharao(EscapeRoom):
         print("Schnell, geh zur verschlossenen Tür und öffne sie!")
 
         return code, loesungswort, geheimnis
-
-    
-    
-       #Level 2
     
     # Level 8
     def sol_lv8(self, data):
         return 0
+
+    # Level 9
+    def sol_lv9(self, data):
+        return "Freiheit"
 
 
     
