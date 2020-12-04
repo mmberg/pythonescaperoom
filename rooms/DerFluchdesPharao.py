@@ -9,6 +9,7 @@ class DerFluchdesPharao(EscapeRoom):
     def __init__(self):
         super().__init__()
         self.set_metadata("Alexander Kempf, Isabelle Beisler, Jessica Seltzer, Laura Kaltenbrunner", __name__)
+        self.add_level(self.create_level8())
         self.add_level(self.create_level1())
         self.add_level(self.create_level2())
         self.add_level(self.create_level3())
@@ -16,7 +17,6 @@ class DerFluchdesPharao(EscapeRoom):
         self.add_level(self.create_level5())
         self.add_level(self.create_level6())
         self.add_level(self.create_level7())
-        self.add_level(self.create_level8())
         self.add_level(self.create_level9())
 
     #################
@@ -313,6 +313,7 @@ class DerFluchdesPharao(EscapeRoom):
             "<b>Zweiter Teil der Koordinaten: ",
             "<img src='static/assets/31134.png'>",
             "</br>",
+            "Versuche es doch mit einer Bilderkennung.."
             "<code>*input_data des Levels ist ein Array von Pfaden, die zu den einzelnen Bildateien gehören.",
             "<code>* 1. Eintrag: Bild für 1",
             "<code>* 2. Eintrag: Bild für 10",
@@ -325,7 +326,9 @@ class DerFluchdesPharao(EscapeRoom):
 
         hints = [
             "1. Ein Beispiel die Umrechnung der Zahlen: </br><img width='300' height='300' src='static/assets/example.png'>",
-            "2. Es wird ein Array in der Form erwarter [ersteKoordinatenZahl, zweiteKoordinatenZahl]"
+            "2. Es wird ein Array in der Form erwarter [ersteKoordinatenZahl, zweiteKoordinatenZahl]",
+            "3. Hier ein <a href='https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html'>Beispiel</a>, wie die Bilderkennung funktioniert.. ",
+            "4. Der Threshholdwert muss bei dieser Methode bei allen Bildern bei 0.84 liegen und bei dem Bild für die Zahl 1 bei 0.99"
         ]
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv8, "data": data} 
@@ -485,11 +488,9 @@ class DerFluchdesPharao(EscapeRoom):
     def sol_lv8(self, data):
         koord = [data[5], data[6]]
         numbers = [data[0], data[1], data[2], data[3], data[4]]
-
         solution = [0,0]
 
         for i in range(len(koord)):
-            print("Neues Bild: ", koord[i])
             img_rgb = cv2.imread(koord[i])
             img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
             for j in range(len(numbers)):
@@ -505,7 +506,6 @@ class DerFluchdesPharao(EscapeRoom):
                 for pt in zip(*loc[::-1]):  
                     count += 1
                     solution[i] += int(numbers[j].split("/")[-1].split(".")[0])
-                print(str(numbers[j]) +" - " + str(count))
         return solution
 
     # Level 9
