@@ -1,2 +1,2 @@
-def run( data):
+def run(data):
     return "Freiheit"

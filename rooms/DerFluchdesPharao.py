@@ -1,14 +1,14 @@
 from EscapeRoom import EscapeRoom
 from random import randint
 import random
+import cv2
+import numpy as np
 
 
 class DerFluchdesPharao(EscapeRoom):
-
     def __init__(self):
         super().__init__()
         self.set_metadata("Alexander Kempf, Isabelle Beisler, Jessica Seltzer, Laura Kaltenbrunner", __name__)
-        self.add_level(self.create_level9())
         self.add_level(self.create_level1())
         self.add_level(self.create_level2())
         self.add_level(self.create_level3())
@@ -17,6 +17,7 @@ class DerFluchdesPharao(EscapeRoom):
         self.add_level(self.create_level6())
         self.add_level(self.create_level7())
         self.add_level(self.create_level8())
+        self.add_level(self.create_level9())
 
     #################
     #### LEVELS #####
@@ -184,7 +185,7 @@ class DerFluchdesPharao(EscapeRoom):
             "2. Wie viele Buchstaben hat noch das Alphabet...",
             "3. Übersetze die geheime Botschaft mit dem zweier Schlüssel"
         ]
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution5, "data": ver_nachricht}
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv5, "data": ver_nachricht}
 
     #   Level 6 Laura
     def create_level6(self):
@@ -288,16 +289,48 @@ class DerFluchdesPharao(EscapeRoom):
     #   Level 8 Alexander
     def create_level8(self):
 
-        task_messages = [
-            "Du hast bisher alle Hindernisse und Rätsel erfolgreich überwunden. Eine letzte Aufgabe steht dir noch ",
-            "im Weg, bevor du wieder in die Freiheit entlassen wirst.",
+        koord = [29.978, 31.134]
+        data = [
+            'static/assets/1.png',
+            'static/assets/10.png',
+            'static/assets/100.png',
+            'static/assets/1000.png',
+            'static/assets/10000.png',
+            'static/assets/29978.png',
+            'static/assets/31134.png'
         ]
 
-        hints = []
+        task_messages = [
+            "<h2>Die mysteriösen Koordinaten</h2>"
+            "Du hast bisher alle Hindernisse und Rätsel erfolgreich überwunden. Eine letzte Aufgabe steht dir noch ",
+            "im Weg, bevor du wieder in die Freiheit entlassen wirst.",
+            "Du findest auf dem Boden eingezeichnet etwas, was aussieht wie Koordinaten..",
+            "Leider nur sind diese in Ägyptischen Zahlen eingezeichnet: ",
+            "</br>",
+            "<b>Erster Teil der Koordinaten: ",
+            "<img src='static/assets/29978.png'>",
+            "</br>",
+            "<b>Zweiter Teil der Koordinaten: ",
+            "<img src='static/assets/31134.png'>",
+            "</br>",
+            "<code>*input_data des Levels ist ein Array von Pfaden, die zu den einzelnen Bildateien gehören.",
+            "<code>* 1. Eintrag: Bild für 1",
+            "<code>* 2. Eintrag: Bild für 10",
+            "<code>* 3. Eintrag: Bild für 100",
+            "<code>* 4. Eintrag: Bild für 1000",
+            "<code>* 5. Eintrag: Bild für 10000",
+            "<code>* 6. Eintrag: Bild des ersten Teils der Koordinaten",
+            "<code>* 7. Eintrag: Bild des zweiten Teils der Koordinaten"
+        ]
 
-        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv8, "data": "myth"} 
+        hints = [
+            "1. Ein Beispiel die Umrechnung der Zahlen: </br><img width='300' height='300' src='static/assets/example.png'>",
+            "2. Es wird ein Array in der Form erwarter [ersteKoordinatenZahl, zweiteKoordinatenZahl]"
+        ]
 
-        #   Level 9 - Abschlusslevel
+        return {"task_messages": task_messages, "hints": hints, "solution_function": self.sol_lv8, "data": data} 
+
+    #   Level 9 - Abschlusslevel
     def create_level9(self):
 
         task_messages = [
@@ -361,7 +394,7 @@ class DerFluchdesPharao(EscapeRoom):
         return count
 
     #   Level 5
-    def solution5(self, ver_nachricht):
+    def sol_lv5(self, ver_nachricht):
 
         alphabet = 'abcdefghijklmnopqrstuvwxyz' 
         result = "" 
@@ -450,7 +483,30 @@ class DerFluchdesPharao(EscapeRoom):
     
     # Level 8
     def sol_lv8(self, data):
-        return 0
+        koord = [data[5], data[6]]
+        numbers = [data[0], data[1], data[2], data[3], data[4]]
+
+        solution = [0,0]
+
+        for i in range(len(koord)):
+            print("Neues Bild: ", koord[i])
+            img_rgb = cv2.imread(koord[i])
+            img_gray = cv2.cvtColor(img_rgb, cv2.COLOR_BGR2GRAY)
+            for j in range(len(numbers)):
+                count = 0
+                template = cv2.imread(numbers[j], 0)
+                w, h = template.shape[::-1]
+                res = cv2.matchTemplate(img_gray,template,cv2.TM_CCOEFF_NORMED)
+                if j == 0:
+                    threshold = .99
+                else:
+                    threshold = .84
+                loc = np.where(res >= threshold)
+                for pt in zip(*loc[::-1]):  
+                    count += 1
+                    solution[i] += int(numbers[j].split("/")[-1].split(".")[0])
+                print(str(numbers[j]) +" - " + str(count))
+        return solution
 
     # Level 9
     def sol_lv9(self, data):
