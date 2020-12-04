@@ -289,7 +289,6 @@ class DerFluchdesPharao(EscapeRoom):
     #   Level 8 Alexander
     def create_level8(self):
 
-        koord = [29.978, 31.134]
         data = [
             'static/assets/1.png',
             'static/assets/10.png',
