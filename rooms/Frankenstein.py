@@ -29,8 +29,8 @@ class Frankenstein(EscapeRoom):
         task_messages = [
             "Wir befinden uns in London, das Jahr ist 1875.",
             "Augenzeugenberichte von Monstersichtungen häufen sich. Irgendetwas Merkwürdiges geht vor sich.",
-            "Das Dasein als Ermittler*in ist nicht immer einfach, zu Weilen auch gefährlich. Du verspürst den fast schon gewohnten Drang. Dies ist ein Fall, den du einfach lösen musst."
-            "Du machst dich auf den Weg mit den Augenzeugen zu reden und das Abenteuer beginnt…"
+            "Das Dasein als Ermittler*in ist nicht immer einfach, zu Weilen auch gefährlich. Du verspürst den fast schon gewohnten Drang. Dies ist ein Fall, den du einfach lösen musst.",
+            "Du machst dich auf den Weg mit den Augenzeugen zu reden und das Abenteuer beginnt…",
             "Die Menschen sind in Angst & Schrecken, du musst herausbekommen wo das Monster, oder sind es mehrere?, herkommen.",
             "Du kannst vier der Augenzeugen ausfinding machen und lässt dir die genauen Positionen beschreiben. Zurück in deinem kleinen Ermittlungsbüro, zeichnest du alle Punke auf einer Karte ein.",
             "Sofort fällt dir auf, dass die vier Orte ein Rechteck ergeben.",
@@ -53,7 +53,7 @@ class Frankenstein(EscapeRoom):
         doorbell = "Dr. Viktor Frankenstein"
         doorbell_no_vowels = "Dr. VXktXr FrXnkXnstXXn"
         task_messages = [
-            "Mit den Koordinaten machst du dich auf den Weg. Am errechneten Ort findest du eine verfallene Stadtvilla."
+            "Mit den Koordinaten machst du dich auf den Weg. Am errechneten Ort findest du eine verfallene Stadtvilla.",
             "An der Klingel ist nur noch der Rest eines Namens zu erkennen, einige Buchstaben sind der Witterung zum Opfer gefallen:",
             "<b>" + doorbell_no_vowels + "</b>", 
             "Alle Vokale sind unkenntlich. Du klingelst. Eine mysteriöse Stimme antwortet:", 
@@ -78,12 +78,12 @@ class Frankenstein(EscapeRoom):
 
         name = random.choice(['Adam Chattoway', 'Phineas Prescott', 'Mycroft Hayward', 'Sterling Kaylock', 'Eliza Godwin', 'Eudora Steverus', 'Lenore Whittock'])
 
-        task_messages = ['Der Name "Dr. Viktor Frankenstein" geht dir nicht aus dem Kopf. Du fühslt wie sich ein Gedanke aus den Tiefen deines Unterbewussten empor kämpft.',
-            'Dr. Viktor Frankenstein... AHA! Es gab vor einigen Monaten einen Skandal um den jungen Doktor. Er hatte behauptet Leben erschaffen zu können, es gab einige vehemente Gegner, wie den Bischoff zum Beispiel.',
+        task_messages = ['Der Name "Dr. Viktor Frankenstein" geht dir nicht aus dem Kopf. Du fühlst wie sich ein Gedanke aus den Tiefen deines Unterbewussten empor kämpft.',
+            'Dr. Viktor Frankenstein... AHA! Es gab vor einigen Monaten einen Skandal um den jungen Doktor. Er hatte behauptet Leben erschaffen zu können, es gab einige vehemente Gegner, wie den Bischof zum Beispiel.',
             'Kurz darauf war der junge Mann verschwunden, wie vom Erdboden verschluckt, die Metropolitan Police hatte ermittelt. Du fragst dich, ob die Monstersichtungen mit dem Verschwinden des Doktors zu tun haben. Du willst die Akten des Falls unter die Lupe nehmen.',
-            'Das wird nicht einfach, du kannst ja nicht einfach bei der Metropolitan Police reinmaschieren und Einsicht verlangen. Zum Glück hast du gute Verbindungen. Einer deiner Leute ist ein Detective bei der Metropolitan Police, er hatte dir geholfen eine Police Badge zu fälschen.',
+            'Das wird nicht leicht, du kannst ja nicht einfach bei der Metropolitan Police reinmaschieren und Einsicht verlangen. Zum Glück hast du gute Verbindungen. Einer deiner Leute ist ein Detective bei der Metropolitan Police, er hatte dir geholfen eine Police Badge zu fälschen.',
             'Es fehlt nur noch die Nummer, diese folgt ein paar Regeln um sie vor Fälschungen zu schützen, das aber hält dich nicht auf. Dein Kontakt hatte dir eine Liste mit Namen und Anweisungen gegeben.',
-            f'Du entscheidest dich für {name}. Die Zahlen in der Badge Number erscheinen nur auf den ersten Blick komplett randomisiert, du weißt aber von deinem Kontakt, dass sie nur pseudo-random sind und die Initialen als Seed benutzen.'
+            f'Du entscheidest dich für {name}. Die Zahlen in der Badge Number erscheinen nur auf den ersten Blick komplett randomisiert, du weißt aber von deinem Kontakt, dass sie nur pseudo-random sind und die Initialen als Seed benutzen.',
             'Laut Anweisung nimmst du nun die Initialen des Namens und fügst dann, verbunden mit Bindestrichen, drei Blöcke mit jeweils drei Zahlen an.',
             'Die Blöcke müssen jeweils eine Quersumme zwischen und inklusive 9 und 15 ergeben, jede Ziffer darf nur einmal pro Block vorkommen.']
 
@@ -159,10 +159,10 @@ class Frankenstein(EscapeRoom):
             str(d_num_raw),
             "&nbsp",
             "Du greifst die Unterlagen aus dem Safe und eilst zurück zu deinem Ermittlungsbüro um die Akten in Ruhe zu Sichten."
-            "Zwei Seiten ziehen deine Aufmerksamkeit besonders auf sich:"
-            "Ein Zettel mit etwas das aussieht wie ein Code: 'Wenn A 25 sei, so sei B 13'. Den solltest du dir wahrscheinlich merken, irgendetwas muss er ja entschlüsseln."
+            "Zwei Seiten ziehen deine Aufmerksamkeit besonders auf sich:",
+            "Ein Zettel mit etwas das aussieht wie ein Code: 'Wenn A 25 sei, so sei B 13'. Den solltest du dir wahrscheinlich merken, irgendetwas muss er ja entschlüsseln.",
             "Das zweite ist eine etwas seltsam anmutende Phantomzeichnung. Sie ist nicht auf Papier, sondern einer sehr flachen Box.",
-            "Anscheinend wurde sie von dem etwas verrückten Erfinder, der manchmal mit der Metropolitan Police arbeitet, erstellt."
+            "Anscheinend wurde sie von dem etwas verrückten Erfinder, der manchmal mit der Metropolitan Police arbeitet, erstellt.",
             "Es sieht irgendwie so aus, als wäre die Zeichnung zeilenweise verschoben...",
             "Und was hat diese Zahl in Reihe 10 zu bedeuten? Scheinbar ändert sie sich jeden Tag etwas... Nachdem du lange darauf schaust, glaubst du das Rätsel gelöst zu haben.",
             "Es sind 8 Zahlen und das Bild besteht aus 8 Reihen. Wie kannst Du es wieder richtig zusammensetzen?",
@@ -181,12 +181,12 @@ class Frankenstein(EscapeRoom):
 
             task_messages = [
                 "Das richtig hingeschobene Phantombild jagt dir einen kalten Schauer über den Rücken. Das Monster! Frankenstein!",
-                "Er muss erfolgreich gewesen sein mit seinen abstrusen Theorien. Du machst dich sofort auf um die alte Stadtvilla unter die Lupe zu nehmen, der Doktor muss dort ein Labor haben.",
+                "Er muss erfolgreich gewesen sein mit seinen abstrusen Theorien. Du machst dich sofort auf, um die alte Stadtvilla unter die Lupe zu nehmen, der Doktor muss dort ein Labor haben.",
                 "Du verschaffst dir Zutritt und findest nach einigem Gesuche auch den Hebel der das staubige Bücherregal zur Seite gleiten lässt und den Weg frei macht ins Labor.",
-                "Im Labor findest du eine riesige Apparatur mit unendlich vielen Kabeln und einer Kupferwanne in der Mitte. Ein Spitze in der alle Kabel zusammenlaufen zeigt darauf.",
+                "Im Labor findest du eine riesige Apparatur mit unendlich vielen Kabeln und einer Kupferwanne in der Mitte. Ein Spitze, in der alle Kabel zusammenlaufen, zeigt darauf.",
                 "Es dämmert dir, wie die Maschine in etwa funktioniert und du stellst mit Grauen fest, dass Dr. Frankenstein hier das Monster erschaffen hat, dass in ganz London Angst und Schrecken verbreitet.",
                 "Du musst das Monster und den Doktor aufhalten. Doch von beiden fehlt jede Spur. Du durchsuchst das Labor mit der Hoffnung auf einen Hinweis.",
-                "Auf einem wüsten Schreibtisch findest du ein Notizbuch mit vielen Einträgen, es sieht aus wie ein Tagebuch. Der letzte Eintrag isvon letzter Woche.",
+                "Auf einem wüsten Schreibtisch findest du ein Notizbuch mit vielen voll geschriebenen Seiten, es sieht aus wie ein Tagebuch. Der letzte Eintrag ist von letzter Woche.",
                 "Das Datum kannst du lesen, aber der restliche Text scheint nur Buchstabensalat zu sein.",
                 "Wenn du es nur entziffern könntest..."
             ]
