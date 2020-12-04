@@ -1,6 +1,8 @@
 from itertools import permutations
 import string
 
+# code = ['A1', 'B1', 'C1', 'D1', 'E1', 'F1']
+
 def run(code):
     '''
     find the right 3 keys red, blue, yellow
@@ -18,10 +20,7 @@ def run(code):
         for p in list(p):
             all_possible_compinations.append(p)
 
-        print(all_possible_compinations)
         return all_possible_compinations
-
-    key_combinations()
 
     # Decode the numbers to open the safe, 1-52 (A1 - Z2)
 
@@ -43,5 +42,7 @@ def run(code):
             
             decoded_numbers.append(num+1)
 
-        print(decoded_numbers)
         return decoded_numbers
+
+    print(key_combinations() + decoding_numbers(code))
+    return key_combinations() + decoding_numbers(code)

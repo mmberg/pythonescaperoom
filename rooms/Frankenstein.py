@@ -11,9 +11,9 @@ class Frankenstein(EscapeRoom):
         super().__init__()
         self.set_metadata("Lisa, Christoph und Thomas", __name__)
         self.add_level(self.create_level1())
-        #self.add_level(self.create_level2())
-        #self.add_level(self.create_level3())
-        #self.add_level(self.create_level4())
+        self.add_level(self.create_level2())
+        self.add_level(self.create_level3())
+        self.add_level(self.create_level4())
         self.add_level(self.create_level5())
         self.add_level(self.create_level6())
 
@@ -80,12 +80,14 @@ class Frankenstein(EscapeRoom):
             'Kurz darauf war der junge Mann verschwunden, wie vom Erdboden verschluckt, die Metropolitan Police hatte ermittelt. Du fragst dich, ob die Monstersichtungen mit dem Verschwinden des Doktors zu tun haben. Du willst die Akten des Falls unter die Lupe nehmen.',
             'Das wird nicht einfach, du kannst ja nicht einfach bei der Metropolitan Police reinmaschieren und Einsicht verlangen. Zum Glück hast du gute Verbindungen. Einer deiner Leute ist ein Detective bei der Metropolitan Police, er hatte dir geholfen eine Police Badge zu fälschen.',
             'Es fehlt nur noch die Nummer, diese folgt ein paar Regeln um sie vor Fälschungen zu schützen, das aber hält dich nicht auf. Dein Kontakt hatte dir eine Liste mit Namen und Anweisungen gegeben.',
-            f'Du entscheidest dich für {name}. Laut Anweisung nimmst du nun die Initialen des Namens und fügst dann, verbunden mit Bindestrichen, drei Blöcke mit jeweils drei Zahlen an.',
+            f'Du entscheidest dich für {name}. Die Zahlen in der Badge Number erscheinen nur auf den ersten Blick komplett randomisiert, du weißt aber von deinem Kontakt, dass sie nur pseudo-random sind und die Initialen als Seed benutzen.'
+            'Laut Anweisung nimmst du nun die Initialen des Namens und fügst dann, verbunden mit Bindestrichen, drei Blöcke mit jeweils drei Zahlen an.',
             'Die Blöcke müssen jeweils eine Quersumme zwischen und inklusive 9 und 15 ergeben, jede Ziffer darf nur einmal pro Block vorkommen.']
 
-        hints = ['Das Format muss am Ende so aussehen: XX-xxx-xxx-xxx, Beispiel: AC-425-428-263.',
-            'Nutze Slicing und Indexing um die Initialen abzutrennen.'
-            'Mit der random Funktion kannst du dir drei stellige Zahlen ausgeben lassen. Prüfe die Zahlen und nutze nur die Passenden.'
+        hints = ['Das Format muss am Ende so aussehen: XX-xxx-xxx-xxx, Beispiel: LW-425-428-263.',
+            'Nutze Slicing und Indexing um die Initialen abzutrennen.',
+            'Bestimme den Unicode Zeichencode für die einzelnen Initialen und rechne diese zusammen. Der errechnete Wert ist dein Seed für den Pseudo Random Number Generator.',
+            'Mit der random Funktion kannst du dir drei stellige Zahlen ausgeben lassen. Prüfe die Zahlen und nutze nur die Passenden.',
             'Füge alles zusammen, mit der join Funktion kannst du Listenelemente zu einem String zusammenfügen.']
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.create_badge_number, "data": name}
@@ -229,9 +231,10 @@ class Frankenstein(EscapeRoom):
     ###Level 3###
     def create_badge_number(self, name):
         '''
-        create a badge number with format XX-xxx-xxx-xxx
-        requirements for the first block: Initials of the badge holders name
-        requirements per block of 3: cross sum is between 9 and 15, the digits are unique
+        Create a badge number with format XX-xxx-xxx-xxx.
+        Numbers are random from a given seed.
+        Requirements for the first block: Initials of the badge holders name.
+        Requirements per block of 3: cross sum is between 9 and 15, the digits are unique.
         '''
         def get_initials(name):
 
@@ -243,7 +246,17 @@ class Frankenstein(EscapeRoom):
 
             return initials
 
-        def unique_digits(a):                                       # function to check uniqueness of digits in a number
+        initials = get_initials(name)
+
+        def create_seed(initials):
+
+            seed_digits = [ord(i) for i in str(initials)]
+
+            return sum(seed_digits)
+
+        seed = create_seed(initials)
+
+        def unique_digits(a):
 
             digits = [int(i) for i in str(a)]
 
@@ -259,23 +272,25 @@ class Frankenstein(EscapeRoom):
             else:
                 return True
 
-        def cross_sum(a):                                           # function to calculate the cross sum
+        def cross_sum(a):
 
             cross_sum_digits = [int(i) for i in str(a)]
 
             return sum(cross_sum_digits)
 
-        numbers = []                                                # list of three digit numbers for the badge number
+        random.seed(seed)
 
-        while len(numbers) < 3:                                     # while we have less than 3 items in the list
+        numbers = []
 
-            x = random.randint(101,998)                             # get random 3 digit number
+        while len(numbers) < 3:
 
-            if unique_digits(x) == True:                            # check if all digits are unique
+            x = random.randint(seed,988)
 
-                if cross_sum(x) >= 9 and cross_sum(x) <= 15:        # check if cross sum is 9
+            if unique_digits(x) == True:
 
-                    numbers.append(x)                               # add number to ints list
+                if cross_sum(x) >= 9 and cross_sum(x) <= 15:
+
+                    numbers.append(x)
 
             else:
                 continue
@@ -285,18 +300,17 @@ class Frankenstein(EscapeRoom):
 
         badge_number = badge_initials + '-' + badge_nums
         
-        print(badge_number)
         return badge_number
+
     ###END Solution Level 3 
 
 
     ###Level 4###
     def open_safe(self, code):
         '''
-        find the right 3 keys red, blue, yellow
-        decode numbers from the note
+        List all combinations of the keys with red, blue, and yellow ribbon.
+        Decode numbers from the note to get the combination.
         '''
-        # Try out all combinations of the keys
 
         def key_combinations():
 
@@ -308,16 +322,11 @@ class Frankenstein(EscapeRoom):
             for p in list(p):
                 all_possible_compinations.append(p)
 
-            print(all_possible_compinations)
             return all_possible_compinations
-
-        key_combinations()
-
-        # Decode the numbers to open the safe, 1-52 (A1 - Z2)
 
         def decoding_numbers(code):
         
-            alphabet = list(string.ascii_uppercase) # Create the list of the uppercase letters of the alphabet with a 1 and then a 2 added
+            alphabet = list(string.ascii_uppercase)
 
             key = [item + '1' for item in alphabet] + [item + '2' for item in alphabet]
 
@@ -329,11 +338,10 @@ class Frankenstein(EscapeRoom):
                 
                 decoded_numbers.append(num+1)
 
-            print("Level 4 im File:")
-            print(decoded_numbers)
             return decoded_numbers
         
-        decoding_numbers(code)
+        return key_combinations() + decoding_numbers(code)
+
 ###END Solution Level 4
 
 

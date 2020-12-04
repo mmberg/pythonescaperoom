@@ -1,5 +1,7 @@
 import random
 
+name = 'Adam Chattoway'
+
 def run(name):
 
     # Slicing & Indexing to get the initials from the name
@@ -13,6 +15,18 @@ def run(name):
             initials.append(names[i][0])
 
         return initials
+
+    # Using the initials for the seed
+
+    initials = get_initials(name)
+
+    def create_seed(initials):
+
+        seed_digits = [ord(i) for i in str(initials)]
+
+        return sum(seed_digits)
+
+    seed = create_seed(initials)
 
     # Check if the digits are unique within a 3 digit block
 
@@ -40,13 +54,15 @@ def run(name):
 
         return sum(cross_sum_digits)
 
-    # Randomly create 3-digit numbers, check the requirements and add to list if they are met
+    # Randomly create 3-digit numbers from seed, check the requirements and add to list if they are met
+
+    random.seed(seed)
 
     numbers = []
 
     while len(numbers) < 3:
 
-        x = random.randint(101,998)
+        x = random.randint(seed,988)
 
         if unique_digits(x) == True:
 
@@ -66,3 +82,5 @@ def run(name):
     
     print(badge_number)
     return badge_number
+
+run(name)
