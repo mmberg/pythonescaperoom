@@ -384,7 +384,7 @@ class DerFluchdesPharao(EscapeRoom):
     
     #   Level 6
     def sol_lv6(self, data):
-        anzahl_wiederholungen = 16
+        anzahl_wiederholungen = 14
         i = 0
         folge = [0,1]
         while (i < anzahl_wiederholungen):
