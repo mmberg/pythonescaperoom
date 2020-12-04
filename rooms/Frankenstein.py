@@ -27,14 +27,17 @@ class Frankenstein(EscapeRoom):
         ])
 
         task_messages = [
-            "Ein Monster wurde an vier Stellen in London gesichtet, die Menschen sind in Angst & Schrecken,",
-            "du willst herausbekommen wo es herkommt.",
-            "Dir fällt auf, dass die vier Orte ein Rechteck ergeben.",
+            "Wir befinden uns in London, das Jahr ist 1875.",
+            "Augenzeugenberichte von Monstersichtungen häufen sich. Irgendetwas Merkwürdiges geht vor sich.",
+            "Das Dasein als Ermittler*in ist nicht immer einfach, zu Weilen auch gefährlich. Du verspürst den fast schon gewohnten Drang. Dies ist ein Fall, den du einfach lösen musst."
+            "Du machst dich auf den Weg mit den Augenzeugen zu reden und das Abenteuer beginnt…"
+            "Die Menschen sind in Angst & Schrecken, du musst herausbekommen wo das Monster, oder sind es mehrere?, herkommen.",
+            "Du kannst vier der Augenzeugen ausfinding machen und lässt dir die genauen Positionen beschreiben. Zurück in deinem kleinen Ermittlungsbüro, zeichnest du alle Punke auf einer Karte ein.",
+            "Sofort fällt dir auf, dass die vier Orte ein Rechteck ergeben.",
             "Das Versteck des Monsters muss sich nahe des Mittelpunkts befinden",
             "Die Koordinaten sind: <b> " +
             str(rectangle)+"</b",
-            "Schreibe eine Methode",
-            "die aus den Koordinaten den Mittelpunkt errechnet."
+            "Jetzt musst du nur noch aus den Koordinaten den Mittelpunkt errechnen!"
         ]
         hints = [
             "Mittelpunkt eines Rechtecks",
@@ -50,10 +53,10 @@ class Frankenstein(EscapeRoom):
         doorbell = "Dr. Viktor Frankenstein"
         doorbell_no_vowels = "Dr. VXktXr FrXnkXnstXXn"
         task_messages = [
-            "Du findest an dem errechneten Ort eine verfallene Stadtvilla mit \
-            einem unleserlichen Namen an der Klingel:",
+            "Mit den Koordinaten machst du dich auf den Weg. Am errechneten Ort findest du eine verfallene Stadtvilla."
+            "An der Klingel ist nur noch der Rest eines Namens zu erkennen, einige Buchstaben sind der Witterung zum Opfer gefallen:",
             "<b>" + doorbell_no_vowels + "</b>", 
-            "Die Vokale sind unkenntlich. Nachdem Du geklinglt hast, antwortet eine mystische Stimme:", 
+            "Alle Vokale sind unkenntlich. Du klingelst. Eine mysteriöse Stimme antwortet:", 
             "<em>\"Wer klingelt an einer Klingel, ohne den Namen lesen zu können?\"</em> fragte die Stimme und fuhr nach eine kurzen Pause fort:",
             "<em>\"Vielleicht öffne ich Dir die Tür. Doch dafür musst Du etwas tun. Erstelle eine Liste \
             mit allen möglichen Kombinationen. Gehe alphabetisch vor! Wie Du siehst fehlen \
@@ -155,9 +158,13 @@ class Frankenstein(EscapeRoom):
             "&nbsp",
             str(d_num_raw),
             "&nbsp",
-            "Du hast zwei Hinweise im Tresor gefunden. Zum einen eine Code und ein seltsame Phantomzeichnung.",
-            "Aber sieht irgendwie so aus, als wäre die Zeichnung zeilenweise verschoben...",
-            "Und was hat diese Zahl in Reihe 10 zu bedeuten? Scheinbar ändert sie sich jeden Tag etwas... ",
+            "Du greifst die Unterlagen aus dem Safe und eilst zurück zu deinem Ermittlungsbüro um die Akten in Ruhe zu Sichten."
+            "Zwei Seiten ziehen deine Aufmerksamkeit besonders auf sich:"
+            "Ein Zettel mit etwas das aussieht wie ein Code: . Den solltest du dir wahrscheinlich merken, irgendetwas muss er ja entschlüsseln."
+            "Das zweite ist eine etwas seltsam anmutende Phantomzeichnung. Sie ist nicht auf Papier, sondern einer sehr flachen Box.",
+            "Anscheinend wurde sie von dem etwas verrückten Erfinder, der manchmal mit der Metropolitan Police arbeitet, erstellt."
+            "Es sieht irgendwie so aus, als wäre die Zeichnung zeilenweise verschoben...",
+            "Und was hat diese Zahl in Reihe 10 zu bedeuten? Scheinbar ändert sie sich jeden Tag etwas... Nachdem du lange darauf schaust, glaubst du das Rätsel gelöst zu haben.",
             "Es sind 8 Zahlen und das Bild besteht aus 8 Reihen. Wie kannst Du es wieder richtig zusammensetzen?",
         ]
         hints = [
@@ -170,15 +177,17 @@ class Frankenstein(EscapeRoom):
 
 
     def create_level6(self):
-            data = ("rjaa kt jv mfv gfjwgjw hjvlgniiu gnvu, mfvu kt tavjwj jfaofhj lgnalj czakza szw kjb bzavujw ot wjuuja!", 25, 13)
+            data = ("kjw etahj cjmu rfjkjw. knv uzafdtb gnu hjgzcija, vjfaja nhhwjvvfsja kwnah ot cfakjwa, nmjw jw rfwk sza kja jwfaajwtahja na vjfaj sjwhnahjagjfu gjfbhjvtlgu. flg jwunyyuj fga rfjkjw mjfb vlgcjflgja otb ijavujw kfjvjv bnjklgjav. bjfaj ugjzwfja mwntlgja bjgw nwmjfu. kfjvj vlgzjyitah fvu rfj vz sfjcj nakjwj taszccdzbbja.", 25, 13)
 
             task_messages = [
-                "Du verstehst wie die Maschine funktioniert und stellst mit Grauen fest,",
-                "dass Dr. Frankenstein hier das Monster erschaffen hat, dass in ganz London",
-                "Angst und Schrecken verbreitet.",
-                "Auf einem wüsten Schreibtisch findest du ein Notizbuch mit Einträgen,",
-                "der letzte wurde vor einer Woche geschrieben,",
-                "du kannst es aber nicht lesen, es scheint nur Buchstabensalat zu sein.",
+                "Das richtig hingeschobene Phantombild jagt dir einen kalten Schauer über den Rücken. Das Monster! Frankenstein!",
+                "Er muss erfolgreich gewesen sein mit seinen abstrusen Theorien. Du machst dich sofort auf um die alte Stadtvilla unter die Lupe zu nehmen, der Doktor muss dort ein Labor haben.",
+                "Du verschaffst dir Zutritt und findest nach einigem Gesuche auch den Hebel der das staubige Bücherregal zur Seite gleiten lässt und den Weg frei macht ins Labor.",
+                "Im Labor findest du eine riesige Apparatur mit unendlich vielen Kabeln und einer Kupferwanne in der Mitte. Ein Spitze in der alle Kabel zusammenlaufen zeigt darauf.",
+                "Es dämmert dir, wie die Maschine in etwa funktioniert und du stellst mit Grauen fest, dass Dr. Frankenstein hier das Monster erschaffen hat, dass in ganz London Angst und Schrecken verbreitet.",
+                "Du musst das Monster und den Doktor aufhalten. Doch von beiden fehlt jede Spur. Du durchsuchst das Labor mit der Hoffnung auf einen Hinweis.",
+                "Auf einem wüsten Schreibtisch findest du ein Notizbuch mit vielen Einträgen, es sieht aus wie ein Tagebuch. Der letzte Eintrag isvon letzter Woche.",
+                "Das Datum kannst du lesen, aber der restliche Text scheint nur Buchstabensalat zu sein.",
                 "Wenn du es nur entziffern könntest..."
             ]
             hints = [
