@@ -160,7 +160,7 @@ class Frankenstein(EscapeRoom):
             "&nbsp",
             "Du greifst die Unterlagen aus dem Safe und eilst zurück zu deinem Ermittlungsbüro um die Akten in Ruhe zu Sichten."
             "Zwei Seiten ziehen deine Aufmerksamkeit besonders auf sich:"
-            "Ein Zettel mit etwas das aussieht wie ein Code: . Den solltest du dir wahrscheinlich merken, irgendetwas muss er ja entschlüsseln."
+            "Ein Zettel mit etwas das aussieht wie ein Code: 'Wenn A 25 sei, so sei B 13'. Den solltest du dir wahrscheinlich merken, irgendetwas muss er ja entschlüsseln."
             "Das zweite ist eine etwas seltsam anmutende Phantomzeichnung. Sie ist nicht auf Papier, sondern einer sehr flachen Box.",
             "Anscheinend wurde sie von dem etwas verrückten Erfinder, der manchmal mit der Metropolitan Police arbeitet, erstellt."
             "Es sieht irgendwie so aus, als wäre die Zeichnung zeilenweise verschoben...",
