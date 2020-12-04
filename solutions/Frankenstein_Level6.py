@@ -1,9 +1,8 @@
-a = 25
-b = 13
-msg_crypt = "rjaa kt jv mfv gfjwgjw hjvlgniiu gnvu, mfvu kt tavjwj jfaofhj lgnalj czakza szw kjb bzavujw ot wjuuja!"
+def run(data):  # Tupel/Tripel 3 Elemente
+    msg_encr = data[0]
+    a = data[1]
+    b = data[2]
 
-
-def run(msg_encr, a, b):
     def decrypt(y, a_inv, b):
         return ((a_inv*(y - b)) % 26)
 
@@ -31,7 +30,5 @@ def run(msg_encr, a, b):
             a_inv = euklid(a, 26)
             x = decrypt(alphabet.find(y), a_inv, b)
             msg = msg + alphabet[x]
-    return msg
-
-
-print(run(msg_crypt, a, b))
+    print(msg)  # die Lösung wird in der Kommandozeile ausgegeben
+    return msg  # auf msg ist nun die entschlüsselte Nachricht gespeichert
