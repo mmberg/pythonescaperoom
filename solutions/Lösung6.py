@@ -1,5 +1,5 @@
 def run(data):
-    anzahl_wiederholungen = 16
+    anzahl_wiederholungen = 14
  
     i = 0
     folge = [0,1]
