@@ -65,7 +65,7 @@ function next_room() {
 //changed from "text" to "html" convert
 function notify(message, fadeout = true) {
     if (fadeout) {
-        $("#message").html(message).fadeTo(500, 1).delay(3000).fadeTo(500, 0);
+        $("#message").html(message).fadeTo(500, 1).delay(6000).fadeTo(500, 0);
     }
     else {
         $("#message").html(message).fadeTo(500, 1);
