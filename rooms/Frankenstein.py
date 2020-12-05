@@ -126,8 +126,8 @@ class Frankenstein(EscapeRoom):
             f'Auf dem Safe liegt ein Zettel mit folgendem Code: {code} - Den gilt es nun zu entschlüsseln und schon hast du Zugriff.']
 
         hints = ['Teste alle Schlüssel-Kombinationen durch und gib diese in einer Liste aus.',
-            'Nach genauer Betrachtung gehst du davon aus, dass die Zahlen der Kombination zwischen 1 und 52 liegen.'
-            'Der schusselige Beamte hat einfach zweimal das Alphabet für den Geheimcode benutzt.'
+            'Nach genauer Betrachtung gehst du davon aus, dass die Zahlen der Kombination zwischen 1 und 52 liegen.',
+            'Der schusselige Beamte hat einfach zweimal das Alphabet für den Geheimcode benutzt.',
             'Du kannst ein Dictionary verwenden oder dir das Indexing einer Liste zunutze machen, um den Geheimcode in Zahlen um zuwandeln. Bedenke, dass Listen an Position 0 starten.']
 
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.open_safe, "data": code}
