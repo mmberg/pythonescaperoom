@@ -1,9 +1,12 @@
 import random
 import string
 import datetime
-from EscapeRoom import EscapeRoom
+
 from itertools import permutations
 from itertools import product
+
+from EscapeRoom import EscapeRoom
+
 
 class Frankenstein(EscapeRoom):
 
