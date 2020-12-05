@@ -1,5 +1,5 @@
 import string
-from itertools import combinations,product
+from itertools import product
 
 def run(doorbell):
     vowels_alphabetical_order = ["a","e","i","o","u"]
@@ -12,8 +12,6 @@ def run(doorbell):
     combination_list = list(product(vowels_alphabetical_order,repeat=len(doorbell_solution_vowels)))
     position_counter = 1
     for c in combination_list:
-        #print(position_counter)
-        #print(c)
         position_counter = position_counter + 1
         if tuple(doorbell_solution_vowels) == c:
             print(position_counter)
