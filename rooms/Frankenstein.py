@@ -43,10 +43,10 @@ class Frankenstein(EscapeRoom):
             "Jetzt musst du nur noch aus den Koordinaten den Mittelpunkt errechnen!"
         ]
         hints = [
-            "Mittelpunkt eines Rechtecks",
-            "Gegegben ist ein Tuple der Form (x,y,x,y,x,y,x,y)",
-            "Mögliche Formel: A+1/2AD",
-            "Erwartet wird eine List der Form[x,y]"
+            "Berechne den Mittelpunkt eines Rechtecks.",
+            "Gegeben ist ein Tuple der Form (x,y,x,y,x,y,x,y).",
+            "Mögliche Formel: A+1/2AD.",
+            "Erwartet wird eine List der Form[x,y]."
 
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution_level1, "data": rectangle}
@@ -69,7 +69,7 @@ class Frankenstein(EscapeRoom):
         ]
         hints = [
             "Oje, so viele Kombinationen... probiere es trotzdem! Ersetze die X jeweils mit den \
-            bekannten Vokalen \"a,e,i,o,u\"",
+            bekannten Vokalen \"a,e,i,o,u\".",
             "Mit jedem Einsetzen erhältst Du eine neue Kombiantion. Diese Kombination solltest Du \
             jeweils deiner Liste hinzufügen. ",
             "Irgendwann triffst Du auf die richtige Kombination der Vokale. An welcher Stelle steht diese Kombination?",
@@ -195,10 +195,10 @@ class Frankenstein(EscapeRoom):
                 "<b>" + str(data[0]) + "</b>"
             ]
             hints = [
-                "Nutze den Code aus dem Safe um die Notiz zu entschlüsseln",
-                "Schlüsselpaar",
-                "inverses Element",
-                "Euklidischer Algorithmus"
+                "Nutze den Code aus dem Safe um die Notiz zu entschlüsseln.",
+                "Schlüsselpaar: a = 25 und b = 13.",
+                "Nutze das Inverse Element.",
+                "Nutze den Euklidischen Algorithmus."
 
             ]
             return {"task_messages": task_messages, "hints": hints, "solution_function": self.solution_level6, "data": data}
