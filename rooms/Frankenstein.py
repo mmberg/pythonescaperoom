@@ -191,7 +191,8 @@ class Frankenstein(EscapeRoom):
                 "Du musst das Monster und den Doktor aufhalten. Doch von beiden fehlt jede Spur. Du durchsuchst das Labor mit der Hoffnung auf einen Hinweis.",
                 "Auf einem wüsten Schreibtisch findest du ein Notizbuch mit vielen voll geschriebenen Seiten, es sieht aus wie ein Tagebuch. Der letzte Eintrag ist von letzter Woche.",
                 "Das Datum kannst du lesen, aber der restliche Text scheint nur Buchstabensalat zu sein.",
-                "Wenn du es nur entziffern könntest..."
+                "Wenn du es nur entziffern könntest...",
+                "<b>" + str(data) + "</b>"
             ]
             hints = [
                 "Nutze den Code aus dem Safe um die Notiz zu entschlüsseln",
