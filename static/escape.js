@@ -19,14 +19,22 @@ function register_clickhandler() {
         show_hint();
     });
     $("#load").click(function () {
+        notify("Lade Räume...");
+        console.log("loading...")
+        var deferreds = [];
         $("input.room:checked").each(function (elem) {
             room_name = ($(this).val());
-            $.post("/rooms/" + room_name, function (data) {
-                console.log(data);
-            });
+            deferreds.push(
+                $.post("/rooms/" + room_name, function (data) {
+                    console.log("room loaded: ", room_name);
+                    //console.log(data);
+                })
+            );
         }).promise().done(function () {
-            show_loaded_rooms();
-            next_room();
+            $.when.apply($, deferreds).done(function () {
+                show_loaded_rooms();
+                next_room(); //i.e. the first one
+            });
         });
     });
 }
