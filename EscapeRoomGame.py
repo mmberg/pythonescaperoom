@@ -14,11 +14,13 @@ class EscapeRoomGame:
             if room.get_name() == room_classname:
                 print("Already loaded.")
                 return
-
-        room_module = importlib.import_module(room_classname)
-        class_ = getattr(room_module, room_classname)
-        room = class_()
-        self.rooms.append(room)
+        try:
+            room_module = importlib.import_module(room_classname)
+            class_ = getattr(room_module, room_classname)
+            room = class_()
+            self.rooms.append(room)
+        except Exception as e:
+            print("Could not load room: "+str(e))
 
     def load_all_rooms(self):
         self.reset()
