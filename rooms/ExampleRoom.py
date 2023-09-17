@@ -2,7 +2,6 @@ import random
 import string
 from EscapeRoom import EscapeRoom
 
-
 class ExampleRoom(EscapeRoom):
 
     def __init__(self):
@@ -19,7 +18,8 @@ class ExampleRoom(EscapeRoom):
         task_messages = [
             "Auf einem Zettel steht folgender Text:",
             "<b>"+secret+"</b>",
-            "Lässt sich hier ein Geheimnis erahnen?"
+            "Lässt sich hier ein Geheimnis erahnen?",
+            # "<img src='static/secret.jpg'/>"
         ]
         hints = [
             "Werfen Sie einen Blick auf die Anfangsbuchstaben!"
