@@ -3,6 +3,7 @@ from EscapeRoomGame import EscapeRoomGame
 import os
 import string
 import random
+import time
 
 app = Flask("")
 game = EscapeRoomGame()
@@ -40,7 +41,7 @@ def get_loaded_rooms():
 @app.route('/rooms/<int:room_nr>')
 def get_room(room_nr):
     if(len(game.get_rooms()) <= room_nr):
-        #print("Room does not exist.")
+        print(f"Room {room_nr} does not exist (yet)")
         abort(404)
     else:
         return jsonify(game.get_room(room_nr).get_metadata())
@@ -59,7 +60,7 @@ def get_level(room_nr, level_nr):
         level = room.get_levels()[level_nr]
         return jsonify({"tasks": level["task_messages"], "hints": level["hints"]})
     else:
-        #print("Invalid level.")
+        print("Invalid level.")
         abort(404)
 
 
@@ -77,4 +78,4 @@ def post_solve_level(room_nr, level_nr):
     return jsonify(solution)
 
 
-app.run()
+app.run(debug=True)
