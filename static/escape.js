@@ -1,7 +1,7 @@
 $(function () {
     register_clickhandler();
     load_rooms();
-    $("#message").hide();
+    //$("#message").hide();
     $("#end").hide();
 });
 
@@ -19,8 +19,8 @@ function register_clickhandler() {
         show_hint();
     });
     $("#load").click(function () {
-        notify("Lade Räume...");
-        console.log("loading...")
+        notify("Lade Räume...", false, false);
+        console.log("loading rooms...");
         var deferreds = [];
         $("input.room:checked").each(function (elem) {
             room_name = ($(this).val());
@@ -51,7 +51,7 @@ function show_loaded_rooms() {
     $("#game").show();
     $("#load_rooms").hide();
     $.get("/rooms", function (data) {
-        notify("Räume geladen: " + data.room_names)
+        notify("Räume geladen: " + data.room_names, true, true)
     });
 }
 
@@ -70,12 +70,22 @@ function next_room() {
         );
 }
 
-function notify(message, fadeout = true) {
+function notify(message, replace=false, fadeout=true) {
+	if(replace){
+		console.log(message, replace, fadeout);
+		$("#message").empty();
+	}
+	
+	p = $(document.createElement("p"));
+	p.text(message);
+	p.addClass("messageitem")
+	$("#message").append(p)
+		
     if (fadeout) {
-        $("#message").text(message).fadeTo(500, 1).delay(3000).fadeTo(500, 0);
+		p.fadeTo(500, 1).delay(3500).fadeTo(500, 0, function(){p.remove()});
     }
     else {
-        $("#message").text(message).fadeTo(500, 1);
+        p.fadeTo(500, 1)
     }
 }
 
@@ -122,7 +132,7 @@ function show_level(data) {
 function end_game() {
     $("#task").empty();
     $("#game").hide();
-    $("#end").html("Du hast " + level_counter + " Level gemeistert und " + hint_counter + " Tipp(s) benötigt.<br><a href='/'>Neu starten</a>").show();
+    $("#end").html("Du hast " + level_counter + " Level gemeistert und " + hint_counter + " Tipp(s) benötigt.<br><a href='/'>Ein neues Spiel starten</a>").show();
     notify("Das Spiel ist zu Ende.")
 }
 
