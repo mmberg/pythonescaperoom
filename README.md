@@ -9,7 +9,7 @@ The levels will be created by various contributors.
 
 Just start ``EscapeRoomWeb.py`` or use the batch file start.bat (on Windows) or start.sh (Linux). This will start a web server on http://localhost:5000 (not https!). Please open this URL in your web browser to start the game.
 
-If Python is not in your system's path, you might need to use the complete path to python.
+If Python is not in your system's path, you might need to use the complete path to Python.
 On Windows, it's recommended to set the path to Python (e.g. ``C:\Users\<user>\AppData\Local\Programs\Python\Python312\``) in the PATH environment variable.
 
 # Install requirements
@@ -22,24 +22,27 @@ Hint: You may want to use a virtual environment to manage contradicting dependen
 
 # How to create a solution
 
-As a player you will have to develop little algorithms in Python with your favorite editor (which you store locally) to solve the challenges. For every level you have to create a .py-file with a method called ``run`` and one parameter.
+As a player you will have to develop little algorithms in Python with your favorite editor (which you store locally) to solve the challenges. For every level you have to create a .py-file with a method called ``run`` and one parameter. For the sake of simplicity you can use the existing ``solutions`` folder to save your code.
 
 Minimal example without functionality:
 
 	def run(secret):
 		pass
 
-The parameter can be called as you like, e.g. ``secret``, ``data`` or ``input_data``. The Escape Room environment will use it to pass the secret information defined in any room (see ``data`` in ExampleRoom) to your solution function. You can then create your algorithm and return the solution.
+The parameter can be called as you like, e.g. ``secret``, ``data`` or ``input_data``. The Escape Room environment will use it to pass the secret information defined in any room (see ``data`` in ExampleRoom) to your solution function. You can then create your algorithm that uses the secret as input and return the solution.
 
 	def run(secret):
 		solution = do_some_magic(secret)
 		return solution
 		
+
 You can then upload the .py-file and check your solution.
+
 		
 # How to create a new room
 
-As a developer you may want to create new rooms and levels. All rooms are Python classes in the 'rooms' folder.
+A room can consist of different levels. Consider each room a different game, while each level is a step towards solving the game.
+As a developer you need to create new rooms and levels. All rooms are Python classes in the 'rooms' folder.
 They should be derived from class ``EscapeRoom``:
 
 	class AnotherRoom(EscapeRoom):
@@ -64,3 +67,10 @@ Every level needs to return the following data structure:
 
 Have a look at the existing classes as a reference.
 
+## Adding static content
+
+If you want to display images, put them into folder ``/static`` and include them into the HTML page by adding ``<img src='static/secret.jpg'/>`` to the task_messages.
+
+# General Remarks
+
+It is not needed to modify the Escape Room environment (i.e. EscapeRoom.py, EscapeRoomGame.py, EscapeRoomWeb.py, escape.css, escape.js, escape.html).
