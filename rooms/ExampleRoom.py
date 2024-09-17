@@ -25,6 +25,8 @@ class ExampleRoom(EscapeRoom):
             "Werfen Sie einen Blick auf die Anfangsbuchstaben!"
         ]
         return {"task_messages": task_messages, "hints": hints, "solution_function": self.first_letters, "data": secret}
+        # if using an algorithm to check the correctness of an answer use:
+        # return {"task_messages": task_messages, "hints": hints, "solution_function": self.first_letters, "data": secret, "algorithm": self.algorithm}
 
     ### SOLUTIONS ###
 
@@ -34,3 +36,7 @@ class ExampleRoom(EscapeRoom):
         for word in words:
             result += word[0]
         return result
+
+    def algorithm(self, solution_attempt):
+        # check solution and return True or False
+        return True
