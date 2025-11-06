@@ -54,10 +54,14 @@ def get_levels(room_nr):
 
 @app.route('/rooms/<int:room_nr>/levels/<int:level_nr>')
 def get_level(room_nr, level_nr):
+    print("Loading level "+str(level_nr+1))
     room = game.get_rooms()[room_nr]
     levels = room.get_levels()
     if level_nr < len(levels):
         level = room.get_levels()[level_nr]
+        if callable(level):
+            level = level()
+            room.set_level(level_nr, level)
         return jsonify({"tasks": level["task_messages"], "hints": level["hints"]})
     else:
         # print("Invalid level.")

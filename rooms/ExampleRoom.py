@@ -2,6 +2,7 @@ import random
 import string
 from EscapeRoom import EscapeRoom
 
+
 class ExampleRoom(EscapeRoom):
 
     def __init__(self):

@@ -1,8 +1,7 @@
 import os
 import importlib
 import sys
-sys.path.append('rooms')
-
+from EscapeRoom import EscapeRoom
 
 class EscapeRoomGame:
 
@@ -30,8 +29,37 @@ class EscapeRoomGame:
     def reset(self):
         self.rooms.clear()
 
-    def find_rooms(self):
-        return [f.split(".")[0] for f in os.listdir('rooms') if f.endswith(('.py', '.pyc'))]
+    def is_room_type(self, room_file):
+        """
+        Very naive check if file is an Escape Room without inspecting object.
+        """
+        is_room = False
+        with open(room_file, 'r', encoding='utf-8', errors='ignore') as file:
+            for line in file.readlines():
+                if "(EscapeRoom):" in line:
+                    return True
+
+    def find_rooms(self, root_folder="rooms", recursive=False):
+        rooms = []
+        if os.path.exists(root_folder):
+            if not recursive:
+                rooms.extend([f.split(".")[0] for f in os.listdir(root_folder) if f.endswith('.py') and self.is_room_type(os.path.join(root_folder, f))])
+                sys.path.append(root_folder)
+            else:
+                for root, dirs, files in os.walk(root_folder):
+                    if "__pycache__" in root: continue
+                    room_file_names = [f.split(".")[0] for f in files if f.endswith('.py')]
+                    for room in room_file_names:
+                        if self.is_room_type(os.path.join(root,room+".py")):
+                            rooms.append(room)
+                    sys.path.append(root)
+        else:
+            print(f"Room folder '{root_folder}' does not exist.")
+
+        if len(rooms)==0:
+            print("No rooms found.")
+
+        return rooms
 
     def get_rooms(self):
         return self.rooms

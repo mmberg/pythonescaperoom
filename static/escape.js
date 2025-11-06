@@ -71,8 +71,8 @@ function next_room() {
 }
 
 function notify(message, replace=false, fadeout=true) {
+    console.log(message)
 	if(replace){
-		console.log(message, replace, fadeout);
 		$("#message").empty();
 	}
 	

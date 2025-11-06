@@ -8,9 +8,13 @@ class EscapeRoom:
         self.levels = []
         self.room_name = "Unknown"
         self.author = "Unknown"
+        self.last_solution = None
 
     def add_level(self, level):
         self.levels.append(level)
+
+    def set_level(self, index, level):
+        self.levels[index]=level
 
     def get_levels(self):
         return self.levels
@@ -28,8 +32,12 @@ class EscapeRoom:
     def get_metadata(self):
         return {"author": self.author, "room_name": self.room_name, "levels": len(self.levels)}
 
+    def get_last_solution(self):
+        return self.last_solution
+
     def check_solution(self, solution_filename, correct_function, data):
         solution = self.run_code(solution_filename, data)
+        self.last_solution = solution
         correct = solution == correct_function(data)
         return {"correct": correct, "solution": solution}
 
@@ -37,7 +45,11 @@ class EscapeRoom:
         try:
             mod = importlib.import_module(filename)
             importlib.reload(mod)
-            return mod.run(data)
+            if hasattr(mod, "run") and callable(getattr(mod, "run", None)):
+                return mod.run(data)
+            else:
+                print(f"run() method not found.")
         except ModuleNotFoundError:
             print(f"Couldn't find: {os.getcwd()}/{filename}.")
             return False
+
