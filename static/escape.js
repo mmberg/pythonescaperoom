@@ -25,7 +25,7 @@ function register_clickhandler() {
         }
     });
     $("#load").click(function () {
-        notify("Lade Räume...", false, false);
+        notify("Lade Räume...", false, false, "SHORT");
         console.log("loading rooms...");
         var deferreds = [];
         $("input.room:checked").each(function (elem) {
@@ -58,7 +58,7 @@ function show_loaded_rooms() {
     $("#play").show();
     $("#load_rooms").hide();
     $.get("/rooms", function (data) {
-        notify("Räume geladen: " + data.room_names, true, true)
+        notify("Räume geladen: " + data.room_names, true, true, "SHORT")
     });
 }
 
@@ -77,19 +77,21 @@ function next_room() {
         );
 }
 
-function notify(message, replace=false, fadeout=true) {
+function notify(message, replace=false, fadeout=true, duration="LONG") {
     console.log(message)
 	if(replace){
 		$("#message").empty();
 	}
 	
 	let p = $(document.createElement("p"));
-	p.text(message);
+	p.html(message);
 	p.addClass("messageitem")
 	$("#message").append(p)
-		
+	
+    timeout = (duration == "SHORT")? 400 : 2700
+
     if (fadeout) {
-		p.fadeTo(500, 1).delay(2000).fadeTo(500, 0, function(){p.remove()});
+		p.fadeTo(500, 1).delay(timeout).fadeTo(500, 0, function(){p.remove()});
     }
     else {
         p.fadeTo(500, 1)
@@ -164,10 +166,10 @@ function upload() {
 
 function show_result(result) {
     if (result.correct) {
-        notify("Deine Lösung ist: " + result.solution + ". Juhu, das war richtig!");
+        notify("Deine Lösung ist: <b>" + result.solution + "</b>.<br>Juhu, das war <b>richtig</b>!");
         next_level();
     }
     else {
-        notify("Deine Lösung ist: " + result.solution + ". Das ist leider falsch.");
+        notify("Deine Lösung ist: <b>" + result.solution + "</b>.<br>Das ist leider <b>falsch</b>.");
     }
 }
