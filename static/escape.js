@@ -18,6 +18,12 @@ function register_clickhandler() {
     $("#btn_hint").click(function () {
         show_hint();
     });
+    $("#message").click(function (e) {
+        if (e.target.matches('.messageitem')) {
+            console.log("close");
+            $(e.target).remove();
+        }
+    });
     $("#load").click(function () {
         notify("Lade Räume...", false, false);
         console.log("loading rooms...");
@@ -42,13 +48,14 @@ function register_clickhandler() {
 function load_rooms() {
     $.get("/rooms/available", function (data) {
         data.forEach(function (item, index) {
-            $("#rooms").append("<input type='checkbox' class='room' value='" + item + "'>" + item + "</input><br>");
+            $("#rooms").append("<input type='checkbox' class='room' id='"+item+"' value='" + item + "'><label for='"+item+"'>"+item+"</label><br>");
         });
     });
 }
 
 function show_loaded_rooms() {
     $("#game").show();
+    $("#play").show();
     $("#load_rooms").hide();
     $.get("/rooms", function (data) {
         notify("Räume geladen: " + data.room_names, true, true)
@@ -76,13 +83,13 @@ function notify(message, replace=false, fadeout=true) {
 		$("#message").empty();
 	}
 	
-	p = $(document.createElement("p"));
+	let p = $(document.createElement("p"));
 	p.text(message);
 	p.addClass("messageitem")
 	$("#message").append(p)
 		
     if (fadeout) {
-		p.fadeTo(500, 1).delay(3500).fadeTo(500, 0, function(){p.remove()});
+		p.fadeTo(500, 1).delay(2000).fadeTo(500, 0, function(){p.remove()});
     }
     else {
         p.fadeTo(500, 1)
@@ -119,20 +126,21 @@ function show_room_data(data) {
 
 function show_level(data) {
     $("#level").text(level + 1);
-    $("#task").empty();
+    $("#task-description").empty();
     $("#hints").empty().hide();
 
     data.tasks.forEach(function (item, index) {
-        $("#task").append("<li>" + item + "</li>")
+        $("#task-description").append("<li>" + item + "</li>")
     });
 
     hints = data.hints;
 }
 
 function end_game() {
-    $("#task").empty();
-    $("#game").hide();
-    $("#end").html("Du hast " + level_counter + " Level gemeistert und " + hint_counter + " Tipp(s) benötigt.<br><a href='/'>Ein neues Spiel starten</a>").show();
+    $("#play").hide();
+    $("#task-description").empty();
+    $("#end_game_message").html("Du hast " + level_counter + " Level gemeistert und " + hint_counter + " Tipp(s) benötigt.<br><a href='/'>Ein neues Spiel starten</a>")
+    $("#end").show();
     notify("Das Spiel ist zu Ende.")
 }
 

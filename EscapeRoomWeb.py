@@ -82,4 +82,6 @@ def post_solve_level(room_nr, level_nr):
     return jsonify(solution)
 
 
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.run(debug=True)
+
